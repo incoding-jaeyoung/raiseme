@@ -171,22 +171,29 @@ function commonTween() {
         })
 
     })
-    $('.slide-up, h2.title ,.text').each(function (e) {
+    $('.slide-up, .sub-title').each(function (e) {
         let text = $(this)
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
+                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
                 end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
                 //                scrub: true, //스크롤에 반응 (없으면 자동재생)
                 //                markers: true,
-                toggleActions: "restart none none none",
+                toggleActions: "play pause pause reverse",
             },
         });
-        upmotion.from(text, 1, {
+        gsap.set(text, {
             y: 80,
             opacity: 0,
-            //            ease: "power3.out",
+            onComplete: function () {
+
+            }
+        })
+        upmotion.to(text, 1, {
+            y: 0,
+            opacity: 1,
+            ease: "power3.out",
             onComplete: function () {
 
             }
@@ -194,19 +201,53 @@ function commonTween() {
 
     })
     $('.left-slide').each(function (e) {
-        gsap.from($(this), 2.5, {
-            x: '100px',
-            opacity: 0,
+        let text = $(this)
+        const leftMotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 20%", // 앞 : 객체 , 뒤 : 페이지 전체
-                stagger: 0.3,
-                //                        scrub: 1, //스크롤에 반응 (없으면 자동재생)
-                //                    markers: true,
-                toggleActions: "play none reverse none",
+                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                scrub: true, //스크롤에 반응 (없으면 자동재생)
+                //                markers: true,
+                toggleActions: "play pause pause reverse",
             },
-            ease: 'Expo.easeOut'
+        });
+        gsap.set(text, {
+            x: '-200px',
+            opacity: 0,
+            onComplete: function () {
+
+            }
+        })
+        leftMotion.to(text, 1, {
+            x: '0',
+            opacity: 1,
+            ease: 'power3.out'
+        })
+    })
+    $('.right-slide').each(function (e) {
+        let text = $(this)
+        const leftMotion = gsap.timeline({
+            scrollTrigger: {
+                trigger: $(this),
+                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                scrub: true, //스크롤에 반응 (없으면 자동재생)
+                //                markers: true,
+                toggleActions: "play pause pause reverse",
+            },
+        });
+        gsap.set(text, {
+            x: '200px',
+            opacity: 0,
+            onComplete: function () {
+
+            }
+        })
+        leftMotion.to(text, 1, {
+            x: '0',
+            opacity: 1,
+            ease: 'power3.out'
         })
     })
     $('.over-text-wrap').each(function (e) {

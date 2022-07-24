@@ -69,11 +69,11 @@
                 <div class="visual-block">
                     <p class="back"><img src="../img/hologram-back.png" alt=""></p>
                     <p class="man"><img src="../img/man.png" alt=""></p>
-                    <p class="holo-01"><img src="../img/img-news-visual-01.png" alt=""></p>
-                    <p class="holo-02"><img src="../img/img-news-visual-02.png" alt=""></p>
-                    <p class="holo-03"><img src="../img/img-news-visual-03.png" alt=""></p>
-                    <p class="holo-04"><img src="../img/img-news-visual-04.png" alt=""></p>
-                    <p class="holo-05"><img src="../img/img-news-visual-05.png" alt=""></p>
+                    <p class="holo-01 holo"><img src="../img/img-news-visual-01.png" alt=""></p>
+                    <p class="holo-02 holo"><img src="../img/img-news-visual-02.png" alt=""></p>
+                    <p class="holo-03 holo"><img src="../img/img-news-visual-03.png" alt=""></p>
+                    <p class="holo-04 holo"><img src="../img/img-news-visual-04.png" alt=""></p>
+                    <p class="holo-05 holo"><img src="../img/img-news-visual-05.png" alt=""></p>
                 </div>
             </div>
         </div>
@@ -195,5 +195,81 @@
         </div>
    </footer>
 </div>
+<script>
+    $(document).ready(function () {
+        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
+        gsap.set($(".visual-block .man"), {
+            opacity:0,
+            y:'50%',
+        })
+        gsap.set($(".visual-block .back"), {
+            opacity:0,
+            y:'-50%',
+        })
+        gsap.set($(".visual-block .holo"), {
+            opacity:0,
+            y:'-150%',
+        })
+        gsap.to($(".visual-block .man"), 0.2, {
+            opacity:1,
+            delay:0.7,
+            y:'0%',
+        })
+        gsap.to($(".visual-block .back"), 0.2, {
+            opacity:1,
+            delay:0.5,
+            y:'0%',
+        })
+        gsap.to($(".visual-block .holo"), 0.2, {
+            opacity:1,
+            delay:1,
+            y:'0%',
+            stagger: 0.1,
+            ease:Power1.easeOut,
+        })
+        tl.set($(".visual-block .holo"), {
+            opacity:1,
+            y:'0%',
+            delay:2,
+        })
+        .to($(".visual-block .back"), 2, {
+            ease:Power1.easeOut,
+            scale:0.95,
+            x:'-5%',
+            opacity:0.3,
+        },'time')
+        .to($(".visual-block .back"), 2, {
+            ease:Power1.easeOut,
+            scale:1,
+            x:'0%',
+            opacity:1,
+        },'time1')
+        .to($(".visual-block .holo-01"), 2, {
+            x:'-10%',
+            y:'-10%',
+            ease:Power1.easeOut,
+            scale:1.1,
+        },'time')
+        .to($(".visual-block .holo-01"), 2, {
+            x:'0%',
+            y:'0%',
+            ease:Power1.easeOut,
+            scale:1,
+        },'time1')
+        .to($(".visual-block .holo-05"), 2, {
+            x:'-10%',
+            y:'10%',
+            scale:1.1,
+            ease:Power1.easeOut,
+        },'time')
+        .to($(".visual-block .holo-05"), 2, {
+            x:'0%',
+            y:'0%',
+            scale:1,
+            ease:Power1.easeOut,
+        },'time1')
+        
+    })
+</script>
 </body>
 </html>

@@ -62,7 +62,7 @@
    <section id="contents">
     <!-- contents -->
         <div class="index-header">
-            <div class="row">
+            <div class="row slide-up">
                 <h2><img src="../img/title.png" width="709" alt=""></h2>
                 <p>레이즈미는 간편하고 스마트한 AI기술을 만듭니다</p>
             </div>
@@ -183,8 +183,8 @@
         </div>
         <div class="cover">
             <div class="row">
-                <img src="../img/raise.png" width="537" alt="">
-                <img src="../img/me.png" width="341" alt="">
+                <img src="../img/raise.png" width="537" alt="" class="left-slide">
+                <img src="../img/me.png" width="341" alt="" class="right-slide">
             </div>
         </div>
         <div class="news-block">
@@ -232,6 +232,45 @@
                 </p>
             </div>
         </div>
+        <div class="contact-block">
+            <div class="row">
+                <h3 class="sub-title"><span class="fc-blue">레이즈미</span>에게 <br>물어보세요</h3>
+                <div class="contact-con">
+                    <p class="text">Raiseme의 AI 모델로 여러분의 서비스를 업그레이드 하고 싶다면 <br>
+                        회사명, 성함, 연락처, 문의내용을 메일로 보내주세요. <br>
+                        서비스 컨설턴트가 성공 사례와 함께 여러분의 서비스를 <span class="fc-blue">Raise</span>해 드립니다.</p>
+                    <p class="tag">
+                        <span>#파트너십문의</span>
+                        <span>#기술문의</span>
+                        <span>#요금문의</span>
+                        <span>#서비스이용문의</span>
+                        <span>#기타문의</span>
+                    </p>
+                    <div class="contact-list">
+                        <dl>
+                            <dt class="eng">Download</dt>
+                            <dd>레이즈미 소개자료를 받고 싶어요</dd>
+                        </dl>
+                        <dl>
+                            <dt class="eng">Developers</dt>
+                            <dd>API 사용 방법을 알고 싶어요</dd>
+                        </dl>
+                        <dl>
+                            <dt class="eng">Email</dt>
+                            <dd>hello@raiseme.kr</dd>
+                        </dl>
+                        <dl>
+                            <dt class="eng">Address</dt>
+                            <dd>05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="character">
+                    <img src="../img/img-man.png" width="306" alt="">
+                    <img src="../img/img-bubble.png" width="113" alt="" class="chat">
+                </div>
+            </div>
+        </div>
     <!-- //contents -->
    </section>
    <footer id="footer">
@@ -255,5 +294,11 @@
         </div>
    </footer>
 </div>
+<script>
+    $(document).ready(function () {
+        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
+        
+    })
+</script>
 </body>
 </html>

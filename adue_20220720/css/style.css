@@ -523,7 +523,7 @@ footer .site-info ul li{line-height: 1.81;}
 .visual-news{background-color: #4285f4; color: #fff;}
 .visual-news .visual-block p{position: absolute;}
 .visual-news .visual-block img{width: 100%;}
-.visual-news .visual-block .back{width: 541px; bottom: 58px; right: 0;}
+.visual-news .visual-block .back{width: 541px; bottom: 58px; right: 0; perspective: 1000px;}
 .visual-news .visual-block .man{width: 415px; bottom: 0; right: 93px;}
 .visual-news .visual-block .holo-01{width: 205px; bottom: 317px; right: 380px;}
 .visual-news .visual-block .holo-02{width: 185px; bottom: 183px; right: 35px;}
@@ -630,7 +630,6 @@ footer .site-info ul li{line-height: 1.81;}
 .benefit .benefit-list li .img{margin-bottom: 25px; height: 96px;}
 .benefit .benefit-list li dt{font-size: 24px;font-weight: 600;}
 .benefit .benefit-list li dd{font-size: 16px; line-height: 26px; font-weight: 500; color: #c5dbff;}
-.row{border: 1px solid #f00;}
 
 .dream{margin-top: 120px;}
 .dream .more{margin-top: 30px;}
@@ -653,3 +652,15 @@ footer .site-info ul li{line-height: 1.81;}
 .link-block .link a{display: inline-flex; font-size: 18px; font-weight: bold; width: 232px; border-radius: 32px;  border: solid 2px #303030; height: 65px; margin: 0 15px; align-items: center; justify-content: center;}
 .link-block .link a:hover{background-color: #303030; color: #fff;}
 
+.contact-block .row{padding-top: 180px; padding-bottom: 230px; display: flex; overflow: hidden; justify-content: space-between;}
+.contact-block .contact-con{width: 855px;}
+.contact-block .text{font-size: 30px; line-height: 50px; letter-spacing: -0.32px; font-weight: 500;}
+.contact-block .tag{font-size: 22px; color: #4285f4; letter-spacing: -0.21px; margin-top: 20px;}
+.contact-block .tag span{margin-right: 20px; font-weight: 600;}
+.contact-block .character{position: absolute; bottom: -40px;}
+.contact-block .character .chat{position: absolute; right: -62px; top: -27px;}
+.contact-list{margin-top: 35px; display: flex; flex-wrap: wrap; width: 100%;}
+.contact-list dl{margin-top: 60px; }
+.contact-list dl dt{font-size: 26px; font-weight: 500;}
+.contact-list dl dd{margin-top: 30px; font-size: 18px; color: #545454; font-weight: 500;}
+.contact-list dl:nth-of-type(1),.contact-list dl:nth-of-type(3){width: 245px; margin-right: 120px;}
