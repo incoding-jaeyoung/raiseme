@@ -4,7 +4,7 @@
  * {-webkit-text-size-adjust:none; margin:0; padding:0;}
 html, body{width: 100%;}
 /*html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, font, img, ins, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, textarea, input, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, audio, canvas, video {margin:0; padding:0; line-height:140%; }*/
-h1,h2,h3,h4,h5,h6{font-size:100%; font-weight: 100;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
 table {border-collapse:collapse; border-spacing:0; border:0; width:100%;}
 ol, ul {list-style:none;}
 abbr[title] {border-bottom: 1px dotted; }

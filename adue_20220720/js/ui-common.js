@@ -128,15 +128,15 @@ function commonTween() {
         x:200,
     })
 
-    $('.fade, .sub-title').each(function (e) {
+    $('.fade').each(function (e) {
         let text = $(this)
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
                 start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "0% 50%%", // 앞 : 객체 , 뒤 : 페이지 전체
                 // scrub: true, //스크롤에 반응 (없으면 자동재생)
-                //                markers: true,
+                markers: true,
                 toggleActions: "play complete none none",
             },
         });
