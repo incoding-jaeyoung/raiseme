@@ -2,16 +2,17 @@
 if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
 }
-
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.saveStyles(".mobile, .desktop");
 // JavaScript Document
 var heroHeight;
 var heroImgHeight;
 $(document).ready(function () {
     $('body').imagesLoaded().done(function (instance) {
         console.log('image loaded!!')
+        commonTween()
         init();
         headerScroll();
-        commonTween()
     });
 });
 function init() {
@@ -36,6 +37,33 @@ function init() {
         $('.tab-ui-con > *').eq(indexNum).addClass('active')
         console.log(indexNum)
     })
+    ScrollTrigger.matchMedia({
+        "(min-width:851px)": function () {
+            var ran = gsap.timeline ()
+            .to('.obj-move',{
+                x: "random(-30, 30)", 
+                y: "random(-30, 30)",
+                scale: "random(0.9, 1)",
+                duration:3,
+                ease:"none",
+                repeat:-1,
+                repeatRefresh:true 
+            })
+        },
+        "(max-width:850px)": function () {
+            var ran = gsap.timeline ()
+            .to('.obj-move',{
+                x: "random(-10, 10)", 
+                y: "random(-10, 10)",
+                scale: "random(0.9, 1)",
+                duration:3,
+                ease:"none",
+                repeat:-1,
+                repeatRefresh:true 
+            })
+        },
+    })
+    
     const videos = gsap.utils.toArray('.video-block video')
     videos.forEach(function(video, i) {
         ScrollTrigger.create({
@@ -94,61 +122,13 @@ function headerScroll() {
     }
 }
 function commonTween() {
-    var tl = gsap.timeline();
-    gsap.to($(".section-story-01 .dao-copy"), 2, {
-        // scrollTrigger: {
-        //     trigger: $('.section-story-01'),
-        //     start: "100% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
-        //     end: "100% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
-        //     markers: true,
-        //     toggleActions: "play pause reverse pause",
-        //     // scrub: 1,
-        //     //                    pin:true,
-        // },
-        opacity:1,
-        delay:0.5
-    })
-    gsap.from(".section-story-01 .dao-copy img", 1, {
-        x:'100',
-        delay:0.5
-    })
-    gsap.to(".section-story-01 .dao-world img.earth-story", 1, {
-        opacity:1,
-        y:0,
-    })
-    
-    gsap.from($(".cha-img .img-b"), {
-        scrollTrigger: {
-            trigger: $(this),
-            start: "100% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-            end: "100% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-            //markers: true,
-            toggleActions: "play pause reverse pause",
-            scrub: 1,
-            //                    pin:true,
-        },
-        x:-200,
-    })
-    gsap.from($(".cha-img .img-f"), {
-        scrollTrigger: {
-            trigger: $(this),
-            start: "100% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-            end: "100% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-            //markers: true,
-            toggleActions: "play pause reverse pause",
-            scrub: 1,
-            //                    pin:true,
-        },
-        x:200,
-    })
-
     $('.fade').each(function (e) {
         let text = $(this)
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 50%%", // 앞 : 객체 , 뒤 : 페이지 전체
+                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "0% 0%%", // 앞 : 객체 , 뒤 : 페이지 전체
                 // scrub: true, //스크롤에 반응 (없으면 자동재생)
                 markers: true,
                 toggleActions: "play complete none none",
@@ -186,84 +166,143 @@ function commonTween() {
 
     })
     $('.slide-up, .sub-title').each(function (e) {
-        let text = $(this)
+        let text = $(this).wrapInner('<div class="over-text-con"></div>')
+        let target = text.find('.over-text-con')
+        console.log(text)
+        gsap.set(target, {
+            y:100,
+            opacity: 0,
+        })
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-                //                scrub: true, //스크롤에 반응 (없으면 자동재생)
-                //                markers: true,
-                toggleActions: "play pause pause reverse",
+                start: "top 85%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "top 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                //scrub: true, //스크롤에 반응 (없으면 자동재생)
+                //markers: true,
+                toggleActions: "play none none reverse",
             },
         });
-        gsap.set(text, {
-            y: 80,
-            opacity: 0,
-            onComplete: function () {
-
-            }
-        })
-        upmotion.to(text, 1, {
-            y: 0,
+        upmotion.to(target, 1, {
+            y:0,
             opacity: 1,
             ease: "power3.out",
-            onComplete: function () {
-
-            }
         })
 
     })
-    $('.left-slide').each(function (e) {
-        let text = $(this)
-        const leftMotion = gsap.timeline({
-            scrollTrigger: {
-                trigger: $(this),
-                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-                                scrub: true, //스크롤에 반응 (없으면 자동재생)
-                //                markers: true,
-                toggleActions: "play pause pause reverse",
-            },
-        });
-        gsap.set(text, {
-            x: '-200px',
-            opacity: 0,
-            onComplete: function () {
-
-            }
-        })
-        leftMotion.to(text, 1, {
-            x: '0',
-            opacity: 1,
-            ease: 'power3.out'
-        })
+    ScrollTrigger.matchMedia({
+        "(min-width:851px)": function () {
+            $('.left-slide').each(function (e) {
+                let text = $(this)
+                const leftMotion = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $(this),
+                        start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                        scrub: true, //스크롤에 반응 (없으면 자동재생)
+                        //markers: true,
+                        toggleActions: "play pause pause reverse",
+                    },
+                });
+                gsap.set(text, {
+                    x: '-200px',
+                    opacity: 0,
+                    onComplete: function () {
+        
+                    }
+                })
+                leftMotion.to(text, 1, {
+                    x: '0',
+                    opacity: 1,
+                    ease: 'power3.out'
+                })
+            })
+        },
+        "(max-width:850px)": function () {
+            $('.left-slide').each(function (e) {
+                let text = $(this)
+                const leftMotion = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $(this),
+                        start: "0% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: "0% 50%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                        scrub: true, //스크롤에 반응 (없으면 자동재생)
+                        //markers: true,
+                        toggleActions: "play pause pause reverse",
+                    },
+                });
+                gsap.set(text, {
+                    x: '-200px',
+                    opacity: 0,
+                    onComplete: function () {
+        
+                    }
+                })
+                leftMotion.to(text, 1, {
+                    x: '0',
+                    opacity: 1,
+                    ease: 'power3.out'
+                })
+            })
+        },
     })
-    $('.right-slide').each(function (e) {
-        let text = $(this)
-        const leftMotion = gsap.timeline({
-            scrollTrigger: {
-                trigger: $(this),
-                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-                                scrub: true, //스크롤에 반응 (없으면 자동재생)
-                //                markers: true,
-                toggleActions: "play pause pause reverse",
-            },
-        });
-        gsap.set(text, {
-            x: '200px',
-            opacity: 0,
-            onComplete: function () {
-
-            }
-        })
-        leftMotion.to(text, 1, {
-            x: '0',
-            opacity: 1,
-            ease: 'power3.out'
-        })
+    ScrollTrigger.matchMedia({
+        "(min-width:851px)": function () {
+            $('.right-slide').each(function (e) {
+                let text = $(this)
+                const leftMotion = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $(this),
+                        start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                        scrub: true, //스크롤에 반응 (없으면 자동재생)
+                        //markers: true,
+                        toggleActions: "play pause pause reverse",
+                    },
+                });
+                gsap.set(text, {
+                    x: '200px',
+                    opacity: 0,
+                    onComplete: function () {
+        
+                    }
+                })
+                leftMotion.to(text, 1, {
+                    x: '0',
+                    opacity: 1,
+                    ease: 'power3.out'
+                })
+            })
+        },
+        "(max-width:850px)": function () {
+            $('.right-slide').each(function (e) {
+                let text = $(this)
+                const leftMotion = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $(this),
+                        start: "0% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: "0% 50%", // 앞 : 객체 , 뒤 : 페이지 전체
+                                        scrub: true, //스크롤에 반응 (없으면 자동재생)
+                        // markers: true,
+                        toggleActions: "play pause pause reverse",
+                    },
+                });
+                gsap.set(text, {
+                    x: '200px',
+                    opacity: 0,
+                    onComplete: function () {
+        
+                    }
+                })
+                leftMotion.to(text, 1, {
+                    x: '0',
+                    opacity: 1,
+                    ease: 'power3.out'
+                })
+            })
+        },
     })
+    
     $('.over-text-wrap').each(function (e) {
         $(this).find(' > *').addClass('over-text').wrapInner('<span class="over-text-con"></span>')
         let text = $(this).find('.over-text-con')
@@ -309,12 +348,7 @@ function mobileProxy() {
             //pc
         },
         "(max-width:768px)": function () {
-            ScrollTrigger.defaults({
-                scroller: "#wrapper",
-            });
-//            ScrollTrigger.config({
-//                autoRefreshEvents: "visibilitychange, DOMContentLoaded, load",
-//            });
+            
 
         },
 
@@ -395,165 +429,6 @@ function openModal(number) {
 function closeModal(no) {
     $('.overlay').hide();
     $('.modal-inside').hide();
-}
-
-
-
-
-
-
-function batteryInfo() {
-    gsap.to(".section-02 #battery-animation", 1.5, {
-        y: -200,
-        scrollTrigger: {
-            trigger: ".section-02 .battery-detial ul",
-            start: "80px 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-            end: "80px 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-            //                        scrub: 1, //스크롤에 반응 (없으면 자동재생)
-            //                        markers: true,
-            toggleActions: "play none reverse none",
-
-        },
-        ease: 'power4.out'
-    })
-    $('.up-slide').each(function (e) {
-        gsap.from($(this), 1, {
-            y: 80,
-            opacity: 0,
-            scrollTrigger: {
-                trigger: $(this),
-                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
-                end: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
-                //                        scrub: 1, //스크롤에 반응 (없으면 자동재생)
-                //                    markers: true,
-                toggleActions: "play none reverse none",
-            },
-            ease: 'power1.out'
-        })
-    })
-    
-    //    $('.section-04 ul li').each(function (e) {
-    const batteryInfoani = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".section-03 .battery-info",
-            start: "0% 40%", // 앞 : 객체 , 뒤 : 페이지 전체
-            end: "0% 40%", // 앞 : 객체 , 뒤 : 페이지 전체
-            //                scrub:1, //스크롤에 반응 (없으면 자동재생)
-            //                    markers: true,
-            //                    pin:".section-01",
-            //                    pinSpacing:false,
-            toggleActions: "play none reverse none",
-        },
-    });
-    batteryInfoani.from('.section-03 ul li .line', 0.5, {
-            transform: 'scaleX(0)',
-            stagger: 0.2,
-            ease: 'power4.out'
-        }, 'info')
-        .from('.section-03 ul li dl', 0.5, {
-            y: 30,
-            opacity: 0,
-            stagger: 0.2,
-            ease: 'power4.out'
-        }, 'info+=0.2')
-    //    })
-
-    $('.battery-charge').hover(function () {
-        gsap.to(".battery-charge .charge span", 0.1, {
-            opacity: 1,
-            stagger: 0.02,
-            ease: 'power2.out'
-        })
-    }, function () {
-        var tl = gsap.timeline();
-        tl.to(".battery-charge .charge span", 0, {
-                opacity: 1,
-                ease: 'power2.out'
-            })
-            .to(".battery-charge .charge span", 0.2, {
-                delay: 0.2,
-                opacity: 0,
-                ease: 'power2.out'
-            })
-    })
-    
-
-    ScrollTrigger.matchMedia({
-        "(min-width:769px)": function () {
-            //pc
-            const benefit = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.side-image',
-                    start: "50% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                    end: "50% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                    //                        scrub: 1, //스크롤에 반응 (없으면 자동재생)
-                    //                    markers: true,
-                    toggleActions: "play none reverse none",
-                },
-            });
-            benefit.from($('.side-image .right img'), 0.5, {
-                    x: '100%',
-                    ease: 'power1.out',
-                }, 'battery')
-                .from($('.side-image .left img'), 0.5, {
-                    x: '-100%',
-                    ease: 'power1.out',
-                }, 'battery')
-                .to($('.ess-benefit').find('> *'), 0.5, {
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.1,
-                    ease: 'power1.out'
-                })
-        },
-        "(max-width:768px)": function () {
-            //mobile
-            const benefit = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.side-image',
-                    start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                    end: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
-                    //                        scrub: 1, //스크롤에 반응 (없으면 자동재생)
-                    //                    markers: true,
-                    toggleActions: "play none reverse none",
-                },
-            });
-            benefit.from($('.side-image .right img'), 0.5, {
-                    x: '100%',
-                    ease: 'power1.out',
-                }, 'battery')
-                .from($('.side-image .left img'), 0.5, {
-                    x: '-100%',
-                    ease: 'power1.out',
-                }, 'battery')
-                .to($('.ess-benefit').find('> *'), 0.5, {
-                    y: 0,
-                    opacity: 1,
-                    stagger: 0.1,
-                    ease: 'power1.out'
-                })
-        },
-
-    })
-
-
-    gsap.to(".section-05 .number", 1, {
-        scrollTrigger: {
-            trigger: ".section-05 .number",
-            start: "0% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
-            end: "100% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
-            //          scrub: 1, //스크롤에 반응 (없으면 자동재생)
-            //          markers: true,
-            toggleActions: "play none reverse none",
-
-        },
-        onStart: function () {
-            counter()
-        },
-        scale: 1,
-        opacity: 1,
-    })
-
 }
 
 function counter() {

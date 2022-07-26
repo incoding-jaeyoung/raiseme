@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>에이듀</title>
+		<link rel="stylesheet" href="../css/popup_style.css" />
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+		<script src="../js/ui.js"></script>
+	</head>
+	<body>
+		<div class="popup">
+			<button type="button" class="popup__btn-open">레이어팝업버튼</button>
+			<!-- 집중도분석 POPUP S -->
+			<div class="popup__wrap off" id="popup0">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2>Raiseme Showcase</h2>
+							<div class="popup__select">
+								<p>집중도 분석</p>
+								<ul>
+									<li class="select">집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">집중도는 몇 퍼센트?<button type="button" class="popup__btn-share">url공유</button></div>
+					</div>
+					<div class="popup__cont">
+						asdasd
+					</div>
+				</div>
+			</div>
+			<!-- 집중도분석 POPUP E -->
+
+			<!-- 흥미도분석 POPUP S -->
+			<div class="popup__wrap off" id="popup1">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2>Raiseme Showcase</h2>
+							<div class="popup__select">
+								<p>흥미도 분석</p>
+								<ul>
+									<li>집중도 분석</li>
+									<li class="select">흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">흥미도는 몇 퍼센트?<button type="button" class="popup__btn-share">url공유</button></div>
+					</div>
+					<div class="popup__cont">
+						<!-- 흥미도분석 전 or 중 S -->
+						<section class="popupCont1">
+							<div class="popup__cont-time">
+								<h3 class="i-time">00:30</h3>
+								<button type="button" class="popup__btn-basic btn-w">시작</button>
+							</div>
+							<div class="popup__cont-video">
+								<div class="video-bg video-bg1">
+									<div class="popup__toast"><p>점선 안에 정면으로 어깨까지 나오도록 해주세요.</p></div>
+									<!-- 영상 송출 시 해당 이 div 숨김 -->
+								</div>
+								<video id="video02" autoplay style="margin: 0 auto; background: #4a4c53" webkit-playsinline="true" playsinline="true"></video>
+							</div>
+						</section>
+						<!-- 흥미도분석 전 or 중 E -->
+
+						<!-- 흥미도분석 종료(로딩) S -->
+						<section class="popupCont2 off">
+							<div class="popup__loading">
+								<div class="popup__loading-box">
+									<div class="popup__loading-img"><img src="../img/loading_img.gif" alt="" /></div>
+									<p>
+										테스트 결과를 분석 중입니다.<br />
+										잠시만 기다려 주세요.
+									</p>
+								</div>
+							</div>
+						</section>
+						<!-- 흥미도분석 종료(로딩) E -->
+
+						<!-- 흥미도분석 결과 S -->
+						<section class="popupCont3 off">
+							<div class="popup__cont-scroll">
+								<div class="popup__cont-box">
+									<div class="popup__cont-tit">
+										<h3>흥미도 분석 결과 당신은…</h3>
+										<h2>
+											전체 분석 시간 <strong>30초</strong> 중 <br />흥미 <span class="txt-BU">높음</span> <strong class="txt-BU">21초</strong>,
+											<span class="txt-R">낮음</span> <strong class="txt-R">6초</strong>, <br /><span class="txt-PU">분석불가</span>
+											<strong class="txt-PU">3초</strong> 입니다.
+										</h2>
+									</div>
+									<div class="popup__list-box">
+										<ul>
+											<li>
+												<div class="box no">
+													<h3>흥미도</h3>
+													<div class="popup__graph-donut">
+														<div class="graph-donut">
+															<canvas id="sample06"></canvas>
+															<script>
+																const ctx06 = document.getElementById("sample06").getContext("2d");
+																const sample06 = new Chart(ctx06, {
+																	type: "doughnut",
+																	data: {
+																		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+																		datasets: [
+																			{
+																				data: [12, 19, 3, 5, 2, 3],
+																				backgroundColor: [
+																					"rgba(255, 99, 132, 0.2)",
+																					"rgba(54, 162, 235, 0.2)",
+																					"rgba(255, 206, 86, 0.2)",
+																					"rgba(75, 192, 192, 0.2)",
+																					"rgba(153, 102, 255, 0.2)",
+																					"rgba(255, 159, 64, 0.2)",
+																				],
+																				borderColor: [
+																					"rgba(255, 99, 132, 1)",
+																					"rgba(54, 162, 235, 1)",
+																					"rgba(255, 206, 86, 1)",
+																					"rgba(75, 192, 192, 1)",
+																					"rgba(153, 102, 255, 1)",
+																					"rgba(255, 159, 64, 1)",
+																				],
+																				borderWidth: 1,
+																			},
+																		],
+																	},
+																	options: {
+																		responsive: true,
+																		maintainAspectRatio: false,
+																		scales: {
+																			y: {
+																				beginAtZero: true,
+																			},
+																		},
+																	},
+																});
+															</script>
+														</div>
+														<div class="popup__list-small">
+															<dl>
+																<dt>흥미 높음</dt>
+																<dd><span class="i-BU"></span></dd>
+															</dl>
+															<dl>
+																<dt>흥미 낮음</dt>
+																<dd><span class="i-R"></span></dd>
+															</dl>
+															<dl>
+																<dt>분석 불가</dt>
+																<dd><span class="i-PU"></span></dd>
+															</dl>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>흥미 높음</h3>
+													<h1>10초</h1>
+													<p>흥미도가 가장 오래 <br />높았던 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>흥미 낮음</h3>
+													<h1>6초</h1>
+													<p>흥미도가 가장 오래 <br />낮았던 시간</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="popup__graph">
+										<div class="popup__graph-tit">
+											<h3>흥미 분포</h3>
+										</div>
+										<div class="popup__graph-box">
+											<canvas id="sample05"></canvas>
+											<script>
+												const ctx05 = document.getElementById("sample05").getContext("2d");
+												const sample05 = new Chart(ctx05, {
+													type: "bar",
+													data: {
+														labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+														datasets: [
+															{
+																data: [12, 19, 3, 5, 2, 3],
+																backgroundColor: [
+																	"rgba(255, 99, 132, 0.2)",
+																	"rgba(54, 162, 235, 0.2)",
+																	"rgba(255, 206, 86, 0.2)",
+																	"rgba(75, 192, 192, 0.2)",
+																	"rgba(153, 102, 255, 0.2)",
+																	"rgba(255, 159, 64, 0.2)",
+																],
+																borderColor: [
+																	"rgba(255, 99, 132, 1)",
+																	"rgba(54, 162, 235, 1)",
+																	"rgba(255, 206, 86, 1)",
+																	"rgba(75, 192, 192, 1)",
+																	"rgba(153, 102, 255, 1)",
+																	"rgba(255, 159, 64, 1)",
+																],
+																borderWidth: 1,
+															},
+														],
+													},
+													options: {
+														responsive: true,
+														maintainAspectRatio: false,
+														scales: {
+															y: {
+																beginAtZero: true,
+															},
+														},
+													},
+												});
+											</script>
+										</div>
+										<div class="popup__list-small">
+											<dl>
+												<dt>흥미 높음 ↑</dt>
+												<dd></dd>
+											</dl>
+											<dl>
+												<dt>흥미 낮음 ↓</dt>
+												<dd></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- 흥미도분석 결과 E -->
+					</div>
+					<div class="popup__foot">
+						<!-- 하단 그래프 노출시 S -->
+						<div class="popup__foot-graph">
+							<canvas id="sample04"></canvas>
+							<script>
+								const ctx04 = document.getElementById("sample04").getContext("2d");
+								const sample04 = new Chart(ctx04, {
+									type: "bar",
+									data: {
+										labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+										datasets: [
+											{
+												data: [12, 19, 3, 5, 2, 3],
+												backgroundColor: [
+													"rgba(255, 99, 132, 0.2)",
+													"rgba(54, 162, 235, 0.2)",
+													"rgba(255, 206, 86, 0.2)",
+													"rgba(75, 192, 192, 0.2)",
+													"rgba(153, 102, 255, 0.2)",
+													"rgba(255, 159, 64, 0.2)",
+												],
+												borderColor: [
+													"rgba(255, 99, 132, 1)",
+													"rgba(54, 162, 235, 1)",
+													"rgba(255, 206, 86, 1)",
+													"rgba(75, 192, 192, 1)",
+													"rgba(153, 102, 255, 1)",
+													"rgba(255, 159, 64, 1)",
+												],
+												borderWidth: 1,
+											},
+										],
+									},
+									options: {
+										responsive: true,
+										maintainAspectRatio: false,
+										scales: {
+											y: {
+												beginAtZero: true,
+											},
+										},
+									},
+								});
+							</script>
+						</div>
+						<!-- 하단 그래프 노출시 E -->
+						<!-- 분석 결과 페이지 노출시 S -->
+						<div class="popup__foot-btn">
+							<button type="button" class="popup__btn-big btn-BU">결과 공유하기</button>
+							<button type="button" class="popup__btn-big btn-W">다시하기</button>
+						</div>
+						<!-- 분석 결과 페이지 노출시 E -->
+					</div>
+				</div>
+			</div>
+			<!-- 흥미도분석 POPUP E -->
+
+			<!-- 자세분석 POPUP S -->
+			<div class="popup__wrap off" id="popup2">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2>Raiseme Showcase</h2>
+							<div class="popup__select">
+								<p>자세 분석</p>
+								<ul>
+									<li>집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li class="select">자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">당신의 자세는 어떤가요?<button type="button" class="popup__btn-share">url공유</button></div>
+					</div>
+					<div class="popup__quick">
+						<div class="popup__quick-box">
+							<dl>
+								<dt>
+									<div class="bg-GY"><span class="i-away">자리비움</span></div>
+								</dt>
+								<dd>0초 (0회)</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-BU"><span class="i-like">자세좋음</span></div>
+								</dt>
+								<dd>0초 (0회)</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-PU"><span class="i-basic">자세보통</span></div>
+								</dt>
+								<dd>0초</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-R"><span class="i-bad">자세나뿜</span></div>
+								</dt>
+								<dd>0초 (0회)</dd>
+							</dl>
+						</div>
+						<!-- 자세분석 중에 노출 S -->
+						<div class="popup__quick-foot">
+							<div class="bg-BU"><span class="i-like2">자세좋음</span></div>
+						</div>
+						<!-- 자세분석 중에 노출 E -->
+					</div>
+					<div class="popup__cont">
+						<!-- 자세분석 전 or 중 S -->
+						<section class="popupCont1">
+							<div class="popup__cont-time">
+								<h3 class="i-time">00:30</h3>
+								<button type="button" class="popup__btn-basic btn-w">시작</button>
+							</div>
+							<div class="popup__cont-video">
+								<div class="video-bg video-bg1">
+									<div class="popup__toast"><p>점선 안에 정면으로 어깨까지 나오도록 해주세요.</p></div>
+									<!-- 영상 송출 시 해당 이 div 숨김 -->
+								</div>
+								<video id="video03" autoplay style="margin: 0 auto; background: #4a4c53" webkit-playsinline="true" playsinline="true"></video>
+							</div>
+						</section>
+						<!-- 자세분석 전 or 중 E -->
+
+						<!-- 자세분석 종료(로딩) S -->
+						<section class="popupCont2 off">
+							<div class="popup__loading">
+								<div class="popup__loading-box">
+									<div class="popup__loading-img"><img src="../img/loading_img.gif" alt="" /></div>
+									<p>
+										테스트 결과를 분석 중입니다.<br />
+										잠시만 기다려 주세요.
+									</p>
+								</div>
+							</div>
+						</section>
+						<!-- 자세분석 종료(로딩) E -->
+
+						<!-- 자세분석 결과 S -->
+						<section class="popupCont3 off">
+							<div class="popup__cont-scroll">
+								<div class="popup__cont-box">
+									<div class="popup__cont-tit">
+										<h3>자세 분석 결과 당신은…</h3>
+										<h2>전체 분석 시간 <strong>30초</strong> 중</h2>
+										<h2>
+											<span class="txt-GY">자리비움</span> <strong class="txt-GY">3초(1회)</strong>, <span class="txt-BU">자세좋음</span> <br />
+											<strong class="txt-BU">5초(2회)</strong>, <span class="txt-R">자세보통</span> <strong class="txt-R">13초</strong>, <br />
+											<span class="txt-PU">자세나쁨</span> <strong class="txt-PU">9초(3회)</strong> 입니다.
+										</h2>
+									</div>
+									<div class="popup__list-box">
+										<ul>
+											<li>
+												<div class="box">
+													<h3>자세평가</h3>
+													<div class="popup__graph-donut no">
+														<div class="graph-donut">
+															<canvas id="sample07"></canvas>
+															<script>
+																const ctx07 = document.getElementById("sample07").getContext("2d");
+																const sample07 = new Chart(ctx07, {
+																	type: "doughnut",
+																	data: {
+																		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+																		datasets: [
+																			{
+																				data: [12, 19, 3, 5, 2, 3],
+																				backgroundColor: [
+																					"rgba(255, 99, 132, 0.2)",
+																					"rgba(54, 162, 235, 0.2)",
+																					"rgba(255, 206, 86, 0.2)",
+																					"rgba(75, 192, 192, 0.2)",
+																					"rgba(153, 102, 255, 0.2)",
+																					"rgba(255, 159, 64, 0.2)",
+																				],
+																				borderColor: [
+																					"rgba(255, 99, 132, 1)",
+																					"rgba(54, 162, 235, 1)",
+																					"rgba(255, 206, 86, 1)",
+																					"rgba(75, 192, 192, 1)",
+																					"rgba(153, 102, 255, 1)",
+																					"rgba(255, 159, 64, 1)",
+																				],
+																				borderWidth: 1,
+																			},
+																		],
+																	},
+																	options: {
+																		responsive: true,
+																		maintainAspectRatio: false,
+																		scales: {
+																			y: {
+																				beginAtZero: true,
+																			},
+																		},
+																	},
+																});
+															</script>
+														</div>
+														<div class="popup__list-small">
+															<dl>
+																<dt>자리 비움</dt>
+																<dd><span class="i-GY"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 좋음</dt>
+																<dd><span class="i-BU"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 보통</dt>
+																<dd><span class="i-R"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 나쁨</dt>
+																<dd><span class="i-PU"></span></dd>
+															</dl>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자리비움</h3>
+													<h1>3초</h1>
+													<p>가장 오래 자리 <br />비운 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자세좋음</h3>
+													<h1>4초</h1>
+													<p>가장 오래 바른 자세 <br />유지한 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자세나쁨</h3>
+													<h1>7초</h1>
+													<p>가장 오래 나쁜 자세 유지한 시간</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- 자세분석 결과 E -->
+					</div>
+					<div class="popup__foot">
+						<!-- 분석 결과 페이지 노출시 S -->
+						<div class="popup__foot-btn">
+							<button type="button" class="popup__btn-big btn-BU">결과 공유하기</button>
+							<button type="button" class="popup__btn-big btn-W">다시하기</button>
+						</div>
+						<!-- 분석 결과 페이지 노출시 E -->
+					</div>
+				</div>
+			</div>
+			<!-- 자세분석 POPUP E -->
+
+			<div class="popup__control off">
+				<button type="button" class="popup__btn-next">다음</button>
+				<button type="button" class="popup__btn-next off" name="popupCont2">다음</button>
+				<button type="button" class="popup__btn-next off" name="popupCont3">다음</button>
+				<button type="button" class="popup__btn-next off" name="popupCont1">다음</button>
+			</div>
+
+			<div class="popup__dim off"></div>
+		</div>
+
+		<script>
+			var stop01 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop01();
+				}
+				video.srcObject = null;
+			};
+			var start01 = function () {
+				var video = document.getElementById("video01"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start01();
+			});
+		</script>
+		<script>
+			var stop02 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop02();
+				}
+				video.srcObject = null;
+			};
+			var start02 = function () {
+				var video = document.getElementById("video02"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start02();
+			});
+		</script>
+		<script>
+			var stop03 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop03();
+				}
+				video.srcObject = null;
+			};
+			var start03 = function () {
+				var video = document.getElementById("video03"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start03();
+			});
+		</script>
+	</body>
+</html>
