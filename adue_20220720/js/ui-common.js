@@ -36,6 +36,20 @@ function init() {
         $('.tab-ui-con > *').eq(indexNum).addClass('active')
         console.log(indexNum)
     })
+    const videos = gsap.utils.toArray('.video-block video')
+    videos.forEach(function(video, i) {
+        ScrollTrigger.create({
+            trigger: video,
+            scroller: 'body',
+            start: '20% center',
+            end: 'bottom center',
+            //markers: true,
+            onEnter: () => video.play(),
+            onEnterBack: () => video.play(),
+            onLeave: () => video.pause(),
+            onLeaveBack: () => video.pause(),
+        });
+    })
 }
 function headerScroll() {
     var didScroll;
@@ -176,7 +190,7 @@ function commonTween() {
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
+                start: "0% 90%", // 앞 : 객체 , 뒤 : 페이지 전체
                 end: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
                 //                scrub: true, //스크롤에 반응 (없으면 자동재생)
                 //                markers: true,

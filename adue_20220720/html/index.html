@@ -22,11 +22,13 @@
 <link rel="stylesheet" href="../css/style.css" />
 
 <script src="../js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 <script src="../js/imagesloaded.pkgd.min.js"></script>
 <script src="../js/gsap.min.js"></script>
 <script src="../js/ScrollTrigger.min.js"></script>
 <script src="../js/swiper-bundle.min.js"></script>
 <script src="../js/ScrollToPlugin3.min.js"></script>
+
 <script src="../js/ui.js"></script>
 <script src="../js/ui-common.js"></script>
 </head>
@@ -70,7 +72,7 @@
         <div class="video-block">
             <div class="row">
                 <div class="videoPlayer">
-                    <video loop="true" muted="" width="100%" height="100%"  preload="none" autoplay playsinline >
+                    <video poster="../img/animation.png" loop="true" muted="true" width="100%" height="100%"  > <!-- playsinline="true" webkit-playsinline="true" preload="auto" autoplay="false"   -->
                         <source src="../img/raisme.mp4" type="video/mp4" >
                     </video>
                 </div>
@@ -94,34 +96,53 @@
                         <li><button type="button">자세 분석<img src="../img/img-arrow.png" width="32" alt=""></button></li>
                         <li><button type="button">부정행위 검출<img src="../img/img-arrow.png" width="32" alt=""></button></li>
                     </ul>
-                    <div class="anime-block">
-                        <img src="../img/animation-01.png" width="530" alt="">
-                    </div>
+                    <ul class="anime-block">
+                        <li class="active">
+                            <video poster="../img/animation-01.png" loop="true" muted="true" width="100%" height="100%">
+                                <source src="../img/raisme.mp4" type="video/mp4" >
+                            </video>
+                        </li>
+                        <li>
+                            <video poster="../img/animation.png" loop="true" muted="true" width="100%" height="100%">
+                                <source src="../img/raisme.mp4" type="video/mp4" >
+                            </video>
+                        </li>
+                        <li>
+                            <video poster="../img/animation-01.png" loop="true" muted="true" width="100%" height="100%">
+                                <source src="../img/raisme.mp4" type="video/mp4" >
+                            </video>
+                        </li>
+                        <li>
+                            <video poster="../img/animation-01.png" loop="true" muted="true" width="100%" height="100%">
+                                <source src="../img/raisme.mp4" type="video/mp4" >
+                            </video>
+                        </li>
+                    </ul>
                     <ul class="list-detail">
                         <li class="active">
                             <dl>
-                                <dt class="eng">Concentration</dt>
+                                <dt class="eng">Concentration 1</dt>
                                 <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dt>Concentration</dt>
+                                <dt class="eng">Concentration 2</dt>
                                 <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dt>Concentration</dt>
+                                <dt class="eng">Concentration 3</dt>
                                 <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dt>Concentration</dt>
+                                <dt class="eng">Concentration 4</dt>
                                 <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
@@ -177,11 +198,61 @@
                     <div class="row">
                         <h3 class="sub-title">레이즈미의 가능성은<br><span class="fc-yellow">무궁무진</span>합니다</h3>
                         <p class="more"><a href="#" class="eng">VIEW ALL</a></p>
+                        <p class="btn-slide">
+                            <button type="button" class="btn-prev"><img src="../img/btn-prev.png" width="41" alt="이전"></button>
+                            <button type="button" class="btn-next"><img src="../img/btn-next.png" width="41" alt="다음"></button>
+                        </p>
+                        <div class="swiper dreamSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="image over"><img src="../img/usecase-thumb-01.png" alt=""></div>
+                                    <dl>
+                                        <dt>자율학습</dt>
+                                        <dd>공부 시간 뿐만 아니라 집중도까지 측정해서 학습의 질을 높여보세요</dd>
+                                    </dl>
+                                    <p class="obj obj-01"><img src="../img/obj-donut-2.png" width="192" alt=""></p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image over"><img src="../img/usecase-thumb-02.png" alt=""></div>
+                                    <dl>
+                                        <dt>인터넷강의</dt>
+                                        <dd>강의 들으면서 놓치거나 이해하지 못한 구간만 골라서 복습하세요</dd>
+                                    </dl>
+                                    <p class="obj obj-02"><img src="../img/obj-spring-2-1.png" width="168" alt=""></p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image over"><img src="../img/usecase-thumb-03.png" alt=""></div>
+                                    <dl>
+                                        <dt>원격교육</dt>
+                                        <dd>AI 보조교사와 함께 집중도와 흥미도에 따른 체계적인 학습을 시작해보세요</dd>
+                                    </dl>
+                                    <p class="obj obj-03"><img src="../img/obj-holo-1.png" width="189" alt=""></p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image over"><img src="../img/usecase-thumb-04.png" alt=""></div>
+                                    <dl>
+                                        <dt>화상상담</dt>
+                                        <dd>회의나 상담 중에 집중도와 흥미도 데이터를 이용해서 한 차원 높은 성과를 이루세요</dd>
+                                    </dl>
+                                    
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="image over"><img src="../img/usecase-thumb-05.png" alt=""></div>
+                                    <dl>
+                                        <dt>온라인시험</dt>
+                                        <dd>편리하고 공정한 AI 시험 감독관을 만나보세요</dd>
+                                    </dl>
+                                    <p class="obj obj-04"><img src="../img/obj-cube-1.png" width="124" alt=""></p>
+                                    <p class="obj obj-05"><img src="../img/obj-spring-4-1.png" width="242" alt=""></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="cover">
+            <div class="overay"></div>
             <div class="row">
                 <img src="../img/raise.png" width="537" alt="" class="left-slide">
                 <img src="../img/me.png" width="341" alt="" class="right-slide">
@@ -224,13 +295,29 @@
         </div>
         <div class="link-block">
             <div class="row">
-                <h3>레이즈미의 AI 기술을 체험하고<span>더 큰 가능성을 탐험해보세요</span></h3>
-                <p class="link">
+                <h3 class="slide-up">레이즈미의 AI 기술을 체험하고<span>더 큰 가능성을 탐험해보세요</span></h3>
+                <p class="link slide-up">
                     <a href="#">시연영상 보기</a>
                     <a href="#">공부절친 바로가기</a>
                     <a href="#">Showcase 체험</a>
                 </p>
+                <ul class="obj-list">
+                    <li class="obj-01" data-depth="0.2"><img src="../img/obj-cube-02.png" width="115" alt="" data-depth="1.2"></li>
+                    <li class="obj-02" data-depth="0.4"><img src="../img/dot-01.png" width="76" alt="" data-depth="1.4"></li>
+                    <li class="obj-03" data-depth="0.6"><img src="../img/obj-donut-01.png" width="170" alt="" data-depth="2.6"></li>
+                    <li class="obj-04" data-depth="0.8"><img src="../img/obj-spring-02.png" width="300" alt="" data-depth="0.8"></li>
+                    <li class="obj-05" data-depth="0.2"><img src="../img/dot-03.png" width="133" alt="" data-depth="1.2"></li>
+                    <li class="obj-06" data-depth="0.5"><img src="../img/dot-02.png" width="48" alt="" data-depth="1.5"></li>
+                    <li class="obj-07" data-depth="0.7"><img src="../img/obj-sphere-02.png" width="350" alt="" data-depth="1.7"></li>
+                </ul>
             </div>
+            
+            <script>
+                $(document).ready(function () {
+                    var scene = $('.obj-list').get(0);
+                    var parallaxInstance = new Parallax(scene);
+                })
+            </script>
         </div>
         <div class="contact-block">
             <div class="row">
@@ -294,10 +381,131 @@
         </div>
    </footer>
 </div>
+<aside class="float">
+    <a href="#"><img src="../img/floating-btn-01.png" width="110" alt="MY MESTIES"></a>
+    <a href="#"><img src="../img/floating-btn-02.png" width="110" alt="쇼케이스 체험하기"></a>
+</aside>
 <script>
     $(document).ready(function () {
-        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
+        var tl = gsap.timeline();
+        tl.to($(".ai-contents"),{
+            scrollTrigger: {
+                trigger: $('.ai-contents'),
+                start: "0% 20%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+                // markers: true,
+                toggleActions: "play pause reverse pause",
+                scrub: 1,
+                pin:true,
+                toggleClass: 'active'
+            },
+        })
+        const buttons = gsap.utils.toArray('.ai-list li');
+        buttons.forEach((btn) => {
+            gsap.to(btn, {
+                scrollTrigger: {
+                start: '0% 40%',
+                end: "100% 40%",
+                trigger: btn,
+                // markers: true,
+                toggleClass: 'active',
+                scrub: 1,
+                }
+            });
+        });
+
+        // 오브젝트 랜덤 이동
+        var obj = gsap.timeline ()
+        .to('.obj li, .chat',{
+            x: "random(-50, 50)", 
+            y: "random(-50, 50)",
+            scale: "random(0.9, 1)",
+            duration:3,
+            ease:"none",
+            repeat:-1,
+            repeatRefresh:true 
+        })
+
+        //플로우 이동
+        gsap.to($(".flow-block img"),{
+            scrollTrigger: {
+                trigger: $('.flow-block'),
+                start: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: () => innerWidth * 3.5, // 앞 : 객체 , 뒤 : 페이지 전체
+                // markers: true,
+                toggleActions: "play pause reverse pause",
+                scrub: 1,
+                pin:true,
+                invalidateOnRefresh: true,
+                pinSpacing: true,
+                anticipatePin: 1
+            },
+            xPercent: -120, 
+            x: () => innerWidth,
+            ease: "none"
+        })
+
+        // 가능성 플로우 이동
+        gsap.to($(".dreamSwiper .swiper-wrapper"),{
+            scrollTrigger: {
+                trigger: $('.dream'),
+                start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+                // markers: true,
+                toggleActions: "play pause reverse pause",
+                scrub: 1,
+                pin:true,
+                invalidateOnRefresh: true,
+                pinSpacing: true,
+                anticipatePin: 1
+            },
+            xPercent: -230, 
+            ease: "none"
+        })
         
+        // 레이즈미 커버 배경 검은처리
+        gsap.to($(".cover .overay"), {
+            scrollTrigger: {
+                trigger: $(".cover"),
+                start: "0% 70%",
+                end: "0% 10%",
+                scrub: true,
+                markers: true,
+                toggleActions: "play pause pause reverse",
+            },
+            opacity: 1,
+        });
+
+        // 오브젝트 parallax 이동
+        // $('.link-block').on('mousemove',function(e) {
+        //     var winHeight = $(window).height();
+        //     var winWidth = $(window).width();
+        //     var dx = 0.5 - (e.pageX / winWidth);
+        //     var dy = 0.5 - (e.pageY / winHeight);
+        //     $('.obj-list li img').each(function(index, el) {
+        //         var $el = $(el);
+        //         var offX = dx * $el.data('offset');
+        //         var offY = dy * $el.data('offset');
+        //         TweenMax.to($el, 0.5, {
+        //             x: offX,
+        //             y: offY
+        //         });
+                
+        //     });
+        // });
+        // $('.link-block').on('mouseout', function(e) {
+        //     $('.obj-list li img').each(function(index, el) {
+        //         TweenMax.to(el, 0.2, {
+        //             x: 0,
+        //             y: 0,
+        //             ease: Quad.easeOut
+        //         });
+                
+        //     });
+        // });
+
+        
+
     })
 </script>
 </body>

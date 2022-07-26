@@ -119,7 +119,7 @@ a:hover{color:inherit;}
 .just-between{justify-content: space-between;}
 .just-center{justify-content:center;}
 .align-center{align-items: center;}
-
+.slide-up{opacity: 0;}
 /* layout */
 .modal.modal-inside{transform: none; display: none;}
 
@@ -610,6 +610,8 @@ footer .site-info ul li{line-height: 1.81;}
 .ai-list li.active button{font-size: 32px; font-weight: 600; color: #303030; border-bottom: 1px solid #000;   align-items: center; line-height: 100%;}
 .ai-list li.active button img{opacity: 1;}
 .anime-block{width: 530px; height: 530px;}
+.anime-block li{width: 530px; height: 530px; display: none;}
+.anime-block li.active{display: block;}
 .list-detail{margin-top: 280px; margin-left: auto; width: 320px;}
 .list-detail li{display: none;}
 .list-detail li dl dt{font-size: 34px; font-weight: 500; color: #303030; margin-bottom: 40px; line-height: 100%;}
@@ -633,7 +635,8 @@ footer .site-info ul li{line-height: 1.81;}
 
 .dream{margin-top: 120px;}
 .dream .more{margin-top: 30px;}
-.cover{height: 850px; background: url(../img/viausl-img-02.png) no-repeat 50% 50%; background-size: cover; display: flex; align-items: center; background-attachment: fixed;}
+.cover{height: 850px; background: url(../img/viausl-img-02.png) no-repeat 50% 50%; background-size: cover; display: flex; align-items: center; background-attachment: fixed; position: relative;}
+.cover .overay{position: absolute; left: 0; right: 0; top: 0; bottom: 0; background-color: rgba(0,0,0,0.5); z-index: 0; opacity: 0;}
 
 .news-block{padding: 145px 0 180px 0;}
 .news-block .more{margin-top: 30px; text-align: right;}
@@ -644,13 +647,24 @@ footer .site-info ul li{line-height: 1.81;}
 .news-list .news-con a dt{font-size: 20px; color: #696969; letter-spacing: -0.21px;}
 .news-list .news-con a dd{font-size: 26px; letter-spacing: -0.26px; color: #303030; font-weight: 600; line-height: 40px; margin-top: 30px;}
 
-.link-block{background-color: #3ddc84;}
+.link-block{background-color: #3ddc84; position: relative; overflow: hidden;}
 .link-block .row{padding: 155px 0 140px 0; display: flex; align-items: center; justify-content: center; flex-direction: column;}
 .link-block h3{font-size: 60px; font-weight: bold;}
 .link-block h3 span{display: block; color: #fff; text-align: center; margin-top: 10px;}
-.link-block .link{margin-top: 60px; display: flex; justify-content: center;}
+.link-block .link{margin-top: 60px; display: flex; justify-content: center; position: relative; z-index: 10;}
 .link-block .link a{display: inline-flex; font-size: 18px; font-weight: bold; width: 232px; border-radius: 32px;  border: solid 2px #303030; height: 65px; margin: 0 15px; align-items: center; justify-content: center;}
 .link-block .link a:hover{background-color: #303030; color: #fff;}
+
+.obj-list {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}
+.obj-list li {position: absolute; left: 0; top: 0; right: 0; bottom: 0;}
+.obj-list li img{position: absolute; left: 50%; top: 0;}
+.obj-list li.obj-01 img{margin-left: -115px; margin-top: -50px;}
+.obj-list li.obj-02 img{margin-left:700px; top: 85px;}
+.obj-list li.obj-03 img{margin-left:700px; top: 160px;}
+.obj-list li.obj-04 img{margin-left:-810px; top: 185px;}
+.obj-list li.obj-05 img{margin-left:-700px; top: 155px;}
+.obj-list li.obj-06 img{margin-left:-480px; top: 370px;}
+.obj-list li.obj-07 img{margin-left:280px; top: 370px;}
 
 .contact-block .row{padding-top: 180px; padding-bottom: 230px; display: flex; overflow: hidden; justify-content: space-between;}
 .contact-block .contact-con{width: 855px;}
@@ -664,3 +678,22 @@ footer .site-info ul li{line-height: 1.81;}
 .contact-list dl dt{font-size: 26px; font-weight: 500;}
 .contact-list dl dd{margin-top: 30px; font-size: 18px; color: #545454; font-weight: 500;}
 .contact-list dl:nth-of-type(1),.contact-list dl:nth-of-type(3){width: 245px; margin-right: 120px;}
+
+.dreamSwiper {margin-top:50px;}
+.dreamSwiper .swiper-slide{width: 796px; margin-right: 125px; position: relative;}
+.dreamSwiper .swiper-slide:nth-of-type(2){margin-top: 165px;}
+.dreamSwiper .swiper-slide:nth-of-type(4){margin-top: 170px;}
+.dreamSwiper .swiper-slide dl{margin-top: 50px;}
+.dreamSwiper .swiper-slide dt{font-size: 28px; font-weight: bold;}
+.dreamSwiper .swiper-slide dd{font-size: 18px; font-weight: 600; margin-top: 35px;}
+.dreamSwiper .obj{position: absolute;}
+.dreamSwiper .obj.obj-01{top: -82px; right: -124px;}
+.dreamSwiper .obj.obj-02{top: 395px; left: 708px;}
+.dreamSwiper .obj.obj-03{top: 60px; right: -125px; z-index: -1;}
+.dreamSwiper .obj.obj-04{top: -80px; left: -83px;}
+.dreamSwiper .obj.obj-05{top: 380px; right: -40px;}
+.btn-slide{margin-top: 30px; display: flex; position: relative; z-index: 10;}
+.btn-slide button{margin-right: 10px;}
+
+.float{position: fixed; z-index: 50; left: 50%; top: 190px; display: flex; flex-direction: column; margin-left: 510px;}
+.float a{margin-bottom: 3px;}
