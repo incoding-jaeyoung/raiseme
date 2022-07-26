@@ -462,6 +462,39 @@
             xPercent: -230, 
             ease: "none"
         })
+
+        gsap.to($(".dreamSwiper .obj-01,.dreamSwiper .obj-03,.dreamSwiper .obj-04"),{
+            scrollTrigger: {
+                trigger: $('.dream'),
+                start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+                // markers: true,
+                toggleActions: "play pause reverse pause",
+                scrub: 1,
+                pin:true,
+                invalidateOnRefresh: true,
+                pinSpacing: true,
+                anticipatePin: 1
+            },
+            xPercent:150, 
+            ease: "none"
+        })
+        gsap.to($(".dreamSwiper .obj-02,.dreamSwiper .obj-05"),{
+            scrollTrigger: {
+                trigger: $('.dream'),
+                start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+                // markers: true,
+                toggleActions: "play pause reverse pause",
+                scrub: 1,
+                pin:true,
+                invalidateOnRefresh: true,
+                pinSpacing: true,
+                anticipatePin: 1
+            },
+            xPercent:50, 
+            ease: "none"
+        })
         
         // 레이즈미 커버 배경 검은처리
         gsap.to($(".cover .overay"), {
