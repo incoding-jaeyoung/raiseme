@@ -483,13 +483,50 @@
         // AI 콘텐츠
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
+                var timer = null;
+                var videoIdx = -1;
+
+                $(".ai-detail-m .anime-block li").each(function () {
+                    $(this).find("video")[0].pause();
+                });
 
                 function onAiUpdate() {
                     if(aiTween && aiTween.scrollTrigger){
                         const idx = Math.round(aiLength * aiTween.scrollTrigger.progress);
                         $(".ai-detail .ai-list li").removeClass("active").eq(idx).addClass("active");
                         $(".ai-detail .list-detail li").removeClass("active").eq(idx).addClass("active");
+                        $(".ai-detail .anime-block li").removeClass("active").eq(idx).addClass("active");
+                        if(videoIdx != idx) {
+                            $(".ai-detail .anime-block li").each(function () {
+                                $(this).find("video")[0].pause();
+                            })
+                            clearTimeout(timer);
+                            setTimeout(() => onTimer(idx), 100);
+                        }
                     }
+                }
+
+                function onEnter() {
+                    const idx = Math.round(aiLength * aiTween.scrollTrigger.progress);
+                    $(".ai-detail .anime-block li").each(function () {
+                        $(this).find("video")[0].pause();
+                    });
+                    clearTimeout(timer);
+                    setTimeout(() => onTimer(idx), 100);
+                }
+
+                function onLeave() {
+                    $(".ai-detail .anime-block li").each(function () {
+                        $(this).find("video")[0].pause();
+                    });
+                    videoIdx = -1
+                    clearTimeout(timer);
+                }
+
+                function onTimer(idx) {
+                    $(".ai-detail .anime-block li video").eq(idx)[0].currentTime = 0;
+                    $(".ai-detail .anime-block li video").eq(idx)[0].play();                  
+                    videoIdx = idx;
                 }
 
                 $(".ai-detail .ai-list li").on("click", function (e) {
@@ -507,7 +544,11 @@
                         scrub: 1,
                         pin:true,
                         toggleClass: 'active',
-                        onUpdate: onAiUpdate
+                        onUpdate: onAiUpdate,
+                        onEnter: onEnter,
+                        onLeave: onLeave,
+                        onEnterBack: onEnter,
+                        onLeaveBack: onLeave
                     },
                     ease: "none"
                 });
@@ -517,13 +558,30 @@
                 if(aiTween) aiTween.kill();
                 let aiIdx = 0;
 
+                $(".ai-detail .anime-block li").each(function () {
+                    $(this).find("video")[0].pause();
+                });
+
+                function videoPlay() {
+                    $(".ai-detail-m .anime-block li").each(function () {
+                        $(this).find("video")[0].pause();
+                    });
+                    setTimeout(function (){
+                        $(".ai-detail-m .anime-block li").eq(aiIdx).find("video")[0].currentTime = 0;
+                        $(".ai-detail-m .anime-block li").eq(aiIdx).find("video")[0].play();
+                    }, 100);
+                }
+                videoPlay();
+
                 $(".ai-detail-m .prev-btn").off("click").on("click", function (e) {
                     if(aiIdx > 0){
                         aiIdx--;
                         $(".ai-detail-m .ai-title-m li").removeClass("active").eq(aiIdx).addClass("active");
                         $(".ai-detail-m .list-detail li").removeClass("active").eq(aiIdx).addClass("active");
+                        $(".ai-detail-m .anime-block li").removeClass("active").eq(aiIdx).addClass("active");
                     }
                     $(".ai-detail-m .paging span").text('0'+(aiIdx+1));
+                    videoPlay();
                 });
 
                 $(".ai-detail-m .next-btn").off("click").on("click", function (e) {
@@ -531,8 +589,10 @@
                         aiIdx++;
                         $(".ai-detail-m .ai-title-m li").removeClass("active").eq(aiIdx).addClass("active");
                         $(".ai-detail-m .list-detail li").removeClass("active").eq(aiIdx).addClass("active");
+                        $(".ai-detail-m .anime-block li").removeClass("active").eq(aiIdx).addClass("active");
                     }
                     $(".ai-detail-m .paging span").text('0'+(aiIdx+1));
+                    videoPlay()
                 });
 
                 $(".ai-detail-m .ai-title-m li").removeClass("active").eq(0).addClass("active");
