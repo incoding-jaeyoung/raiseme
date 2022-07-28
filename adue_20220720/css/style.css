@@ -863,33 +863,46 @@ video[poster]{
 .about-head  .people .circle.circle-03{width: 48px; height: 48px; background-color: #4285f4; left: 782px; top: 240px;}
 .about-head  .people .circle.circle-04{width: 23px; height: 23px; background-color: #3ddc84; left: 715px; top: 367px;}
 
-.process{background-color: #1c69e8;}
+.process{ background:#4285f4 url(../img/img-fluid.png) no-repeat center top; background-size: 2225px auto;}
 .process .row{ padding-top: 155px; width: 1090px; color: #fff;}
-.process .process-title{display: flex; padding-left: 11px; border-bottom: 2px solid #fff;}
+.process .process-title{display: flex; padding-left: 11px; background: url(../img/img-shape-arrow.png) no-repeat 0 bottom; background-size: 1090px auto;}
 .process .process-title h2{font-size: 30px; font-weight: normal; line-height: 100%;}
 .process .process-title div p{margin-top: 15px; font-size: 60px; font-weight: 600; line-height: 100%;}
 .process .process-title .cha{margin-right: 20px;}
 
 .process-list{margin-top: 73px; display: flex; justify-content: space-between;}
-.process-list .step .title{width: 237px; height: 237px; border: 2px solid #fff; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 36px; font-weight: bold; line-height: 46px; margin-bottom: 50px;}
+.process-list .step .title{width: 243px; height: 243px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 36px; font-weight: bold; line-height: 46px; margin-bottom: 50px; background: url(../img/img-circle.png) no-repeat; background-size: 243px auto; position: relative;}
 .process-list .step .title em{font-style: normal; color: #143e83;}
 .process-list .step ul{padding-left: 40px; font-size: 20px;}
 .process-list .step ul li{line-height: 45px; display: flex; align-items: center;}
 .process-list .step ul li img{margin-right: 15px;}
+.process-list .step .title:after{content: ""; display: block; width: 165px; height: 1px; background: url(../img/img-dotline.png) no-repeat; background-size: auto  1px; right:0%; position: absolute; transform: translateX(103%) translateY(-3px); top: 50%;}
+.process-list .step .title:before{content: ""; display: block; background: url(../img/img-arrow-white.png) no-repeat; width: 7px; height: 12px; background-size: 7px auto; right: -178px; top:114px; position: absolute; transform: tr;}
+.process-list .step:last-of-type .title::after{display: none;}
+.process-list .step:last-of-type .title::before{display: none;}
 
 .history{ text-align: center;}
 .history .row{padding-top: 150px; overflow: hidden;}
 .history .row .cha-img{ margin-bottom: -140px;}
 
-.people{background-color: #3ddc84; color: #fff; overflow: hidden;}
-.people .row{padding: 200px 0 180px 0; position: relative;}
-.people h2{font-weight: bold; font-size: 50px;}
-.people h2 span{ color:#ffe774;}
-.people .obj li{position: absolute;}
-.people .obj li.obj-01{top: -326px; left: 1048px;}
-.people .obj li.obj-02{top: 148px; left: 1400px;}
-.people .obj li.obj-03{top: 525px; left: -250px;}
-.people .obj li.obj-04{top: 980px; right: -330px;}
+.people-block{background-color: #3ddc84; color: #fff; overflow: hidden;}
+.people-block .row{padding: 200px 0 180px 0; position: relative;}
+.people-block h2{font-weight: bold; font-size: 50px;}
+.people-block h2 span{ color:#ffe774;}
+.people-block .obj li{position: absolute;}
+.people-block .obj li.obj-01{top: -326px; left: 1048px;}
+.people-block .obj li.obj-02{top: 148px; left: 1400px;}
+.people-block .obj li.obj-03{top: 525px; left: -250px;}
+.people-block .obj li.obj-04{top: 980px; right: -330px;}
 .people-list{margin-top: 60px; display: flex; justify-content: space-between; flex-wrap: wrap;}
-
+ 
+.data-list{margin-top: 280px; display: flex; justify-content: center; position: relative;}
+.data-list .data-text li{position: absolute; left: 50%; top: 0;}
+.data-list .data-text li.data-01{top: -43px; margin-left: -410px;}
+.data-list .data-text li.data-02{top: 15px; margin-left: 100px;}
+.data-list .data-text li.data-03{top: 47px; margin-left: 300px;}
+.data-list .data-text li.data-04{top: 75px; margin-left: -530px;}
+.data-list .data-text li.data-05{top: 130px; margin-left: 200px;}
+.data-list .data-text li.data-06{top: 190px; margin-left: -390px;}
+.data-list .data-text li.data-07{top: 232px; margin-left: 100px;}
 
