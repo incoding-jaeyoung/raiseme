@@ -176,9 +176,9 @@
                             </li>
                         </ul>
                         <div class="paging">
-                            <button type="button"><img src="../img/btn-prev.png" width="28" alt=""></button>
+                            <button class="prev-btn" type="button"><img src="../img/btn-prev.png" width="28" alt=""></button>
                             <p><span>01</span> / 04</p>
-                            <button type="button"><img src="../img/btn-next.png" width="28" alt=""></button>
+                            <button class="next-btn" type="button"><img src="../img/btn-next.png" width="28" alt=""></button>
                         </div>
                     </div>
                     <ul class="anime-block">
@@ -206,25 +206,25 @@
                     <ul class="list-detail">
                         <li class="active">
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.1</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.2</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.3</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.4</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
@@ -469,8 +469,79 @@
 <script>
     
     $(document).ready(function () {
-        //플로우 이동
+
+
+        function percentToTop( per ) {
+            return (document.body.scrollHeight - $(window).height()) * per;
+        }
+
+        let aiTween;
+        const aiLength = 3;
+        const apPercents = [0.156, 0.162, 0.210, 0.254];
         
+
+        // AI 콘텐츠
+        ScrollTrigger.matchMedia({
+            "(min-width:851px)": function () {
+
+                function onAiUpdate() {
+                    if(aiTween && aiTween.scrollTrigger){
+                        const idx = Math.round(aiLength * aiTween.scrollTrigger.progress);
+                        $(".ai-detail .ai-list li").removeClass("active").eq(idx).addClass("active");
+                        $(".ai-detail .list-detail li").removeClass("active").eq(idx).addClass("active");
+                    }
+                }
+
+                $(".ai-detail .ai-list li").on("click", function (e) {
+                    const idx = $(this).index();
+                    gsap.to($('html, body'), 0, {scrollTop: percentToTop(apPercents[idx])});
+                });
+
+                aiTween = gsap.to($(".ai-contents"),{
+                    scrollTrigger: {
+                        trigger: $('.ai-contents'),
+                        start: "0% 20%", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: () => `+=2000`, // 앞 : 객체 , 뒤 : 페이지 전체
+                        // markers: true,
+                        toggleActions: "play pause reverse pause",
+                        scrub: 1,
+                        pin:true,
+                        toggleClass: 'active',
+                        onUpdate: onAiUpdate
+                    },
+                    ease: "none"
+                });
+            },
+            "(max-width:850px)": function () {
+                //mob interaction
+                if(aiTween) aiTween.kill();
+                let aiIdx = 0;
+
+                $(".ai-detail-m .prev-btn").off("click").on("click", function (e) {
+                    if(aiIdx > 0){
+                        aiIdx--;
+                        $(".ai-detail-m .ai-title-m li").removeClass("active").eq(aiIdx).addClass("active");
+                        $(".ai-detail-m .list-detail li").removeClass("active").eq(aiIdx).addClass("active");
+                    }
+                    $(".ai-detail-m .paging span").text('0'+(aiIdx+1));
+                });
+
+                $(".ai-detail-m .next-btn").off("click").on("click", function (e) {
+                    if(aiIdx < aiLength){
+                        aiIdx++;
+                        $(".ai-detail-m .ai-title-m li").removeClass("active").eq(aiIdx).addClass("active");
+                        $(".ai-detail-m .list-detail li").removeClass("active").eq(aiIdx).addClass("active");
+                    }
+                    $(".ai-detail-m .paging span").text('0'+(aiIdx+1));
+                });
+
+                $(".ai-detail-m .ai-title-m li").removeClass("active").eq(0).addClass("active");
+                $(".ai-detail-m .list-detail li").removeClass("active").eq(0).addClass("active");
+                $(".ai-detail-m .paging span").text('01');
+            },
+        })
+
+        //플로우 이동
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
                 gsap.to($(".flow-block img"),{
@@ -494,28 +565,59 @@
             "(max-width:850px)": function () {
                 //mob interaction
             },
-        })
-        
+        });
 
-        // 가능성 플로우 이동
+
+
+         // 가능성 플로우 이동
+        let dreamTween;
+        let dreamSwiper;
+        const dreamLength = $(".dreamSwiper .swiper-slide").length-1;
+        let dreamWidth = ($(".dreamSwiper .swiper-slide").eq(0).width() + 125) * ($(".dreamSwiper .swiper-slide").length-1);
+        // const globalPercent = $(window).scrollTop() / (document.body.scrollHeight - $(window).height());
+        const dreamPercents = [0.610, 0.640, 0.667, 0.693,0.720];
+
+
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
-                gsap.to($(".dreamSwiper .swiper-wrapper"),{
+                if(dreamSwiper) dreamSwiper.destroy();
+
+                $(".btn-slide .btn-prev").off("click").on("click", function () {
+                    const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
+                    if(idx > 0) {
+                        console.log(idx-1)
+                        gsap.to($('html, body'), 0.5, {scrollTop: percentToTop(dreamPercents[idx-1])});
+                    } 
+                });
+
+                $(".btn-slide .btn-next").off("click").on("click", function () {
+                    const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
+                    if(idx < dreamLength) {
+                        gsap.to($('html, body'), 0.5,{scrollTop: percentToTop(dreamPercents[idx+1])});
+                    }
+                }); 
+                dreamTween = gsap.to($(".dreamSwiper .swiper-wrapper"),{
                     scrollTrigger: {
                         trigger: $('.dream'),
-                        start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-                        end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+                        start: "20% 0", // 앞 : 객체 , 뒤 : 페이지 전체
+                        end: () => `+=2500 100%`, // 앞 : 객체 , 뒤 : 페이지 전체
                         // markers: true,
                         toggleActions: "play pause reverse pause",
                         scrub: 1,
-                        pin:true,
+                        // pin:true,
                         invalidateOnRefresh: true,
                         pinSpacing: true,
-                        anticipatePin: 1
+                        anticipatePin: 1,
+                        snap: {
+                            snapTo: 1 / dreamLength,
+                            delay: 0,
+                            duration: 0.2
+                        }
                     },
-                    xPercent: -250, 
+                    x: () => -dreamWidth, 
                     ease: "none"
-                })
+                });
+                
                 gsap.to($(".dreamSwiper .obj-01,.dreamSwiper .obj-03,.dreamSwiper .obj-04"),{
                     scrollTrigger: {
                         trigger: $('.dream'),
@@ -548,11 +650,35 @@
                     xPercent:50, 
                     ease: "none"
                 })
+
+                ScrollTrigger.update();
+
             },
             "(max-width:850px)": function () {
                 //mob interaction
+                if(dreamTween) dreamTween.kill();
+                dreamSwiper = new Swiper(".dreamSwiper", {
+                    slidesPerView: "auto"
+                });
+
+                $(".btn-slide .btn-prev").off("click").on("click", function () {
+                    dreamSwiper.slideTo(dreamSwiper.activeIndex-1);
+                });
+
+                $(".btn-slide .btn-next").off("click").on("click", function () {
+                    dreamSwiper.slideTo(dreamSwiper.activeIndex+1);
+                    
+                });
+
+                dreamSwiper.on("slideChange", function () {
+                    $(".dream .paging em").text('0'+(dreamSwiper.activeIndex+1));
+                });
+
+                $(".dream .paging em").text('01');
             },
         })
+
+        
         
         
         // 레이즈미 커버 배경 검은처리
@@ -584,6 +710,7 @@
                 });
             },
         })
+
         ScrollTrigger.refresh();
     })
 </script>
