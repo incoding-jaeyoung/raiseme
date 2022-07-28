@@ -80,12 +80,12 @@
                 <div class="use-contents">
                     <h3>실시간으로 고객의 상태를 확인하고 원활한 화상상담 진행이 가능합니다.</h3>
                     <div class="thumb-slider">
-                        <div class="swiper mySwiper">
+                        <div class="swiper thumb01">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <div class="thumb-block">
+                                    <div class="thumb-block  slide-01">
                                         <img src="../img/thumb-01.png" width="763" alt="">
-                                        <img src="../img/img-talkbubble.png" class="popup" width="328" alt="">
+                                        <img src="../img/img-talkbubble.png" class="popup-01" width="328" alt="">
                                     </div>
                                     <div class="thumb-con">
                                         <dl>
@@ -102,25 +102,100 @@
                                         </p>
                                     </div>
                                 </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-02">
+                                        <img src="../img/img-thumb-02.png" width="763" alt="">
+                                        <img src="../img/img-thumb-popup.png" class="popup-01" width="380" alt="">
+                                        <img src="../img/img-emotion.png" class="popup-02" width="167" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>부정 감정 감지 및 <br>자동 화면 전환</dt>
+                                            <dd>
+                                                상담 중 자료화면을 띄워 놓은 상태에서 고객의 표정을 확인할 수 없을 때, <br>
+                                                부정적 감정을 감지하면 화면 위로 고객의 표정이 <br>
+                                                자동으로 팝업되어 적절한 피드백을 제공할 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#흥미도 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block slide-03">
+                                        <img src="../img/img-thumb-02.png" width="763" alt="">
+                                        <img src="../img/img-emptydesk-popup.png" class="popup-01" width="475" alt="">
+                                        <img src="../img/talk-bubble.png" class="popup-02" width="296" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>부정 감정 감지 및 <br>자동 화면 전환</dt>
+                                            <dd>
+                                                상담 중 자료화면을 띄워 놓은 상태에서 고객의 표정을 확인할 수 없을 때, <br>
+                                                부정적 감정을 감지하면 화면 위로 고객의 표정이 <br>
+                                                자동으로 팝업되어 적절한 피드백을 제공할 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#흥미도 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="swiper-pagination"></div>
                         </div>
                         <script>
-                            var swiper = new Swiper(".mySwiper", {
-                                pagination: {
-                                el: ".swiper-pagination",
-                                },
-                            });
+                            setTimeout(function(){
+                                var swiper = new Swiper(".thumb01", {
+                                    pagination: {
+                                        el: ".swiper-pagination",
+                                    },
+                                });
+                            },500)
+                            
                         </script>
                         <ul class="obj">
-                            <li><img src="../img/obj-spring.png" width="207" alt=""></li>
-                            <li><img src="../img/img-holo-4.png" width="122" alt=""></li>
+                            <li class="obj-move"><img src="../img/obj-spring.png" width="207" alt=""></li>
+                            <li class="obj-move"><img src="../img/img-holo-4.png" width="122" alt=""></li>
                         </ul>
                     </div>
                     <h4>레이즈미와 함께하는 화상상담, 이런 것도 가능해요!</h4>
                     <div class="count-list">
                         <div class="coung-block">
-                            <div class="image"></div>
+                            <div class="image"><img src="../img/oc-thumb-01.png" alt=""></div>
+                            <dl>
+                                <dt>상담자료에 대한 집중도•흥미도 측정</dt>
+                                <dd>상담자료 설명 시 고객의 집중도와 흥미도를 측정하여 부족한 설명을 보충하거나 개선할 수 있습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image"><img src="../img/oc-thumb-02.png" alt=""></div>
+                            <dl>
+                                <dt>상담 결과 리포트</dt>
+                                <dd>전체 상담 시간 중 긍정적인 반응을 보인 횟수와 시간을 계산합니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image"><img src="../img/oc-thumb-03.png" alt=""></div>
+                            <dl>
+                                <dt>고객 성향 파악</dt>
+                                <dd>고객별 상담 데이터를 통해 개인별 성향을 파악하고 다음 상담에 활용할 수 있습니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image"><img src="../img/oc-thumb-04.png" alt=""></div>
+                            <dl>
+                                <dt>상담 코칭 가이드</dt>
+                                <dd>측정된 고객의 감정값을 기준으로 AI가 상담 중 화제를 전환하도록 코칭 가이드를 제공합니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image"><img src="../img/oc-thumb-05.png" alt=""></div>
+                            <dl>
+                                <dt>추가•재상담 추천</dt>
+                                <dd>상담 종료 후, 종합 점수가 일정 수준 이하일 경우 AI가 재상담이나 추가 미팅을 추천합니다. </dd>
+                            </dl>
                         </div>
                     </div>
                 </div>

@@ -1077,3 +1077,15 @@ video[poster]{
 .use-contents h3{text-align: center; font-size: 40px; font-weight: 600; color: #000; width: 100%;}
 .use-contents h4{font-size: 40px; font-weight: 600; color: #000; width: 100%;}
 .thumb-slider{margin-top: 150px;}
+
+.thumb-slider .swiper-slide{display: flex;}
+.thumb-slider .thumb-block{width: 763px; height: 558px; position: relative;}
+.thumb-slider .thumb-block{}
+.thumb-slider .thumb-block.slide-01 .popup-01{position: absolute; left: 488px; top: 182px;}
+.thumb-slider .thumb-block.slide-02 .popup-01{position: absolute; left: 189px; top: 117px;}
+.thumb-slider .thumb-block.slide-02 .popup-02{position: absolute; left: 503px; top: 54px;}
+.thumb-slider .thumb-block.slide-03 .popup-01{position: absolute; left: 171px; top: 152px;}
+.thumb-slider .thumb-block.slide-03 .popup-02{position: absolute; left: 131px; top: 422px;}
+.thumb-slider .thumb-con{ margin-top: 175px; margin-left: 125px;}
+.thumb-slider .thumb-con dt{font-size: 50px; font-weight: bold;}
+.thumb-slider .thumb-con dd{font-size: 20px; font-weight: 500; color: #696969; line-height: 34px; margin-top:30px;}
