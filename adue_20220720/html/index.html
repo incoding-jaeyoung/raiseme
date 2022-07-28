@@ -470,16 +470,13 @@
     
     $(document).ready(function () {
 
-
-        function percentToTop( per ) {
-            return (document.body.scrollHeight - $(window).height()) * per;
-        }
-
         let aiTween;
         const aiLength = 3;
         const apPercents = [0.156, 0.162, 0.210, 0.254];
         
-
+        // $(window).on("scroll", function () {
+        //     console.log($(window).scrollTop());
+        // })
         // AI 콘텐츠
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
@@ -531,7 +528,9 @@
 
                 $(".ai-detail .ai-list li").on("click", function (e) {
                     const idx = $(this).index();
-                    gsap.to($('html, body'), 0, {scrollTop: percentToTop(apPercents[idx])});
+                    const top = ($(".ai-contents").parent().parent().offset().top + 710) + ((500 * idx));
+                    console.log(top)
+                    gsap.to($('html, body'), 0, {scrollTop: top});
                 });
 
                 aiTween = gsap.to($(".ai-contents"),{
@@ -634,9 +633,6 @@
         let dreamSwiper;
         const dreamLength = $(".dreamSwiper .swiper-slide").length-1;
         let dreamWidth = ($(".dreamSwiper .swiper-slide").eq(0).width() + 125) * ($(".dreamSwiper .swiper-slide").length-1);
-        // const globalPercent = $(window).scrollTop() / (document.body.scrollHeight - $(window).height());
-        const dreamPercents = [0.610, 0.640, 0.667, 0.693,0.720];
-
 
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
@@ -644,16 +640,17 @@
 
                 $(".btn-slide .btn-prev").off("click").on("click", function () {
                     const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
+                    const top = ($(".dream").parent().parent().offset().top + 1197) + ((415 * (idx-1)));
                     if(idx > 0) {
-                        console.log(idx-1)
-                        gsap.to($('html, body'), 0.5, {scrollTop: percentToTop(dreamPercents[idx-1])});
+                        gsap.to($('html, body'), 0.5, {scrollTop: top });
                     } 
                 });
 
                 $(".btn-slide .btn-next").off("click").on("click", function () {
                     const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
+                    const top = ($(".dream").parent().parent().offset().top + 1197) + ((415 * (idx+1)));
                     if(idx < dreamLength) {
-                        gsap.to($('html, body'), 0.5,{scrollTop: percentToTop(dreamPercents[idx+1])});
+                        gsap.to($('html, body'), 0.5,{scrollTop: top});
                     }
                 }); 
                 dreamTween = gsap.to($(".dreamSwiper .swiper-wrapper"),{
