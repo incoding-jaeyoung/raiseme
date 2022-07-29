@@ -29,14 +29,13 @@ function init() {
         $('.navTrigger').removeClass('active');
         $('.m-menu').removeClass('active')
     })
-    $('.tab-ui-con > *').eq(0).addClass('active')
+    // $('.tab-ui-con > *').eq(0).addClass('active')
     $('.tab-ui li button').on('click',function(){
         var indexNum = $('.tab-ui li button').index(this)
         $('.tab-ui li').removeClass('active')
         $('.tab-ui li').eq(indexNum).addClass('active')
         $('.tab-ui-con > *').removeClass('active')
         $('.tab-ui-con > *').eq(indexNum).addClass('active')
-        console.log(indexNum)
     })
     ScrollTrigger.matchMedia({
         "(min-width:851px)": function () {
@@ -327,16 +326,22 @@ function commonTween() {
             }
         })
     })
-    $('.up-slide-stagger').each(function (e) {
-        var stagger = $('.up-slide-stagger').find('> *')
+    $('.up-slide-stagger > *').each(function (e) {
+        var stagger = $(this)
+        console.log(stagger)
+        
         gsap.from(stagger, 0.5, {
-            y: 80,
-            opacity: 0,
-            stagger: 0.1,
             scrollTrigger: {
                 trigger: $(this),
-                toggleActions: "restart none none none",
+                start: "-=85 85%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "top 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+                // scrub: true, //스크롤에 반응 (없으면 자동재생)
+                // markers: true,
+                toggleActions: "play none none reverse",
             },
+            y: 80,
+            opacity:0,
+            stagger: 0.1,
             ease: 'power1.out'
         })
     })
