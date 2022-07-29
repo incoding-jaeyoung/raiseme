@@ -472,11 +472,7 @@
 
         let aiTween;
         const aiLength = 3;
-        const apPercents = [0.156, 0.162, 0.210, 0.254];
         
-        // $(window).on("scroll", function () {
-        //     console.log($(window).scrollTop());
-        // })
         // AI 콘텐츠
         ScrollTrigger.matchMedia({
             "(min-width:851px)": function () {
@@ -528,8 +524,8 @@
 
                 $(".ai-detail .ai-list li").on("click", function (e) {
                     const idx = $(this).index();
-                    const top = ($(".ai-contents").parent().parent().offset().top + 710) + ((500 * idx));
-                    console.log(top)
+                    const height = (aiTween.scrollTrigger.end - aiTween.scrollTrigger.start)/aiLength;
+                    const top = aiTween.scrollTrigger.start + (height * idx);
                     gsap.to($('html, body'), 0, {scrollTop: top});
                 });
 
@@ -640,7 +636,8 @@
 
                 $(".btn-slide .btn-prev").off("click").on("click", function () {
                     const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
-                    const top = ($(".dream").parent().parent().offset().top + 1197) + ((415 * (idx-1)));
+                    const height = (dreamTween.scrollTrigger.end - dreamTween.scrollTrigger.start)/dreamLength;
+                    const top = dreamTween.scrollTrigger.start + ((height * (idx-1)));
                     if(idx > 0) {
                         gsap.to($('html, body'), 0.5, {scrollTop: top });
                     } 
@@ -648,15 +645,16 @@
 
                 $(".btn-slide .btn-next").off("click").on("click", function () {
                     const idx = Math.round(dreamLength * dreamTween.scrollTrigger.progress);
-                    const top = ($(".dream").parent().parent().offset().top + 1197) + ((415 * (idx+1)));
+                    const height = (dreamTween.scrollTrigger.end - dreamTween.scrollTrigger.start)/dreamLength;
+                    const top = dreamTween.scrollTrigger.start + ((height * (idx+1)));
                     if(idx < dreamLength) {
                         gsap.to($('html, body'), 0.5,{scrollTop: top});
                     }
                 }); 
                 dreamTween = gsap.to($(".dreamSwiper .swiper-wrapper"),{
                     scrollTrigger: {
-                        trigger: $('.dream'),
-                        start: "20% 0", // 앞 : 객체 , 뒤 : 페이지 전체
+                        trigger: $(".dreamSwiper .swiper-wrapper"),
+                        start: "0 0", // 앞 : 객체 , 뒤 : 페이지 전체
                         end: () => `+=2500 100%`, // 앞 : 객체 , 뒤 : 페이지 전체
                         // markers: true,
                         toggleActions: "play pause reverse pause",
