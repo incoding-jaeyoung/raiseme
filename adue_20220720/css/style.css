@@ -64,7 +64,7 @@ a:hover{color:inherit;}
 
 
 .fc-blue-light{color: #4285f4 !important;}
-.fc-blue{color: #4686c5 !important;}
+.fc-blue{color: #4285f4 !important;}
 .fc-yellow{color: #ffe440 !important;}
 .fc-black{color: #000 !important;}
 .fc-red{color: #f50000 !important;}
@@ -868,7 +868,7 @@ video[poster]{
 .about-head  .people .circle.circle-03{width: 48px; height: 48px; background-color: #4285f4; left: 782px; top: 240px;}
 .about-head  .people .circle.circle-04{width: 23px; height: 23px; background-color: #3ddc84; left: 715px; top: 367px;}
 
-.process{ background:#4285f4 url(../img/img-fluid.png) no-repeat center top; background-size: 2225px auto;}
+.process{ background:#4285f4 url(../img/img-fluid.png) no-repeat center top; background-size: 3840px auto;}
 .process .row{ padding-top: 155px; width: 1090px; color: #fff;}
 .process .process-title{display: flex; padding-left: 11px; background: url(../img/img-shape-arrow.png) no-repeat 0 bottom; background-size: 1090px auto;}
 .process .process-title h2{font-size: 30px; font-weight: normal; line-height: 100%;}
@@ -905,7 +905,7 @@ video[poster]{
 .people-block .obj li.obj-06 img{transform: rotateZ(90deg);}
 .people-block .obj li.obj-07{top: 500px; left: -100px;}
  
-.data-list{margin-top: 280px; display: flex; justify-content: center; position: relative; padding-right: 80px;}
+.data-list{margin-top: 240px; display: flex; justify-content: center; position: relative; padding-right:0px;}
 .data-list .data-text li{position: absolute; left: 50%; top: 0;}
 .data-list .data-text li.data-01{top: -43px; margin-left: -490px;}
 .data-list .data-text li.data-02{top: 15px; margin-left: 40px;}
@@ -944,7 +944,7 @@ video[poster]{
 .history-con.right .con .text::after{width: 170px; right:5px; left: auto;}
 
 .people-list{margin-top: 60px; display: flex; justify-content: space-between; flex-wrap: wrap; padding-left: 0px; padding-right: 0px; position: relative;}
-.people-list li .cha{height: 360px; position: relative; display: flex; align-items: center; justify-content: center;}
+.people-list li .cha{height: 360px; position: relative; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 50px;}
 .people-list li .cha img{transition: all 0.5s ease;}
 .people-list li .cha .front{position: absolute; z-index: 10;}
 .people-list li .cha .back{opacity: 0;}
@@ -1019,7 +1019,7 @@ video[poster]{
     .people-block .obj li.obj-06 img{transform: rotateZ(90deg);}
     .people-block .obj li.obj-07{top: 500px; left: -100px; display: none;}
     
-    .data-list{margin-top: 230px; display: flex; justify-content: center; position: relative; padding-right: 0;}
+    .data-list{margin-top: 230px; display: flex; justify-content: center; position: relative; padding-right: 5px;}
     .data-list img{width: 270px; transform: translateX(20px);}
     .data-list .data-text li{position: absolute; left: 50%; top: 0;}
     .data-list .data-text li.data-01{top: -80px; margin-left: -80px;}
@@ -1068,8 +1068,8 @@ video[poster]{
     .history-con.right .con .text::after{display: none;}
 
     .people-list{margin-top: 0px; display: flex; justify-content: space-between; flex-wrap: wrap; padding-left: 0px; padding-right: 0px; position: relative;}
-    .people-list li{width: 45%; margin-bottom: 30px;}
-    .people-list li .cha{height: 180px; display: flex; align-items: center;}
+    .people-list li{width: 45%; margin-bottom: 35px;}
+    .people-list li .cha{height: 160px; display: flex; align-items: flex-end; margin-bottom: 25px;}
     .people-list li .cha img{width: 140px;}
     .people-list li dl{text-align: center; font-weight: 600;}
     .people-list li dl dt{font-size: 13px;}
