@@ -1340,3 +1340,26 @@ h2.title{font-size: 44px; font-weight: 600; color: #000; display: flex; flex-dir
     .thumbnail-list .list-con:nth-child(2n+2) .image{margin-right: 0;}
     .thumbnail-list .list-con:nth-child(2n+2) .info{padding-left: 0px;}
 }
+
+.news-tab.service li button{width: 270px;}
+.visual-block.service{width: auto;}
+
+.case-slider{padding: 180px 0 150px;}
+
+.service-process{background-color: #303030; color: #fff;}
+.service-process .row{padding: 100px 0 115px;}
+.service-process h3{padding-bottom: 20px; border-bottom: 1px solid #606060; font-weight: 40px; font-weight: 600; text-align: left; color: #fff;}
+.service-process .sercive{margin-top: 100px;}
+
+.api-slider .row{padding: 130px 0 150px 0; position: relative;}
+.apiSwiper {margin-top: 60px;position: relative;}
+.apiSwiper .swiper-slide{width: 450px;}
+.apiSwiper .swiper-slide dl{margin-top: 40px;}
+.apiSwiper .swiper-slide dl dt {font-size: 24px; font-weight: 600;  letter-spacing: -0.25px;  color: #000;}
+.apiSwiper .swiper-slide dl dd{font-size: 18px;font-weight: 500;line-height:30px;letter-spacing: -0.18px;color: #535353; margin-top: 30px;}
+.apiSwiper .swiper-slide dl dd:first-of-type{height: 60px;}
+.apiSwiper .swiper-slide dl dd a{ margin-top: 20px;}
+.api-slider .swiper-button-next{width: 60px; height: 60px; background: url(../img/img-next.png) no-repeat; background-size: 60px; right: 0; top: -120px; margin: 0;}
+.api-slider .swiper-button-next::after{display: none;}
+.api-slider .swiper-button-prev{width: 60px; height: 60px; background: url(../img/img-prev.png) no-repeat; background-size: 60px; left: auto; right: 70px; top: -120px; margin: 0;}
+.api-slider .swiper-button-prev:after{display: none;}
