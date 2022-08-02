@@ -243,10 +243,11 @@ button[class^="popup__btn"] {
 .popup__head h2 {
   display: inline-block;
   vertical-align: top;
-  margin-right: 3.2rem;
+  margin-right: 1.5rem;
   font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.03rem;
+  text-transform: uppercase;
 }
 
 .popup__head-txt {
@@ -892,17 +893,19 @@ button[class^="popup__btn"] {
 
 .popup__select-box {
   padding: 1.8rem 0 1.8rem 3.2rem;
+  display: flex; align-items: center;
 }
 
 .popup__select p {
   min-width: 16rem;
-  height: 3.7rem;
+  height: 4rem;
   line-height: 3.7rem;
-  border-radius: 3.7rem;
-  padding: 0 2.4rem;
-  font-size: 1.8rem;
+  border-radius: 1.2rem;
+  padding: 0 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  background: #494c56 url(../img/Icon_arrowW.svg) no-repeat 92% center/2.4rem;
+  background: #212121 url(../img/btn-listdown.png) no-repeat 92% center/2.4rem;
+  background-size: 13px auto;
   cursor: pointer;
 }
 
@@ -913,10 +916,12 @@ button[class^="popup__btn"] {
   left: 0;
   width: 100%;
   z-index: 50;
-  border-radius: 1.6rem;
-  background-color: #494c56;
+  border-radius: 1.2rem;
+  background-color: #212121;
   overflow: hidden;
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .popup__select ul li {
@@ -928,12 +933,12 @@ button[class^="popup__btn"] {
           align-items: center;
   height: 3.7rem;
   line-height: 3.7rem;
-  padding: 0 2.4rem;
+  padding: 0 2rem;
   cursor: pointer;
 }
 
 .popup__select ul li.select, .popup__select ul li:hover {
-  background-color: #5a5d68;
+  color: #4285f4;
 }
 
 .popup__toast {
@@ -1282,3 +1287,5 @@ button[class^="popup__btn"] {
     font-size: 1.6rem;
   }
 }
+
+

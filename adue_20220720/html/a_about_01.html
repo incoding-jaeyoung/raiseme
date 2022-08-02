@@ -84,6 +84,7 @@
             </div>
         </div>
         <div class="process">
+            <div class="mask-block"><img src="../img/img-fluid.png" alt=""></div>
             <div class="row"> 
                 <div class="process-title">
                     <p class="cha"><img src="../img/man-sm.png" width="86" alt=""></p>
@@ -335,6 +336,19 @@
 </div>
 <script>
     $(document).ready(function () {
+        gsap.to($('.mask-block img'),0.5, {
+            maskPosition: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: $('.mask-block img'),
+                start: "center center",
+                end: "center top",
+                // scrub: true,
+                toggleClass:{targets:'.mask-block img',className:'active'},
+                toggleActions: "play none none none",
+            },
+            css:{WebkitMaskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)'}
+        });
         
     })
 </script>

@@ -78,22 +78,76 @@
                 </div>
             </div>
         </div>
-        <ul class="news-tab service tab-ui">
-            <li class="active"><button type="button">화상상담</button></li>
-            <li><button type="button">공부절친</button></li>
-        </ul>
+        <div class="row">
+            <ul class="news-tab service tab-ui">
+                <li class="active"><button type="button">화상상담</button></li>
+                <li><button type="button">공부절친</button></li>
+            </ul>
+        </div>
         <div class="use-contents-wrap tab-ui-con">
             <div class="use-contents active">
-                <h3>레이즈미의 API 서비스로 비즈니스의 수준을 높여보세요</h3>
                 <div class="row">
-                    <div class="case-slider ">
-                        case
+                    <h3>레이즈미의 API 서비스로 비즈니스의 수준을 높여보세요</h3>
+                    <div class="case-slider">
+                        <div class="case-con first">
+                            <div class="image-block block-01">
+                                <img src="../img/img-service-01-1.png" width="673" class="img-01" alt="">
+                                <img src="../img/img-service-01-2.png" width="345" class="img-02" alt="">
+                                <img src="../img/img-service-01-3.png" width="380" class="img-03" alt="">
+                            </div>
+                            <div class="case-txt">
+                                <dl>
+                                    <dt>성능 및 정확도</dt>
+                                    <dd>분석 용량이나 트래픽 제약이 없는 안정적 성능을 지원해드립니다.</dd>
+                                    <dd>지속적인 업데이트로 정확도 개선 및 촬영각도 제약을 해결해드립니다.</dd>
+                                </dl>
+                                <p>편의성</p>
+                                <p>기능활용 방안 지원</p>
+                            </div>
+                        </div>
+                        
+                        <div class="case-con">
+                            <div class="image-block block-02">
+                                <img src="../img/img-service-01-1.png" width="673" class="img-01" alt="">
+                                <img src="../img/img-service-01-2.png" width="345" class="img-02" alt="">
+                                <img src="../img/img-service-01-3.png" width="380" class="img-03" alt="">
+                            </div>
+                            <div class="case-txt">
+                                <p>성능 및 정확도</p>
+                                <dl>
+                                    <dt>편의성</dt>
+                                    <dd>운영이나 관리 없이 즉시 AI 모델을 적용할 수 있습니다.</dd>
+                                    <dd>AI를 활용한 서비스 신규기능과 차별성을 극대화할 수 있습니다.</dd>
+                                </dl>
+                                <p>기능활용 방안 지원</p>
+                            </div>
+                        </div>
+                        <div class="case-con">
+                            <div class="image-block block-03">
+                                <img src="../img/img-service-01-1.png" width="673" class="img-01" alt="">
+                                <img src="../img/img-service-01-2.png" width="345" class="img-02" alt="">
+                                <img src="../img/img-service-01-3.png" width="380" class="img-03" alt="">
+                            </div>
+                            <div class="case-txt">
+                                <p>성능 및 정확도</p>
+                                <p>편의성</p>
+                                <dl>
+                                    <dt>기능활용 방안 지원</dt>
+                                    <dd>Usage를 고려한 서비스의 차별성을 확보하고 활용 방안을 지원해드립니다.</dd>
+                                    <dd>업종별 적용사례를 기반으로 서비스 개선 방안을 제시해드립니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="service-process">
                     <div class="row">
-                        <h3>서비스 연계방식</h3>
-                        <div class="sercive image"><img src="../img/service-img.png" alt=""></div>
+                        <div class="flex-title">
+                            <h3>서비스 <span class="m-block">연계방식</span></h3>
+                            <a href="#" class="more-btn">API 사용 방법을 <span class="m-block">알고 싶어요</span></a>
+                        </div>
+                        <div class="sercive fade pc-view"><img src="../img/service-img.png" width="1397" alt=""></div>
+                        <div class="sercive fade mob-view"><img src="../img/service-img-mo.png" width="100%" alt=""></div>
                     </div>
                 </div>
                 <div class="api-slider">
@@ -138,6 +192,7 @@
                             <div class="swiper-button-prev"></div>
                         </div>
                         <script>
+                            
                             var swiper = new Swiper(".apiSwiper", {
                                 navigation: {
                                     nextEl: ".swiper-button-next",
@@ -146,12 +201,18 @@
                                 slidesPerView: "auto",
                                 spaceBetween: 24,
                             });
+                            if (window.innerWidth <= 850) {
+                                swiper.detachEvents();
+                            }
                         </script>
                     </div>
                 </div>
             </div>
             <div class="use-contents">
-                2
+                <div class="row">
+                    <h3>나의 집중력 페이스메이커, 공부절친과 함께 성적이 쑥쑥</h3>
+                    <div class="comming eng">Coming Soon!</div>
+                </div>
             </div>
         </div>
     <!-- //contents -->
@@ -179,79 +240,41 @@
 </div>
 <script>
     $(document).ready(function () {
-        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
-        gsap.set($(".visual-block .man"), {
-            opacity:0,
-            y:'50%',
+        const progressDiv = document.getElementById('progress')
+        function aaa(){
+            console.log((progress*100).toFixed())
+        }
+        ScrollTrigger.create({
+            trigger: ".case-slider",
+            pin: ".case-slider",
+            scrub: 3,
+            start: "top 0%",
+            end: "+=3000",
+            pinSpacing:true,
+            onEnter(){
+                $('.case-con').eq(0).addClass('active')
+            },
+            onLeaveBack(){
+                $('.case-con').eq(0).addClass('first')
+                $('.case-con').eq(0).removeClass('active')
+            },
+            onUpdate({progress, direction, isActive}) {
+                var per = (progress*100).toFixed()
+                if(per > 0 && per < 30){
+                    $('.case-con').removeClass('active')
+                    $('.case-con').eq(0).addClass('active')
+                } else if (per > 31 && per < 62){
+                    $('.case-con').removeClass('active')
+                    $('.case-con').eq(1).addClass('active')
+                    $('.case-con').eq(0).removeClass('first')
+                } else if (per > 63 && per <= 100){
+                    $('.case-con').removeClass('active')
+                    $('.case-con').eq(2).addClass('active')
+                }
+
+            }
         })
-        gsap.set($(".visual-block .back"), {
-            opacity:0,
-            y:'-50%',
-        })
-        gsap.set($(".visual-block .holo"), {
-            opacity:0,
-            y:'-150%',
-        })
-        gsap.to($(".visual-block .man"), 0.2, {
-            opacity:1,
-            delay:0.7,
-            y:'0%',
-        })
-        gsap.to($(".visual-block .back"), 0.2, {
-            opacity:1,
-            delay:0.5,
-            y:'0%',
-        })
-        gsap.to($(".visual-block .holo"), 0.2, {
-            opacity:1,
-            delay:1,
-            y:'0%',
-            stagger: 0.1,
-            ease:Power1.easeOut,
-        })
-        tl.set($(".visual-block .holo"), {
-            opacity:1,
-            y:'0%',
-            delay:2,
-        })
-        .to($(".visual-block .back"), 2, {
-            ease:Power1.easeOut,
-            scale:0.95,
-            x:'-5%',
-            opacity:0.3,
-        },'time')
-        .to($(".visual-block .back"), 2, {
-            ease:Power1.easeOut,
-            scale:1,
-            x:'0%',
-            opacity:1,
-        },'time1')
-        .to($(".visual-block .holo-01"), 2, {
-            x:'-10%',
-            y:'-10%',
-            ease:Power1.easeOut,
-            scale:1.1,
-        },'time')
-        .to($(".visual-block .holo-01"), 2, {
-            x:'0%',
-            y:'0%',
-            ease:Power1.easeOut,
-            scale:1,
-        },'time1')
-        .to($(".visual-block .holo-05"), 2, {
-            x:'-10%',
-            y:'10%',
-            scale:1.1,
-            ease:Power1.easeOut,
-        },'time')
-        .to($(".visual-block .holo-05"), 2, {
-            x:'0%',
-            y:'0%',
-            scale:1,
-            ease:Power1.easeOut,
-        },'time1')
-        
-    })
+    });
 </script>
 </body>
 </html>

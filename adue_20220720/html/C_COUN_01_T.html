@@ -140,15 +140,16 @@
                                     </div>
                                     <div class="thumb-con">
                                         <dl>
-                                            <dt>부정 감정 감지 및 <br>자동 화면 전환</dt>
+                                            <dt>고객 부재 시 알림 제공</dt>
                                             <dd>
-                                                상담 중 자료화면을 띄워 놓은 상태에서 고객의 표정을 확인할 수 없을 때, <br>
-                                                부정적 감정을 감지하면 화면 위로 고객의 표정이 <br>
-                                                자동으로 팝업되어 적절한 피드백을 제공할 수 있습니다.
+                                                상담 중 자료를 띄워 놓은 상태에서 고객의 상태를 확인할 수 없을 때, 
+고객이 자리를 비우거나 화면을 보고 있지 않으면 
+알림을 받을 수 있습니다.
+
                                             </dd>
                                         </dl>
                                         <p class="tag">
-                                            <span>#흥미도 분석</span>
+                                            <span>#자세 분석</span>
                                         </p>
                                     </div>
                                 </div>
@@ -157,7 +158,7 @@
                         </div>
                         <script>
                             setTimeout(function(){
-                                var swiper = new Swiper(".thumb01", {
+                                var swiper = new Swiper(".swiper", {
                                     effect: "fade",
                                     pagination: {
                                         el: ".swiper-pagination",
@@ -166,6 +167,8 @@
                                             return '<span class="' + className + '">0' + (index + 1) + "</span>";
                                         },
                                     },
+                                    observer: true,
+                                    observeParents: true,
                                     
                                 });
                                 swiper.on('slideChangeTransitionEnd', function () {
@@ -224,16 +227,375 @@
                     </div>
                 </div>
                 <div class="use-contents">
-                    2
+                    <h3>수강생들의 집중도를 측정하고 효율적인 학습 관리가 가능합니다.</h3>
+                    <div class="thumb-slider">
+                        <div class="swiper thumb02">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-01">
+                                        <img src="../img/thumb-01.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-talkbubble.png" class="popup-01" width="328" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>집중도 측정 및 저하 구간 복습</dt>
+                                            <dd>
+                                                강의를 시청하는 수강생의 집중도를 측정하고 집중도가 일정 수치 이하로 떨어진 구간을 안내합니다. <br>
+                                                집중도가 떨어진 구간만 복습하여 학습효과를 높일 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-02">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-thumb-popup.png" class="popup-01" width="380" alt="">
+                                        <img src="../img/img-emotion.png" class="popup-02" width="167" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>강의 종합 리포트 제공</dt>
+                                            <dd>
+                                                인터넷강의 시청 중 집중도가 떨어지거나 졸았던 구간, 자리비움 횟수 등을 파악할 수 있습니다.   <br>데이터를 강의를 개선하는데 활용할 수 있습니다. 
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                            <span>#흥미도 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block slide-03">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-emptydesk-popup.png" class="popup-01" width="475" alt="">
+                                        <img src="../img/talk-bubble.png" class="popup-02" width="296" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>자리비움 시 강의 자동 중지.재생</dt>
+                                            <dd>
+                                                강의 중 자리를 비울 때 별도로 중지.재생 버튼을 실행하지 않아도 AI가 자리비움을 감지하여 자동으로 강의를 중지하고 자리에 돌아오면 자동으로 다시 재생합니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#자세 분석 </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <ul class="obj">
+                            <li class="obj-move"><img src="../img/obj-spring.png" width="207" alt=""></li>
+                            <li class="obj-move"><img src="../img/img-holo-4.png" width="122" alt=""></li>
+                        </ul>
+                    </div>
+                    <h4>레이즈미와 함께하는 인터넷강의, <span>이런 것도 가능해요!</span></h4>
+                    <div class="count-list up-slide-stagger">
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-01.png" alt=""></div>
+                            <dl>
+                                <dt>집중도 미달 강의 복습 추천</dt>
+                                <dd>집중도를 일정 비율 이상 충족하지 못한 상태로 다음 강의로 넘어가기 전에 복습을 추천합니다.</dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-02.png" alt=""></div>
+                            <dl>
+                                <dt>취약 과목 및 단원 분석
+                                </dt>
+                                <dd>과목별 집중도를 분석해서 수강생들의 취약 과목 및 단원을 분석하고 학습 스케줄을 추천합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-03.png" alt=""></div>
+                            <dl>
+                                <dt>집중도 저하 시 휴식 제안
+                                </dt>
+                                <dd>강의 시청 중 졸거나 집중도가 일정 수치 이하일 경우 컨디션을 고려하여 휴식을 제안합니다. 
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-04.png" alt=""></div>
+                            <dl>
+                                <dt>졸음 경고 알림
+                                </dt>
+                                <dd>강의 시청 중 조는 수강생을 깨우는 보이스 알림을 발송해서 다시 강의에 집중 할 수 있도록 합니다. 
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-05.png" alt=""></div>
+                            <dl>
+                                <dt>모션 인식 컨트롤러
+                                </dt>
+                                <dd>AI가 수강생의 모션을 인식해 강의를 일시정지하거나 간편하게 북마크 해놓을 수 있습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
                 <div class="use-contents">
-                    3
+                    <h3>캠스터디, 온라인독서실 이용자들의 집중도를 학습자세 평가 AI 엔진이 측정해드립니다.</h3>
+                    <div class="thumb-slider">
+                        <div class="swiper thumb02">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-01">
+                                        <img src="../img/thumb-01.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-talkbubble.png" class="popup-01" width="328" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>시간 대비 학습효율 자동 측정</dt>
+                                            <dd>
+                                                전체 공부 시간 중 실제 집중한 시간을 AI가 분석하여 학습 효율을
+측정해드립니다. 시간대비 공부 효율을 확인하고 집중도를 높이거나
+유지하는데 활용할 수 있습니다.
+
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-02">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-thumb-popup.png" class="popup-01" width="380" alt="">
+                                        <img src="../img/img-emotion.png" class="popup-02" width="167" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>집중도 분석 리포트 제공</dt>
+                                            <dd>
+                                                AI가 실시간으로 집중도를 측정하여 객관적이고 정확하게
+측정해드립니다. 분석 리포트의 패턴을 분석해서 효율적으로 시간을
+관리할 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block slide-03">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-emptydesk-popup.png" class="popup-01" width="475" alt="">
+                                        <img src="../img/talk-bubble.png" class="popup-02" width="296" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>자동 학습 스케줄링</dt>
+                                            <dd>
+                                                과목별 성과를 바탕으로 학습 스케줄을 자동으로 생성해드립니다.  <br>
+나에게 부족한 과목을 추천하거나 
+과목별 적절한 공부 시간을 분배할 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                            <span>#자세 분석 </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <ul class="obj">
+                            <li class="obj-move"><img src="../img/obj-spring.png" width="207" alt=""></li>
+                            <li class="obj-move"><img src="../img/img-holo-4.png" width="122" alt=""></li>
+                        </ul>
+                    </div>
+                    <h4>레이즈미와 함께하는 자율학습,  <span>이런 것도 가능해요!</span></h4>
+                    <div class="count-list up-slide-stagger">
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-01.png" alt=""></div>
+                            <dl>
+                                <dt>학습 블랙리스트 행위 측정
+                                </dt>
+                                <dd>졸거나 자리 비우기 같은 학습 블랙리스트 행위의 유형•빈도수를 측정합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-02.png" alt=""></div>
+                            <dl>
+                                <dt>학습 컨디션 조절</dt>
+                                <dd>집중도 저하 시 적절한 휴식을 권유하는 학습 컨디션 조절 기능입니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-03.png" alt=""></div>
+                            <dl>
+                                <dt>분석 리포트 SNS 공유
+                                </dt>
+                                <dd>공부 시간, 집중도, 효율 등의 분석 데이터를 SNS에 공유합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-04.png" alt=""></div>
+                            <dl>
+                                <dt>유저 맞춤형 응원 메시지
+                                </dt>
+                                <dd>하위 랭킹 유저에게는 격려 메시지를, 상위 랭킹 유저에게는 칭찬 메시지를 전송합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-05.png" alt=""></div>
+                            <dl>
+                                <dt>다른 사용자 학습 스케줄 가져오기
+                                </dt>
+                                <dd>집중도 상위 랭킹 사용자들의 학습 스케줄을 찾아보고 나의 학습 스케줄에 적용할 수 있습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
                 <div class="use-contents">
-                    4
+                    <h3>원격 수업을 진행하면서 수집한 데이터를 기반으로 효과적인 수업 지도가 가능합니다.</h3>
+                    <div class="thumb-slider">
+                        <div class="swiper thumb02">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-01">
+                                        <img src="../img/thumb-01.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-talkbubble.png" class="popup-01" width="328" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>학습 지도 대상 자동 선정</dt>
+                                            <dd>
+                                                수업 중 반복적으로 자리를 비우거나, 지속적으로 집중도가 떨어지는 등 
+지도가 필요한 학생 개인 혹은 모둠을
+ AI가 지정하여 학습 지도 대상으로 전달해드립니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block  slide-02">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-thumb-popup.png" class="popup-01" width="380" alt="">
+                                        <img src="../img/img-emotion.png" class="popup-02" width="167" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>개인 종합 분석 데이터 제공</dt>
+                                            <dd>
+                                                수업 결과 데이터로 학생들이 흥미를 가진 과목이나 전반적인
+수업 자세를 파악할 수 있습니다.   <br>
+데이터를 근거로 진로 상담이나 학부모 상담에 활용할 수 있습니다. 
+
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                            <span>#흥미도 분석 </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="thumb-block slide-03">
+                                        <img src="../img/img-thumb-02.png" class="popup-00" width="763" alt="">
+                                        <img src="../img/img-emptydesk-popup.png" class="popup-01" width="475" alt="">
+                                        <img src="../img/talk-bubble.png" class="popup-02" width="296" alt="">
+                                    </div>
+                                    <div class="thumb-con">
+                                        <dl>
+                                            <dt>그룹별 종합 분석 데이터 제공</dt>
+                                            <dd>
+                                                수업 중 전반적으로 집중도가 저하하거나 수업 자세가 안 좋아지면
+AI가 알림을 제공하고, 이를 통해 수업진도를 조절하거나
+집중력을 환기시킬 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                        <p class="tag">
+                                            <span>#집중도 분석</span>
+                                            <span>#자세 분석</span>
+                                            <span>#자세 분석 </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <ul class="obj">
+                            <li class="obj-move"><img src="../img/obj-spring.png" width="207" alt=""></li>
+                            <li class="obj-move"><img src="../img/img-holo-4.png" width="122" alt=""></li>
+                        </ul>
+                    </div>
+                    <h4>레이즈미와 함께하는 원격수업,  <span>이런 것도 가능해요!</span></h4>
+                    <div class="count-list up-slide-stagger">
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-01.png" alt=""></div>
+                            <dl>
+                                <dt>학생용 학습 데이터
+                                </dt>
+                                <dd>학생 스스로 취약한 과목을 파악하고 공부의 비중을 조절할 수 있습니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-02.png" alt=""></div>
+                            <dl>
+                                <dt>자리비움 알림 </dt>
+                                <dd>일정 시간 이상 자리를 비운 학생에게 SMS를 발송하고 학생 화면에 알림을 띄웁니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-04.png" alt=""></div>
+                            <dl>
+                                <dt>조는 학생 깨우기
+                                </dt>
+                                <dd>수업 중 조는 학생을 깨우는 보이스 알림을 제공합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-04.png" alt=""></div>
+                            <dl>
+                                <dt>질문•발표 학생 보기
+                                </dt>
+                                <dd>질문을 하거나 발표하기 위해 손을 드는 학생들의 화면만 선별하여 보여줍니다.
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="coung-block">
+                            <div class="image over"><img src="../img/oc-thumb-05.png" alt=""></div>
+                            <dl>
+                                <dt>모션 인식 투표
+                                </dt>
+                                <dd>여럿이 투표를 하는 경우 특정 액션을 취하면 찬성•반대 여부를 자동으로 집계합니다.
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
                 <div class="use-contents">
-                    5
+                    <h3>부정행위 걱정 없이 온라인시험을 운영, 감독하세요</h3>
+                    <div class="comming eng">Coming Soon!</div>
                 </div>
             </div>
             
@@ -301,77 +663,7 @@
 </div>
 <script>
     $(document).ready(function () {
-        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
-        gsap.set($(".visual-block .man"), {
-            opacity:0,
-            y:'50%',
-        })
-        gsap.set($(".visual-block .back"), {
-            opacity:0,
-            y:'-50%',
-        })
-        gsap.set($(".visual-block .holo"), {
-            opacity:0,
-            y:'-150%',
-        })
-        gsap.to($(".visual-block .man"), 0.2, {
-            opacity:1,
-            delay:0.7,
-            y:'0%',
-        })
-        gsap.to($(".visual-block .back"), 0.2, {
-            opacity:1,
-            delay:0.5,
-            y:'0%',
-        })
-        gsap.to($(".visual-block .holo"), 0.2, {
-            opacity:1,
-            delay:1,
-            y:'0%',
-            stagger: 0.1,
-            ease:Power1.easeOut,
-        })
-        tl.set($(".visual-block .holo"), {
-            opacity:1,
-            y:'0%',
-            delay:2,
-        })
-        .to($(".visual-block .back"), 2, {
-            ease:Power1.easeOut,
-            scale:0.95,
-            x:'-5%',
-            opacity:0.3,
-        },'time')
-        .to($(".visual-block .back"), 2, {
-            ease:Power1.easeOut,
-            scale:1,
-            x:'0%',
-            opacity:1,
-        },'time1')
-        .to($(".visual-block .holo-01"), 2, {
-            x:'-10%',
-            y:'-10%',
-            ease:Power1.easeOut,
-            scale:1.1,
-        },'time')
-        .to($(".visual-block .holo-01"), 2, {
-            x:'0%',
-            y:'0%',
-            ease:Power1.easeOut,
-            scale:1,
-        },'time1')
-        .to($(".visual-block .holo-05"), 2, {
-            x:'-10%',
-            y:'10%',
-            scale:1.1,
-            ease:Power1.easeOut,
-        },'time')
-        .to($(".visual-block .holo-05"), 2, {
-            x:'0%',
-            y:'0%',
-            scale:1,
-            ease:Power1.easeOut,
-        },'time1')
+        
         
     })
 </script>

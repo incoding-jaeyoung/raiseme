@@ -36,6 +36,8 @@ function init() {
         $('.tab-ui li').eq(indexNum).addClass('active')
         $('.tab-ui-con > *').removeClass('active')
         $('.tab-ui-con > *').eq(indexNum).addClass('active')
+        ScrollTrigger.refresh();
+        swiper.update()
     })
     ScrollTrigger.matchMedia({
         "(min-width:851px)": function () {
@@ -127,7 +129,7 @@ function commonTween() {
         const upmotion = gsap.timeline({
             scrollTrigger: {
                 trigger: $(this),
-                start: "0% 70%", // 앞 : 객체 , 뒤 : 페이지 전체
+                start: "0% 80%", // 앞 : 객체 , 뒤 : 페이지 전체
                 end: "0% 0%%", // 앞 : 객체 , 뒤 : 페이지 전체
                 // scrub: true, //스크롤에 반응 (없으면 자동재생)
                 // markers: true,
