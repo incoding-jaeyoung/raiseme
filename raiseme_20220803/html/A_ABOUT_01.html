@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="Raiseme" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<meta property="og:image" content="../img/img-og.png">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="Raiseme">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title>Raiseme</title>
+<link rel="stylesheet" href="../css/popup_style.css" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/ScrollTrigger.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/ScrollToPlugin3.min.js"></script>
+
+<script src="../js/ui.js"></script>
+<script src="../js/ui-common.js"></script>
+</head>
+
+<body> 
+<div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+   <header id="header" class="index">
+       <div class="row">
+        <h1><a href="M_MAIN_01.html"><img src="../img/ci.svg" alt="Raiseme"></a></h1>
+            <ul class="gnb">
+                <li class="active"><a href="A_ABOUT_01.html">ABOUT</a></li>
+                <li><a href="S_APIS_01_T.html">Service</a></li>
+                <li><a href="T_CONC_01_T.html">Tech</a></li>
+                <li><a href="C_COUN_01_T.html">Use case</a></li>
+                <li><a href="N_NEWS_01.html">News</a></li>
+            </ul>
+            <p class="menu-btn">
+                <span class="navTrigger"><i></i><i></i><i></i></span>
+            </p>
+       </div>
+   </header>
+   <div class="m-menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#page01">ABOUT US</a></li>
+            <li><a href="#page02">STORY</a></li>
+            <li><a href="#page03">ROAD MAP</a></li>
+            <li><a href="#page04">TEAM & ADVISORS</a></li>
+            <li><a href="#page05">FAQ</a></li>
+        </ul>
+    </div>
+   <section id="contents">
+    <!-- contents -->
+        <div class="about-head">
+            <div class="row">
+                <h2 class="eng slide-up"><img src="../img/raise-me-1.png" width="509" alt=""></h2>
+                <h3>사람들의 일상을 <span class="stroke">레이즈미</span></h3>
+                <div class="people">
+                    <img src="../img/people.png" width="680" alt="">
+                    <span class="circle circle-01 obj-move"></span>
+                    <span class="circle circle-02 obj-move"></span>
+                    <span class="circle circle-03 obj-move"></span>
+                    <span class="circle circle-04 obj-move"></span>
+                </div>
+                <div class="text">
+                    포스트코로나와 함께 우리의 삶은 비대면의 일상화로 접어들었습니다. <br>
+온라인을 활용한 다양한 방법으로 커뮤니케이션하고 있지만 원격수업으로 벌어지는 학습격차, <br class="mob-hide">
+의미가 제대로 전달되지 않는 화상회의, <br class="mob-hide">
+2% 부족한 친구들과의 영상통화 같은 어려움을 겪고 있습니다.  <br>
+<p>레이즈미 1.0은 ‘이런 어려움을 어떻게 해결할까?’ <span class="m-block">라는 고민에서 시작했습니다.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="process">
+            <div class="mask-block"><img src="../img/img-fluid.png" alt=""></div>
+            <div class="row"> 
+                <div class="process-title">
+                    <p class="cha"><img src="../img/man-sm.png" width="86" alt=""></p>
+                    <div>
+                        <h2>레이즈미는 이렇게 해결합니다</h2>
+                        <p class="eng">RAISEME <span class="eng">Solution Process</span></p>
+                    </div>
+                </div>
+                <div class="process-list">
+                    <div class="step">
+                        <p class="title eng">DISCOVER<em>&</em>DEFINE</p>
+                        <ul>
+                            <li><img src="../img/check.png" width="22" alt=""> 문제점 파악</li>
+                            <li><img src="../img/check.png" width="22" alt=""> 페인포인트 탐색</li>
+                            <li><img src="../img/check.png" width="22" alt=""> 인사이트 정의</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <p class="title eng">DEVELOP<em>&</em>ANALYZE</p>
+                        <ul>
+                            <li><img src="../img/check.png" width="22" alt=""> 아이데이션</li>
+                            <li><img src="../img/check.png" width="22" alt=""> 검증</li>
+                            <li><img src="../img/check.png" width="22" alt=""> 데이터 분석</li>
+                        </ul>
+                    </div>
+                    <div class="step">
+                        <p class="title eng">SOLVE<em>&</em>IMPLEMENT</p>
+                        <ul>
+                            <li><img src="../img/check.png" width="22" alt=""> 기술구현</li>
+                            <li><img src="../img/check.png" width="22" alt=""> AI 모델 개발</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="data-list">
+                    <img src="../img/img-sculpture.png" width="543" alt="" class="human">
+                    <ul class="data-text">
+                        <li class="data-01 obj-move"><img src="../img/tag-01.png" width="218" alt=""></li>
+                        <li class="data-02 obj-move"><img src="../img/tag-02.png" width="173" alt=""></li>
+                        <li class="data-03 obj-move"><img src="../img/tag-03.png" width="172" alt=""></li>
+                        <li class="data-04 obj-move"><img src="../img/tag-04.png" width="279" alt=""></li>
+                        <li class="data-05 obj-move"><img src="../img/tag-05.png" width="191" alt=""></li>
+                        <li class="data-06 obj-move"><img src="../img/tag-06.png" width="172" alt=""></li>
+                        <li class="data-07 obj-move"><img src="../img/tag-07.png" width="171" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="row">
+                <h2><img src="../img/img-raiseme-logo.png" width="252" alt=""></h2>
+                <div class="history-block">
+                    <dl class="history-title">
+                        <dt>레이즈미 1.0이 시작됐습니다</dt>
+                        <dd>비대면 커뮤니케이션의 한계 극복</dd>
+                    </dl>
+                    <div class="history-list">
+                        <div class="history-con">
+                            <p class="img fade"><img src="../img/rounded-01.png" width="445" alt=""></p>
+                            <div class="con">
+                                <p class="year eng">2020</p>
+                                <p class="text">AI 기반 온라인 학습 솔루션 제안 <br>삼성 SDS XEED-LAB Xeed-lab 5기 Top3 선정</p>
+                            </div>
+                        </div>
+                        <div class="history-con right">
+                            <p class="img fade"><img src="../img/rounded-02.png" width="445" alt=""></p>
+                            <div class="con">
+                                <p class="year eng">2021</p>
+                                <p class="text">사업성과 기술력을 검증 받아 사업화 인큐베이션 진행 <br>
+                                    원격교육 시스템 적용 및 다양한 화상회의 서비스와 연계하여 사업 확대 중 <br>
+                                    집중도, 흥미도, 수업태도 분석 VISION AI 모델 개발.</p>
+                            </div>
+                        </div>
+                        <div class="history-con">
+                            <p class="img fade"><img src="../img/rounded-03.png" width="445" alt=""></p>
+                            <div class="con">
+                                <p class="year eng">2022</p>
+                                <p class="text">집중도, 흥미도, 자세 분석 등 AI 모델 상품화 <br>공부시간과 집중도를 AI로 측정, 분석하는 "공부절친" 개발</p>
+                            </div>
+                        </div>
+                        <dl class="history-title-02">
+                            <dt>레이즈미 2.0을 기대해주세요</dt>
+                            <dd>메타버스와 현실을 잇는 인터랙션</dd>
+                        </dl>
+                        <div class="history-con">
+                            <p class="img fade"><img src="../img/rounded-04.png" width="445" alt=""></p>
+                            <div class="con">
+                                <p class="year eng">2024</p>
+                                <dl class="text">
+                                    <dt>모션 트래킹, 모션 인터렉션용 AI모델 확보 및 서비스</dt>
+                                    <dd>모션 트래킹 : 가상 공간에서 신체부위가 어디에  위치하는지 판정하는 행위 추적 기술</dd>
+                                    <dd>모션 인터렉션 : 특정 액션을 취하면 언어, 명령어, 이모티콘 등을 자동으로 전환하고 송출</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="history-con right">
+                            <p class="img fade"><img src="../img/rounded-05.png" width="445" alt=""></p>
+                            <div class="con">
+                                <p class="year eng">2025</p>
+                                <dl class="text">
+                                    <dt>메타버스 인터렉션 및 AI 기반 반응형 콘텐츠</dt>
+                                    <dd>Reactive contents coordination(반응형 콘텐츠 조합) 모델</dd>
+                                    <dd>AI 휴먼이 사람의 집중도나 흥미도 등의 감정변화에 맞춰 콘텐츠를 자동으로 구성하고 제공</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="cha-img slide-up"><img src="../img/people-sm.png" width="469" alt=""></p>
+            </div>
+        </div>
+        <div class="people-block">
+            <div class="row">
+                <h2>우리가 <span>레이즈미를 만들었어요</span></h2>
+                <ul class="obj">
+                    <li class="obj-05 obj-move"><img src="../img/dot-01.png" width="76" alt=""></li>
+                    <li class="obj-06 obj-move"><img src="../img/dot-03.png" width="133" alt=""></li>
+                    <li class="obj-07 obj-move"><img src="../img/dot-02.png" width="48" alt=""></li>
+                    <li class="obj-01 obj-move"><img src="../img/obj-sphere-02.png" width="537" alt=""></li>
+                    <li class="obj-02 obj-move"><img src="../img/obj-cube-02.png" width="77" alt=""></li>
+                    <li class="obj-03 obj-move"><img src="../img/obj-donut-01.png" width="189" alt=""></li>
+                    <li class="obj-04 obj-move"><img src="../img/obj-spring-02.png" width="270" alt=""></li>
+                </ul>
+                <ul class="people-list">
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-01.png" class="front" width="280" alt="">
+                            <img src="../img/img-team-01-hover.png" class="back" width="280" alt="">
+                        </p>
+                        <dl>
+                            <dt>Product & CX Planner</dt>
+                            <dd>프로, 황재호</dd>
+                        </dl>
+                        <p class="text">“AI와 사람의 경쟁이 아닌 
+                            협업하는 서비스를 통해 
+                            더 나은 삶을 만들고 싶습니다”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-02.png" class="front" width="287" alt="">
+                            <img src="../img/img-team-02-hover.png" class="back" width="287" alt="">
+                        </p>
+                        <dl>
+                            <dt>Engineer, R&D</dt>
+                            <dd>프로, 구범모</dd>
+                        </dl>
+                        <p class="text">“협업하는걸 좋아하는 개발자입니다.
+                            더 나은 방향을 고민합니다.”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-03.png" class="front" width="282" alt="">
+                            <img src="../img/img-team-03-hover.png" class="back" width="282" alt="">
+                        </p>
+                        <dl>
+                            <dt>Engineer, R&D</dd>
+                            <dd>프로, 한상욱</dd>
+                        </dl>
+                        <p class="text">“호기심, 츤데레, 도도…
+                            매력만점 고양이 같은
+                            개발자를 추구합니다.”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-04.png" class="front" width="297" alt="">
+                            <img src="../img/img-team-04-hover.png" class="back" width="297" alt="">
+                        </p>
+                        <dl>
+                            <dt>Engineer, R&D</dt>
+                            <dd>프로, 김동준</dd>
+                        </dl>
+                        <p class="text">“해가지면 날개를 접고 파도 사이에서
+                            흔들리며 잠드는 갈매기처럼, 여전히
+                            개발의 바다에서 모험중입니다.”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-05.png" class="front" width="297" alt="">
+                            <img src="../img/img-team-05-hover.png" class="back" width="297" alt="">
+                        </p>
+                        <dl>
+                            <dt>Staff</dt>
+                            <dd>프로, 한성현</dd>
+                        </dl>
+                        <p class="text">“인간의 감각만으로 다 파악하기
+                            어려운 정보의 동굴을 AI라는
+                            횃불로 밝히며 탐험중입니다.”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-06.png" class="front" width="282" alt="">
+                            <img src="../img/img-team-06-hover.png" class="back" width="282" alt="">
+                        </p>
+                        <dl>
+                            <dt>Engineer, R&D</dt>
+                            <dd>프로, 최명진</dd>
+                        </dl>
+                        <p class="text">“흐르는 파도에 몸을 맡겼던
+                            문과생 개발자.
+                            지금은 누구보다 즐겁게 서핑중 ”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha">
+                            <img src="../img/team-07.png" class="front" width="287" alt="">
+                            <img src="../img/img-team-07-hover.png" class="back" width="287" alt="">
+                        </p>
+                        <dl>
+                            <dt>Engineer, R&D</dt>
+                            <dd>프로, 박관배</dd>
+                        </dl>
+                        <p class="text">“새로운 도전을 통해
+                            자신을 재발견하고, 가치 있는 인생을
+                            만들어가고 있는 흰머리 개발자”
+                            </p>
+                    </li>
+                    <li>
+                        <p class="cha"><img src="../img/team-08.png" width="280" alt=""></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <!-- //contents -->
+   </section>
+   <footer id="footer">
+        <div class="row">
+            <div class="footer-menu">
+                <h1><img src="../img/ci-footer.svg" alt=""></h1>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
+                    <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="site-info">
+                <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
+                <ul class="contact">
+                    <li>이메일: hello@raiseme.kr</li>
+                    <li>주소: 05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</li>
+                </ul>
+            </div>
+        </div>
+   </footer>
+</div>
+<script>
+    $(document).ready(function () {
+        gsap.to($('.mask-block img'),0.5, {
+            maskPosition: "100%",
+            ease: "none",
+            scrollTrigger: {
+                trigger: $('.mask-block img'),
+                start: "center center",
+                end: "center 20%",
+                scrub: true,
+                toggleClass:{targets:'.mask-block img',className:'active'},
+                toggleActions: "play none none none",
+            },
+            css:{WebkitMaskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)'}
+        });
+        
+    })
+</script>
+</body>
+</html>

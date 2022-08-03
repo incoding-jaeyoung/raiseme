@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="Raiseme" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<meta property="og:image" content="../img/img-og.png">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="Raiseme">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title>Raiseme</title>
+<link rel="stylesheet" href="../css/popup_style.css" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/ScrollTrigger.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/ScrollToPlugin3.min.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/ui-common.js"></script>
+</head>
+
+<body> 
+<div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+   <header id="header">
+       <div class="row">
+            <h1><a href="M_MAIN_01.html"><img src="../img/ci.svg" alt="Raiseme"></a></h1>
+            <ul class="gnb">
+                <li><a href="A_ABOUT_01.html">ABOUT</a></li>
+                <li><a href="S_APIS_01_T.html">Service</a></li>
+                <li class="active"><a href="T_CONC_01_T.html">Tech</a></li>
+                <li><a href="C_COUN_01_T.html">Use case</a></li>
+                <li><a href="N_NEWS_01.html">News</a></li>
+            </ul>
+            <p class="menu-btn">
+                <span class="navTrigger"><i></i><i></i><i></i></span>
+            </p>
+       </div>
+   </header>
+   <div class="m-menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#page01">ABOUT US</a></li>
+            <li><a href="#page02">STORY</a></li>
+            <li><a href="#page03">ROAD MAP</a></li>
+            <li><a href="#page04">TEAM & ADVISORS</a></li>
+            <li><a href="#page05">FAQ</a></li>
+        </ul>
+    </div>
+   <section id="contents">
+    <!-- contents -->
+        <div class="page-header visual-case">
+            <div class="row">
+                <p class="cate eng">TECH</p>
+                <h2>편리하고 정확한<br><em>레이즈미</em></h2>
+                <p class="summery">편리하고 정확한 레이즈미의 <span> 기술을 활용하세요</span></p>
+                <div class="visual-block tech slide-up">
+                    <ul class="obj">
+                        <li class="obj-01 obj-move"><span></span></li>
+                        <li class="obj-02 obj-move"><span></span></li>
+                        <li class="obj-03 obj-move"><span></span></li>
+                        <li class="obj-04 obj-move"><img src="../img/obj-sphere.png" width="96" alt=""></li>
+                        <li class="obj-05 obj-move"><span></span></li>
+                    </ul>
+                    <p class="cha"><img src="../img/img-thumsup.png" width="278" alt=""></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ul class="news-tab tab-tech tab-ui">
+                <li class="active"><button type="button">집중도 분석</button></li>
+                <li><button type="button">흥미도 분석</button></li>
+                <li><button type="button">자세 분석</button></li>
+                <li><button type="button">부정행위 검출</button></li>
+            </ul>
+        </div>
+        <div class="use-contents-wrap tab-ui-con">
+            <div class="use-contents active">
+                <div class="row">
+                    <div class="showcase-intro intro-01">
+                        <div class="image"><img src="../img/tech-box-01-mo.png" alt=""></div>
+                        <dl>
+                            <dt>레이즈미의 집중도 분석 <br>
+                                AI 모델을 소개합니다</dt>
+                            <dd>집중도와 상관관계가 높은 뇌파로 라벨링 한 영상데이터를 학습한 AI가 더 정확하게 판정할 수 있습니다. <br>
+                                Eye Tracking으로는 구분할 수 없는 청각 집중상태나 멍하게 시선만 고정한 상태를 구분할 수 있습니다.
+                                </dd>
+                            <dd><a href="#" class="more-btn">Showcase 체험하기</a></dd>
+                        </dl>
+                    </div>
+                    <p class="ai-title"><span>차별화 포인트</span></p>
+                    <div class="thumbnail-list up-slide-stagger">
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-thumb-01.png" alt=""></div>
+                            <div class="info">
+                                <p class="title eng">Feature 01</p>
+                                <dl>
+                                    <dt>이미지가 아닌 영상단위 분석</dt>
+                                    <dd>이미지는 연속된 동작이나 상태의 변화를 측정하기에 부정확합니다.</dd>
+                                    <dd>Raiseme의 집중도 분석 AI 모델은 영상 속 동작의 앞뒤 문맥을 파악해 유사한 동작들의 차이를 측정할 수 있습니다. </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-thumb-02.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 02</p>
+                                <dl>
+                                    <dt>뇌파 활용 라벨링된 학습데이터</dt>
+                                    <dd>자세, 행동, 표정이 변할 때 집중력도 함께 변화합니다.</dd>
+                                    <dd>Raiseme는 한양대 뇌공학연구실과 초중등, 성인들을 대상으로 연구하여 집중/비집중 뇌파를 기반으로 딥러닝된 AI모델입니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-thumb-03.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 03</p>
+                                <dl>
+                                    <dt>원격수업 적용을 통한 최적화</dt>
+                                    <dd>AI의 분석대상 및 데이터 측정 기능은 현직교사들이 참여한 실험을 통해 개발됐습니다.</dd>
+                                    <dd>원격수업에 최적화된 AI 모델로 수업 집중도를 측정하고 이를 통한 학습효과 개선이 이미 검증되었습니다. </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-block">
+                    <div class="row">
+                        <ul class="obj">
+                            <li class="obj-01 obj-move"><img src="../img/obj-cube-02.png" width="77" alt=""></li>
+                            <li class="obj-02 obj-move"><img src="../img/obj-spring-02.png" width="300" alt=""></li>
+                            <li class="obj-03 obj-move"><img src="../img/dot-03.png" width="133" alt=""></li>
+                            <li class="obj-04 obj-move"><img src="../img/dot-02.png" width="77" alt=""></li>
+                            <li class="obj-05 obj-move"><img src="../img/obj-donut-01.png" width="170" alt=""></li>
+                            <li class="obj-06 obj-move"><img src="../img/obj-sphere-02.png" width="475" alt=""></li>
+                        </ul>
+                        <div class="flex just-between title-ai">
+                            <h2 class="title slide-up"><span class="fc-blue">집중도 분석 AI 모델</span>은 <em>어떻게 사용할 수 있을까요?</em></h2>
+                            <a href="#" class="more-btn eng">LEARN MORE</a>
+                        </div>
+                        <div class="ai-model up-slide-stagger">
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-01.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>자율학습</dt>
+                                    <dd>“ 제대로 집중해서 <br>공부했는지 확신이 없어요 ”</dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-02.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>인터넷강의</dt>
+                                    <dd>“ 놓치거나 이해하지 못한 <br>구간만 다시 보고 싶어요 ”</dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-03.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>원격수업</dt>
+                                    <dd>“ 학생들의 상태를 관찰하는데<br>시간이 오래 걸려요 ”</dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-04.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>화상상담</dt>
+                                    <dd>“ 상대방이 내 설명을 잘<br>이해하고 있는지 궁금해요 ”</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="use-contents">
+                <div class="row">
+                    <div class="showcase-intro intro-02">
+                        <div class="image"><img src="../img/tech-tab-2-box-01-m.png" alt=""></div>
+                        <dl>
+                            <dt>레이즈미의 흥미도 분석 <br>
+                                AI 모델을 소개합니다</dt>
+                            <dd>Raiseme의 흥미도 분석 AI 모델은 영상 속 사람의 표정변화와
+                                얼굴 근육 상태의 변화 등을 분석해서 흥미도를 측정합니다. <br>
+                                긍정적인 감정 상태에서 느끼는 흥미도 뿐만 아니라 
+                                흥미도를 얼마나 유지하는지 판정할 수 있습니다. 
+                                
+                                </dd>
+                            <dd><a href="#" class="more-btn">Showcase 체험하기</a></dd>
+                        </dl>
+                    </div>
+                    <p class="ai-title"><span>차별화 포인트</span></p>
+                    <div class="thumbnail-list up-slide-stagger">
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-tab-2-box-02.png" alt=""></div>
+                            <div class="info">
+                                <p class="title eng">Feature 01</p>
+                                <dl>
+                                    <dt>흥미 vs 지루함 분석결과 활용</dt>
+                                    <dd>흥미도를 측정할 때는 주변 상황과 복잡한 감정 상태를 고려해야 합니다.</dd>
+                                    <dd>Raiseme의 흥미도 분석 AI 모델은 흥미도를 분석하는 동시에 지루함과 연관된 감정들을 보정하여 활용성이 높은 결과를 낼 수 있습니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-tab-2-box-03.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 02</p>
+                                <dl>
+                                    <dt>즉시 활용 가능한 분석결과</dt>
+                                    <dd>기존의 타 표정 기반 AI 모델은 7개의 감정으로만 흥미도와 지루함을 판정합니다.</dd>
+                                    <dd>Raiseme는 흥미도와 지루함과 연관된 감정들을 수치로 변환하여 감정 변화를 정확하게 측정할 수 있습니다. </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-tab-2-box-04.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 03</p>
+                                <dl>
+                                    <dt>흥미도 실시간 평가 데이터활용</dt>
+                                    <dd>실제 사람들의 평가와 AI측정값이 일치하는지 실험을 통해 검증하였습니다.</dd>
+                                    <dd>영상 또는 대화 stream에서 얻는 감정을 실시간 평가하는 실험을 다수의 실험자에 
+                                        실시하여 결과를 반영했습니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-block">
+                    <div class="row">
+                        <ul class="obj">
+                            <li class="obj-01 obj-move"><img src="../img/obj-cube-02.png" width="77" alt=""></li>
+                            <li class="obj-02 obj-move"><img src="../img/obj-spring-02.png" width="300" alt=""></li>
+                            <li class="obj-03 obj-move"><img src="../img/dot-03.png" width="133" alt=""></li>
+                            <li class="obj-04 obj-move"><img src="../img/dot-02.png" width="77" alt=""></li>
+                            <li class="obj-05 obj-move"><img src="../img/obj-donut-01.png" width="170" alt=""></li>
+                            <li class="obj-06 obj-move"><img src="../img/obj-sphere-02.png" width="475" alt=""></li>
+                        </ul>
+                        <div class="flex just-between title-ai">
+                            <h2 class="title slide-up"><span class="fc-blue">흥미도 분석 AI 모델</span>은 <em>어떻게 사용할 수 있을까요?</em></h2>
+                            <a href="#" class="more-btn eng">LEARN MORE</a>
+                        </div>
+                        <div class="ai-model up-slide-stagger">
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-01.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>자율학습</dt>
+                                    <dd>“ 내 공부 방법이<br>
+                                        뭐가 문제인지 모르겠어요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-02.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>인터넷강의</dt>
+                                    <dd>“ 학생들이 제대로 듣고 있는지 <br>
+                                        알 수 없어서 답답해요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-03.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>원격수업</dt>
+                                    <dd>“ 수업에 대한 학생들의 <br>
+                                        반응이 궁금해요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-04.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>화상상담</dt>
+                                    <dd>“ 내 설명에 문제가 <br>
+                                        있는건 아닌지 모르겠어요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="use-contents">
+                <div class="row">
+                    <div class="showcase-intro intro-03">
+                        <div class="image"><img src="../img/tech-tab-3-box-01-m.png" alt=""></div>
+                        <dl>
+                            <dt>레이즈미의 자세 분석 <br>
+                                AI 모델을 소개합니다</dt>
+                            <dd>원격수업이나 상담을 진행할 때 참여자가 보이지 않거나 
+                                반응을 확인할 수 없는 경우에 AI가 해당 참여자를 리포팅합니다. <br>
+                                리포팅 결과를 통해 적극적인 참여를 유도하고 
+                                바른자세로 집중할 수 있도록 가이드 할 수 있습니다.
+                                </dd>
+                            <dd><a href="#" class="more-btn">Showcase 체험하기</a></dd>
+                        </dl>
+                    </div>
+                    <p class="ai-title"><span>차별화 포인트</span></p>
+                    <div class="thumbnail-list up-slide-stagger">
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-3-thumb-01.png" alt=""></div>
+                            <div class="info">
+                                <p class="title eng">Feature 01</p>
+                                <dl>
+                                    <dt>적절한 시점에 집중관리 대상 선정 
+                                    </dt>
+                                    <dd>대화 상대가 고의적으로 화면에서 벗어나는 상황을 발견할 수 있습니다.</dd>
+                                    <dd>자세에 따라 질문과 호명을 통해 바른 자세를 유도하고 참여 수준을 평가할 수 있습니다.
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-3-thumb-02.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 02</p>
+                                <dl>
+                                    <dt>비대면 그룹 소통에 다양한 활용 가능
+                                    </dt>
+                                    <dd>상대방의 참여 상태를 파악할 수 있어 수업 진행, 지도 방식을 개선할 수 있습니다.</dd>
+                                    <dd>학생이 자리를 비우는 상황에 즉시 대처할 수 있어 더 쉬운 학습지도가 가능합니다. 
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-3-thumb-03.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 03</p>
+                                <dl>
+                                    <dt>교사들의 핵심 요구사항 반영</dt>
+                                    <dd>비대면 수업에서 교사가 가장 필요로 하는 기능은 ‘수업자세 관리 및 지도’입니다.</dd>
+                                    <dd>AI보조교사 도입 시 교사를 가장 효과적으로 지원하는 기능으로 선정된 기능을 AI모델로 
+                                        구현하였습니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-block">
+                    <div class="row">
+                        <ul class="obj">
+                            <li class="obj-01 obj-move"><img src="../img/obj-cube-02.png" width="77" alt=""></li>
+                            <li class="obj-02 obj-move"><img src="../img/obj-spring-02.png" width="300" alt=""></li>
+                            <li class="obj-03 obj-move"><img src="../img/dot-03.png" width="133" alt=""></li>
+                            <li class="obj-04 obj-move"><img src="../img/dot-02.png" width="77" alt=""></li>
+                            <li class="obj-05 obj-move"><img src="../img/obj-donut-01.png" width="170" alt=""></li>
+                            <li class="obj-06 obj-move"><img src="../img/obj-sphere-02.png" width="475" alt=""></li>
+                        </ul>
+                        <div class="flex just-between title-ai">
+                            <h2 class="title slide-up"><span class="fc-blue">자세  분석 AI 모델</span>은 <em>어떻게 사용할 수 있을까요?</em></h2>
+                            <a href="#" class="more-btn eng">LEARN MORE</a>
+                        </div>
+                        <div class="ai-model up-slide-stagger">
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-01.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>자율학습</dt>
+                                    <dd>“ 타이머를 직접 조작하니까 <br>
+                                        측정하기 번거롭고<br>
+                                        정확하지도 않아요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-02.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>인터넷강의</dt>
+                                    <dd>“ 인터넷강의를 혼자 듣는데<br>
+                                        자꾸 딴짓을 하게 돼요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-03.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>원격수업</dt>
+                                    <dd>“ 수업 하면서 학생들의<br>
+                                        자세까지 지도하기 힘들어요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-04.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>화상상담</dt>
+                                    <dd>“ 자료를 보면서 상대방의<br>
+                                        반응까지 확인하기 어려워요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="use-contents">
+                <div class="row">
+                    <div class="showcase-intro intro-04">
+                        <div class="image"><img src="../img/tech-tab-4-box-01-m.png" alt=""></div>
+                        <dl>
+                            <dt>레이즈미의 시험 부정행위 검출 <br>
+                                AI 모델을 소개합니다</dt>
+                            <dd>시험 응시자의 부정행위를 실시간으로 관리하고
+                                부정 행위 적발 시 시험 감독관에게 리포팅합니다. <br>
+                                온라인시험 현장에서 일어나는 각종 부정행위를 방지하거나 
+                                적발할 수 있어 더욱 공정하고 신뢰도 높은 평가를 할 수 있습니다.
+                                </dd>
+                            <dd><a href="#" class="more-btn">Showcase 체험하기</a></dd>
+                        </dl>
+                    </div>
+                    <p class="ai-title"><span>차별화 포인트</span></p>
+                    <div class="thumbnail-list up-slide-stagger">
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-4-thumb-01.png" alt=""></div>
+                            <div class="info">
+                                <p class="title eng">Feature 01</p>
+                                <dl>
+                                    <dt>온라인시험 감독관이 참여 · 제작
+                                    </dt>
+                                    <dd>삼성 G-SAT 및 내부 온라인시험 감독 경험을 기반으로 데이터를 제작하고 학습했습니다.</dd>
+                                    <dd>자체적인 온라인시험 진행•감독을 다년간 수행한 경험을 자세 분석 AI 모델 개발에 반영하였습니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-4-thumb-02.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 02</p>
+                                <dl>
+                                    <dt>영상 기반의 높은 정확성</dt>
+                                    <dd>얼굴 각도, 상반신 자세, 수행 동작 등 여러 가지 요소를 동시에 모니터링할 수 있습니다.</dd>
+                                    <dd>수행 동작의 유사성을 비교해서 부정 행위를 판정합니다.
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="list-con">
+                            <div class="image"><img src="../img/tech-img-tab-4-thumb-03.png" alt=""></div>
+                            <div class="info">
+                                <p class="title">Feature 03</p>
+                                <dl>
+                                    <dt>실시간 부정행위 검출</dt>
+                                    <dd>정상 VS 비정상 행위를 학습한 모델이 실시간으로 부정 응시자를 검출합니다.</dd>
+                                    <dd>발생시간·빈도·부정행위 유형을 자동으로 작성하고 증빙자료로 활용할 수 있습니다.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-block">
+                    <div class="row">
+                        <ul class="obj">
+                            <li class="obj-01 obj-move"><img src="../img/obj-cube-02.png" width="77" alt=""></li>
+                            <li class="obj-02 obj-move"><img src="../img/obj-spring-02.png" width="300" alt=""></li>
+                            <li class="obj-03 obj-move"><img src="../img/dot-03.png" width="133" alt=""></li>
+                            <li class="obj-04 obj-move"><img src="../img/dot-02.png" width="77" alt=""></li>
+                            <li class="obj-05 obj-move"><img src="../img/obj-donut-01.png" width="170" alt=""></li>
+                            <li class="obj-06 obj-move"><img src="../img/obj-sphere-02.png" width="475" alt=""></li>
+                        </ul>
+                        <div class="flex just-between title-ai">
+                            <h2 class="title slide-up"><span class="fc-blue">시험 부정행위 검출</span>은 <em>어떻게 사용할 수 있을까요?</em></h2>
+                            <a href="#" class="more-btn eng">LEARN MORE</a>
+                        </div>
+                        <div class="ai-model up-slide-stagger">
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-01.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>온라인시험</dt>
+                                    <dd>“ 감독관이 혼자 여러 명의<br>
+                                        응시자를 감시하는데 <br>
+                                        한계가 있어요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-03.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>온라인시험</dt>
+                                    <dd>“ 오프라인보다 온라인에서<br>
+                                        부정행위 시도 횟수가 더 많고<br>
+                                        발견하기 힘들어요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                            <div class="model-con">
+                                <p class="image"><img src="../img/tech-img-aimodel-04.png" width="199" alt=""></p>
+                                <dl>
+                                    <dt>온라인시험</dt>
+                                    <dd>“ 부정행위에 대한<br>
+                                        근거자료 확보와 부정행위<br>
+                                        검증에 수작업이 너무 많아요 ”
+                                        </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    <!-- //contents -->
+   </section>
+   <footer id="footer">
+        <div class="row">
+            <div class="footer-menu">
+                <h1><img src="../img/ci-footer.svg" alt=""></h1>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
+                    <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="site-info">
+                <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
+                <ul class="contact">
+                    <li>이메일: hello@raiseme.kr</li>
+                    <li>주소: 05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</li>
+                </ul>
+            </div>
+        </div>
+   </footer>
+</div>
+</body>
+</html>

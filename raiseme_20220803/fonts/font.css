@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'GangwonEduPower';
+  font-weight: normal;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduPower.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduPower.eot?#iefix') format('embedded-opentype'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduPower.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduPower.woff') format('woff'),
+       url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduPower.ttf') format("truetype");
+  font-display: swap;
+} 
+
+/* Akshar 400  */
+@font-face {
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 400;
+  src: url('aksh/Akshar-Light.ttf'); /* IE9 Compat Modes */
+  src: local(''),
+       url('aksh/Akshar-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+/* Akshar 400  */
+@font-face {
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 400;
+  src: url('aksh/Akshar-Regular.ttf'); /* IE9 Compat Modes */
+  src: local(''),
+       url('aksh/Akshar-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* Akshar 500  */
+@font-face {
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 500;
+  src: url('aksh/Akshar-Medium.ttf'); /* IE9 Compat Modes */
+  src: local(''),
+       url('aksh/Akshar-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+/* Akshar 700  */
+@font-face {
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 700;
+  src: url('aksh/Akshar-SemiBold.ttf'); /* IE9 Compat Modes */
+  src: local(''),
+       url('aksh/Akshar-SemiBold.ttf') format('truetype'), /* Safari, Android, iOS */
+}
+
+/* Akshar 900  */
+@font-face {
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 900;
+  src: url('aksh/Akshar-Bold.ttf'); /* IE9 Compat Modes */
+  src: local(''),
+       url('aksh/Akshar-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+}

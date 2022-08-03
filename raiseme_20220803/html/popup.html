@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>에이듀</title>
+		<link rel="stylesheet" href="../css/popup_style.css?v=2" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<!-- Resources -->
+		<script src="../js/jquery-3.3.1.min.js"></script>
+		<script src="../js/adu_posenet_sdk_0.0.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+		<script src="../js/ui.js"></script>
+		<script src="../js/interest.js"></script>
+		<script src="../js/posture.js"></script>
+		<script src="../js/attention.js"></script>
+	</head>
+	<body>
+		<div class="popup">
+			<button type="button" class="popup__btn-open">RAISEME SHOWCASE</button>
+			<!-- 약관동의 -->
+			<div class="popup__wrap off" id="popupAgree">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE <em>약관동의</em></h2>
+						</div>
+					</div>
+					<div class="popup__cont-scroll">
+						<div class="policy-wrap">
+							<h3>약관동의</h3>
+							<div class="policy-block">
+								<p>
+									<input type="checkbox" id="chk1" /><label for="chk1">이용약관 <span>(필수)</span></label>
+								</p>
+								<div class="policy-con">
+<pre>
+제 1 조 (목적)
+이 약관은 Raiseme(이하 "회사"라 합니다)가 운영하는 Raiseme.kr 사이트로 제공하는 인터넷 서비스(이하 "서비스"라
+합니다)의 이용과 관련하여 서비스 이용 절차 및 방법 등에 대한 사항을 규정함을 목적으로 합니다.
+
+제 2 조 (서비스 범위 및 회사의 책임 제한)
+회사는 Raiseme.kr 사이트를 방문한 고객(이하 “사용자”)에게 Raiseme의 회사소개, 서비스, AI모델기술, 활용사례, 뉴
+스 등을 무상으로 제공합니다.
+Raiseme.kr 사이트는 “사용자” 의 편의를 위해 회사가 무상으로 제공하는 서비스로, 회사는 Raiseme.kr 사이트에서 제
+공하는 서비스 내용, 서비스의 제한, 이용 중지, 장애, 서비스 이용 불가 상황 및 이로 인한 결과 등 서비스 이용과 관련
+한 모든 사항에 대하여 어떠한 책임도 부담하지 않습니다.
+
+제 3 조 (용어의 정의)
+이 약관에서 사용하는 용어의 정의는 다음과 같습니다.
+AI모델 서비스 : 영상 데이터 속의 행동, 자세, 표정 등을 AI기반으로 분석하여 집중도, 흥미도, 태도 등을 분석해 주는
+모델 서비스
+
+제 4 조 (약관 동의 방법)
+사용자가 서비스 이용 허가를 받으려면 약관에 동의해야 합니다. 일반적으로 약관에 대하여 사용자는 회사가 제공하는
+사이트에 구현된 "동의" 버튼을 클릭하시거나, 이와 유사하게 구현된 기능을 활용하여 동의할 수 있습니다.
+
+제 5 조 (약관의 개정)
+회사는 필요할 경우 약관을 수정하거나 변경할 수 있습니다. 약관이 변경되는 경우 회사는 약관의 변경 내용 및 사유를
+시행 10일 전(사용자에게 불리하거나 중대한 사항의 변경은 30일 전)에 회사가 제공하는 사이트에 변경 약관을 공지합
+니다.
+사용자가 변경된 약관을 확인하고도 변경된 약관의 효력 발생일까지 약관 변경에 대한 거부의사를 명시적으로 표시하
+지 않거나 약관 변경 이후에 서비스를 이용할 경우 변경된 약관에 동의한 것으로 봅니다. 사용자가 변경된 약관에 동의
+하지 않는 경우, 회사가 제공하는 사이트의 서비스 이용이 제한되거나 정지될 수 있습니다.
+
+제 6 조 (회원정보 수집ᆞ변경)
+회사는 사용자에 관한 정보를 별도의 회원정보로 수집ᆞ보관하지 않습니다.
+
+제 7 조 (회원의 의무)
+
+사용자(이하 회원)은 이 약관에서 규정하는 사항과 이용안내 또는 공지사항 등을 통하여 회사가 공지하는 사항을 준수
+하여야 하며, 기타 회사의 업무에 방해되는 행위를 하여서는 안됩니다.
+회원은 회사의 사전승낙 없이는 서비스를 이용하여 영업활동을 할 수 없으며, 그 영업활동의 결과와 회원이 약관에 위
+반한 영업활동을 하여 발생한 결과에 대하여 회사는 책임을 지지 않습니다. 회원은 이와 같은 영업활동으로 회사가 손
+해를 입은 경우 회원은 회사에 대하여 손해배상의무를 집니다.
+회원은 회사의 명시적인 동의가 없는 한 서비스의 이용권한, 기타 이용 계약상 지위를 타인에게 양도, 증여할 수 없으
+며, 이를 담보로 제공할 수 없습니다.
+회원은 서비스 이용과 관련하여 다음 각 호에 해당되는 행위를 하여서는 안됩니다.
+1. 본 서비스의 Showcase 체험을 위해 현재일 기준 만 14세 미만 아동이 영상을 촬영하고 업로드하여 이용하는
+행위
+2. 본 서비스를 통하여 얻은 정보를 회사의 사전승낙 없이 회원의 이용 이외 목적으로 복제하거나 이를 출판 및 방
+송 등에 사용하거나 제3자에게 제공하는 행위
+3. 제3자의 특허, 상표, 영업비밀, 저작권 기타 지적재산권을 침해하는 내용을 게시, 전자메일 또는 기타의 방법으
+로 타인에게 유포하는 等 제3자의 권리를 침해하는 행위
+4. 공공질서 및 미풍양속에 위반되는 저속, 음란한 내용의 정보, 문장, 도형 등을 전송, 게시, 전자메일 또는 기타
+의 방법으로 타인에게 유포하는 행위
+5. 모욕적이거나 위협적이어서 타인의 프라이버시를 침해할 수 있는 내용을 전송, 게시, 전자메일 또는 기타의 방
+법으로 타인에게 유포하는 행위
+6. 범죄와 결부되거나 범죄와 결부될 우려가 있는 행위
+7. 다른 사람의 개인정보를 무단으로 수집 또는 저장, 유출하는 행위 等 개인정보보호법령 위반 행위
+8. 회원의 고객사 또는 제3의 기관 소유 정보를 본 Raiseme.kr 사이트를 통해 외부로 유출하거나 기타의 방법으
+로 공개하는 등 제3자의 정보를 무단으로 유출하는 행위
+9. 기타 관계법령에 위배되는 행위
+
+제 8 조 (게시물 등 임의 삭제)
+회사는 회원이 게시하거나 등록하는 서비스내의 내용물이 다음 각 호에 해당한다고 판단되는 경우에 사전통지 없이 삭
+제할 수 있습니다.
+1. 다른 회원 또는 제3자를 비방하거나 중상모략으로 명예를 손상시키는 내용인 경우
+2. 범죄적 행위에 결부되거나 결부될 우려가 있다고 판단되는 내용일 경우
+3. 회사 또는 제3자의 특허권, 저작권, 영업비밀 등 지식재산권 및 기타 권리를 침해하거나 침해할 우려가 있는 내
+용인 경우
+4. 회사에서 규정한 게시기간이나 용량을 초과한 경우
+5. 저속, 음란한 내용의 정보, 문장, 도형, 음향, 동영상 등을 전송, 게시하거나 링크시키는 경우 및 기타 공공질서
+및 미풍양속에 반하는 내용인 경우
+6. 본 사이트의 성격 및/또는 운영목적에 부합하지 않는 게시물의 경우
+7. 회원의 고객사 또는 제3의 기관과 분쟁 소지 또는 법적 문제 소지 등 이슈 발생 가능성이 있다고 판단되는 내용
+인 경우
+8. 타인의 개인정보(성명, 주민등록번호, 주소, 사진, 또는 영상 등에 의하여 특정한 개인을 알아볼 수 있는 정보를
+말하며, 해당 정보만으로는 특정 개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 것을
+
+포함한다)를 본인의 동의 없이 게시하는 내용
+9. 관계법령에 위반되거나 위반될 우려가 있는 내용
+10. 기타 본 서비스 운영목적에 부합하지 않는다고 판단되는 내용
+
+제 9 조 (회사의 저작권)
+회사가 제공하는 모든 저작물의 저작권 및 기타 지식재산권은 저작권자 또는 회사에 귀속합니다.
+회원 및/또는 사용자는 서비스를 이용함으로써 얻은 정보를 회사의 사전 승낙 없이 복제, 전송, 출판, 배포, 방송 기타 방
+법에 의하여 제3자에게 공개하거나 또는 이용하게 하여서는 안됩니다.
+
+제 10 조 (서비스 이용 책임)
+회원은 서비스를 이용하여 상품을 판매하는 영업활동을 할 수 없으며 특히 해킹, 돈벌이 광고, 음란 사이트 등을 통한
+상업행위, 상용S/W 불법배포, 고객사 정보 불법유출 등을 할 수 없습니다. 이를 어기고 발생한 영업활동의 결과 및 손
+실, 관계기관에 의한 구속 등 법적 조치 등에 관해서는 회사가 책임을 지지 않습니다.
+
+제 11 조 (이용 제한)
+회사는 다음 각호의 어느 하나에 해당하는 경우 사전통지 없이 서비스 이용을 중지할 수 있습니다.
+1. 타인의 명예를 손상시키거나 불이익을 주는 행위를 한 경우
+2. 회사, 다른 회원 또는 제 3자의 지적재산권을 침해하는 경우
+3. 공공질서 및 미풍양속에 저해되는 내용을 고의로 유포시킨 경우
+4. 회원이 국익 또는 사회적 공익을 저해할 목적으로 서비스 이용을 계획 또는 실행하는 경우
+5. 서비스 운영을 고의로 방해한 경우
+6. 서비스의 안정적 운영을 방해할 목적으로 다량의 정보를 게시하거나 광고성 정보를 홍보하는 경우
+7. 정보통신설비의 오작동이나 정보의 파괴를 유발시키는 컴퓨터 바이러스 프로그램 등을 유포하는 경우
+8. 정보통신윤리위원회 등 외부기관의 시정요구가 있거나 불법선거운동과 관련하여 선거관리위원회의 유권해석
+을 받은 경우
+9. 회사의 서비스를 이용하여 얻은 정보를 회사의 사전 승낙 없이 복제 또는 유통시키거나 상업적으로 이용하는 경우
+10. 본 약관을 포함하여 기타 회사가 정한 이용 조건에 위반한 경우
+11. 기타 회사방침 또는 외부적 요인, 기술적 요인 등 제반 상황에 의하여 서비스 이용 중지 또는 제한이 필요하다 고 회사가 판단하는 경우
+
+제 12 조 (면책)
+Raiseme.kr 사이트는 “사용자” 의 편의를 위해 회사가 무상으로 제공하는 서비스로, 회사는 Raiseme.kr 사이트에서 제
+공하는 서비스 내용, 서비스의 제한, 이용 중지, 장애, 서비스 이용 불가 상황 및 이로 인한 결과 등 서비스 이용과 관련
+한 모든 사항에 대하여 어떠한 책임도 부담하지 않습니다.
+회사는 서비스를 통해 제공한 모든 정보, 자료 등에 대해 사실성, 정확성 등을 담보하지 않으며, 이를 신뢰하여 행한 사
+용자의 행위에 대해 책임을 지지 않습니다.
+
+회사는 서비스를 매개로 한 회원과 다른 회원 간 의견 교환, 거래 등에서 발생한 손해나 회원이 서비스 상에 게재된 타
+인의 게시물 등의 컨텐츠를 신뢰함으로써 발생한 손해에 대해서 책임을 부담하지 않습니다.
+
+제 13 조 (관할법원 및 준거법)
+서비스 이용과 관련하여 회사와 회원 사이에 발생하는 분쟁과 관련한 소송의 관할법원은 회사의 본점 소재지를 관할하
+는 대한민국의 법원으로 하며, 이 약관의 효력 및 해석 등에 대하여는 대한민국의 법률에 따릅니다.
+</pre>
+								</div>
+							</div>
+							<div class="policy-block">
+								<p>
+									<input type="checkbox" id="chk2" /><label for="chk2">개인정보처리방침<span>(필수)</span></label>
+								</p>
+								<div class="policy-con">
+<pre>
+Raiseme는 개인정보보호법 제30조에 따라 정보주체의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보처리방침을 수립ㆍ공개합니다.
+Raiseme의 개인정보처리방침은 다음과 같은 내용을 담고 있습니다.
+• 개인정보의 처리 목적
+• 처리하는 개인정보의 항목
+• 개인정보의 처리 및 보유 기간
+• 개인정보의 파기절차 및 파기방법(개인정보를 보존하여야 하는 경우에는 그 보존근거와 보존하는 개인정보 항목을 포함)
+• 정보주체와 법정대리인의 권리ㆍ의무 및 그 행사방법에 관한 사항
+• 인터넷 접속정보파일 등 개인정보를 자동으로 수집하는 장치의 설치∙운영 및 그 거부에 관한 사항
+• 개인정보의 안전성 확보 조치에 관한 사항
+• 개인정보보호책임자의 성명 또는 개인정보 보호업무 및 관련 고충사항을 처리하는 부서의 명칭과 전화번호 등 연락처
+• 정보주체의 권익침해에 대한 구제방법
+• 정보주체의 권리와 그 행사방법
+• 개인정보처리방침의 변경에 관한 사항
+• 본 개인정보처리방침은 2022년 9월 1일부터 시행합니다.
+
+1. 개인정보의 처리 목적
+Raiseme는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+• AI모델 분석 서비스 이용
+
+2. 처리하는 개인정보의 항목
+Raiseme는 만 14세 미만 아동을 대상으로 서비스를 제공하지 않습니다.
+필수정보 : 영상정보
+선택정보 : 없음
+또한 서비스 이용과정에서 아래와 같은 정보들이 자동으로 생성되어 수집될 수 있습니다.
+- PC 환경정보 : OS버전
+- 모바일 기기 이용 시 : 단말기 식별번호, 단말기 OS정보
+
+3. 개인정보의 처리 및 보유 기간
+Raiseme는 법령에 따른 개인정보 보유∙이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의 받은 개인정보 보유∙이용기간 내에서 개인정보를 처리∙보유합니다.
+각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.
+• 영상정보 : 사용자가 AI모델 서비스의 Showcase체험 클릭 후 분석결과를 사용자에게 팝업화면으로 제공할 때까지
+
+4. 개인정보의 파기절차 및 파기방법
+Raiseme는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.
+개인정보 파기의 절차 및 방법은 다음과 같습니다.
+
+파기절차
+Raiseme는 파기 사유가 발생한 개인정보를 Raiseme.kr 가 보관기능이 없도록 시스템을 설계 및 구축합니다.  
+파기방법
+Raiseme는 전자적 파일 형태로 기록된 개인정보는 Raiseme.kr에 저장하지 않습니다.
+
+5. 정보주체와 법정대리인의 권리∙의무 및 그 행사방법에 관한 사항
+정보주체는 Raiseme에 대해 언제든지 개인정보 열람∙정정∙삭제∙처리∙정지 요구 등의 권리를 행사할 수 있습니다.
+권리의 행사는 Raiseme에 대해 개인정보보호법 시행령 41조에 따라 서면, 전화, 전자우편, 인터넷 등 정보주체가 쉽게 활용할 수 있는 방법으로 할 수 있으며, Raiseme는 이에 대해 지체 없이 조치하겠습니다.
+권리의 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.
+개인정보 열람 및 처리정지 요구는 개인정보보호법 제35조 제5항, 제37조 제2항에 의하여 정보주체의 권리가 제한될 수 있습니다.
+개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.
+Raiseme는 정보주체 권리에 따른 열람의 요구, 정정∙삭제의 요구, 처리정지의 요구 시 열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.
+
+6. 인터넷 접속정보파일 등 개인정보를 자동으로 수집하는 장치의 설치∙운영 및 그 거부에 관한 사항
+Raiseme는 이용자에게 개별적인 맞춤서비스를 제공하기 위해 이용정보를 저장하고 수시로 불러오는 쿠키(cookie)를 사용합니다.
+쿠키는 웹사이트를 운영하는데 이용되는 서버가 이용자의 컴퓨터 브라우저에게 보내는 소량의 정보이며 이용자들의 PC내의 하드디스크에 저장되기도 합니다.
+쿠키의 사용목적 : 이용자가 방문한 각 서비스와 웹사이트들에 대한 방문 및 이용형태, 인기 검색어, 보안접속 여부 등을 파악하여 이용자에게 최적화된 정보 제공을 위해 사용됩니다.
+쿠키의 설치∙운영 및 거부 : 웹브라우저 상단의 도구>인터넷옵션>개인정보 메뉴의 옵션 설정을 통해 쿠키 저장을 거부할 수 있습니다.
+쿠키 저장을 거부할 경우 맞춤형 서비스 이용에 어려움이 발생할 수 있습니다.
+
+7. 개인정보의 안전성 확보 조치에 관한 사항
+Raiseme는 개인정보의 안전성 확보를 위해 다음과 같은 조치를 취하고 있습니다.
+• 관리적 조치 : 내부관리계획 수립∙시행, 정기적 직원 교육 등
+• 기술적 조치 : 접근권한 관리, 접근통제시스템 설치, 고유식별정보 등의 암호화, 보안프로그램 설치
+• 물리적 조치 : 전산실, 자료보관실 등의 접근통제
+
+8. 개인정보보호책임자의 성명 또는 개인정보 보호업무 및 관련 고충사항을 처리하는 부서의 명칭과 전화번호 등 연락처
+Raiseme는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보보호책임자를 지정하고 있습니다.
+• 개인정보보호책임자
+- 성명: 황재호
+- 직책: 소사장
+- 연락처: jaeho.hwang@raiseme.kr
+• 개인정보보호 담당부서
+- 부서명: 에이듀소사장
+- 담당자: 김동준
+- 연락처: dongjun.kim@raiseme.kr
+정보주체께서는 Raiseme.kr를 이용하시면서 발생한 모든 개인정보보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보보호책임자 및 담당부서로 문의하실 수 있습니다. Raiseme는 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.
+
+9. 정보주체의 권익침해에 대한 구제방법
+정보주체는 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.
+<아래의 기관은 Raiseme와는 별개의 기관으로서 Raiseme의 자체적인 개인정보 불만처리, 피해구제 결과에 만족하지 못하시거나 보다 자세한 도움이 필요하시면 문의하여 주시기 바랍니다.>
+• 개인정보보호위원회 : (국번없이) 118 (www.pipc.go.kr)
+• 개인정보침해신고센터 : (국번없이) 118 (privacy.kisa.or.kr)
+• 개인정보분쟁조정위원회 : 1833-6972 (www.kopico.go.kr)
+• 대검찰청 사이버수사과
+: (국번없이) 1301 (cybercid.spo.go.kr)
+• 경찰청 사이버안전지킴이
+: (국번없이) 182 (www.police.go.kr/www/security/cyber.jsp)
+
+10. 정보주체의 권리와 그 행사방법
+Raiseme는 이용된 개인정보는 “개인정보의 보유 및 이용기간”에 명시된 바에 따라 처리하고 그 외의 용도로 이용할 수 없도록 처리하고 있습니다.
+
+11. 개인정보처리방침의 변경에 관한 사항
+• 이 개인정보처리방침은 2022. 9. 1부터 적용됩니다.
+• 이전의 개인정보처리방침은 아래에서 확인하실 수 있습니다
+</pre>
+								</div>
+							</div>
+							<div class="policy-block">
+								<p>
+									<input type="checkbox" id="chk3" /><label for="chk3">개인정보수집이용동의<span>(필수)</span></label>
+								</p>
+								<div class="policy-con">
+<pre>
+AI 모델 분석 Showcase 체험을 위해서는 아래와 같이 개인정보(영상정보)를 수집ㆍ이용합니다. 
+1. 개인정보 수집 목적 : 집중도 분석, 흥미도 분석, 자세 분석, 부정행위 검출 등 AI모델 분석 Showcase 체험 
+2. 개인정보 수집 항목 : PC 또는 모바일 단말 등의 카메라를 통해 촬영된 녹화 영상 
+3. 보유 및 이용기간 :  AI모델 분석 Showcase 체험 까지 
+
+사용자는 이용약관과 개인정보 수집 및 이용에 동의하지 않을 권리가 있으며, 동의를 거부할 경우에는 Showcase 체험이 불가합니다. 
+</pre>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="popup-footer">
+						<a href="javascript:void(0)" class="back">이전으로</a>
+						<a href="javascript:void(0)" class="next disabled" onclick="$('#popupAgree').addClass('off');$('#popupIndex').removeClass('off')">계속하기</a>
+					</div>
+				</div>
+			</div>
+			<!-- //약관동의 -->
+
+			<!-- 메인 -->
+			<div class="popup__wrap off" id="popupIndex">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head pc-display-none">
+						<div class="popup__select-box">
+							<h2 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+						</div>
+					</div>
+					<div class="popup__cont-scroll">
+						<div class="popup-index">
+							<div class="popup-index-con">
+								<h1 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h1>
+								<div class="sub-title">
+									<h2>레이즈미의 <span class="fc-blue">AI 모델</span> 을 <span class="m-block"></span>지금 체험해보세요 <a href="javascript:void(0)" class="btn-share"><span class="btn-share__text">URL을 복사했습니다.</span><img src="../img/btn-copylink.png" width="37" alt=""></a></span></h2>
+								</div>
+								<div class="type-list">
+									<div class="type type-01">
+										<a href="javascript:void(0);" onclick="$('#popupIndex').addClass('off');$('#popup0Intro').removeClass('off')"></a>
+										<dl>
+											<dt>집중도 분석</dt>
+											<dd>사람의 자세, 행동, 표정 등을 분석하여 <br>집중도를 측정합니다. </dd>
+										</dl>
+									</div>
+									<div class="type type-02">
+										<a href="javascript:void(0);" onclick="$('#popupIndex').addClass('off');$('#popup1Intro').removeClass('off')"></a>
+										<dl>
+											<dt>흥미도 분석</dt>
+											<dd>표정 변화로 인한 얼굴 근육을 분석해서 <br>흥미도를 측정합니다.</dd>
+										</dl>
+									</div>
+									<div class="type type-03">
+										<a href="javascript:void(0);" onclick="$('#popupIndex').addClass('off');$('#popup2Intro').removeClass('off')"></a>
+										<dl>
+											<dt>자세 분석</dt>
+											<dd>화상으로 소통할 때 참여자들의 <br>바른 자세 여부를 확인할 수 있습니다.</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //메인 -->
+
+			<!-- 집중도분석 소개 -->
+			<div class="popup__wrap off" id="popup0Intro">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>집중도 분석</p>
+								<ul>
+									<li class="select">집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup__cont-scroll">
+						<div class="popup-index" style="padding-top: 0; height: auto">
+							<div class="popup-intro-con">
+								<div class="intro-head">
+									<div class="message">
+										<h3>
+											<span class="fc-blue">나의 집중도</span>는 몇 퍼센트? <button type="button" class="btn-share"><span class="btn-share__text">URL을 복사했습니다.</span><img src="../img/btn-copylink.png" width="37" alt="" /></button>
+										</h3>
+										<p>나는 집중력이 좋은 편인지 궁금하다면 <span class="m-block">지금 테스트 해보세요!</span></p>
+									</div>
+									<p class="start"><a href="javascript:void(0)" onclick="$('#popup0Intro').addClass('off');$('#popup0').removeClass('off')">Let’s start</a></p>
+								</div>
+								<p class="ai-text">레이즈미의 집중도 분석 AI 모델은 화면을 응시하고 있는 사람의 <span>자세, 행동, 표정</span> 등을 분석하여 집중도를 측정합니다.</p>
+								<div class="ai-process">
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-01.png" alt="" /></div>
+										<dl style="margin-left:1.2rem">
+											<dt><span>1</span>준비</dt>
+											<dd>분석을 시작하기 전에 시청할 동영상을 준비해주세요.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-02-01.png" alt="" /></div>
+										<dl style="margin-left:1.2rem">
+											<dt><span>2</span>분석 시작</dt>
+											<dd>정확한 분석을 위해 모니터를 정면으로 응시하세요.</dd>
+											<dd>촬영을 위해 카메라 접근을 허용해주세요.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-03.png" alt="" /></div>
+										<dl>
+											<dt><span>3</span>분석 중</dt>
+											<dd>쇼케이스를 실행한 상태에서 동영상을 시청하세요.</dd>
+											<dd>분석 결과를 위해 <span>최소 10초 이상 최대 60초</span> 동안 시청해야 합니다.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-04.png" alt="" /></div>
+										<dl style="margin-left:2.1rem">
+											<dt><span>4</span>분석 완료</dt>
+											<dd>집중도를 확인하고 결과를 공유하세요.</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //집중도분석 소개 -->
+			<!-- 집중도분석 -->
+			<div class="popup__wrap off" id="popup0">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng" style="cursor:pointer" onclick="$('#popup0').addClass('off');$('#popup0Intro').removeClass('off')"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>집중도 분석</p>
+								<ul>
+									<li class="select">집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">집중도는 몇 퍼센트?<button type="button" class="popup__btn-share btn-share"><span class="btn-share__text">URL을 복사했습니다.</span>url공유</button></div>
+					</div>
+					<div class="popup__cont">
+						<!-- 집중도분석 전 or 중 -->
+						<section class="popupCont1">
+							<div class="popup__cont-time">
+								<h3 class="i-time">30</h3>
+								<button type="button" class="popup__btn-basic btn-w btn-start" id="start01">시작</button>
+							</div>
+							<div class="popup__cont-video">
+								<div id="guideline_01" class="video-bg video-bg1">
+									<div class="popup__toast"><p>점선 안에 정면으로 어깨까지 나오도록 해주세요.</p></div>
+									<!-- 영상 송출 시 해당 이 div 숨김 -->
+								</div>
+								<video id="video01" autoplay style="margin: 0 auto; background: #4a4c53" webkit-playsinline="true" playsinline="true"></video>
+
+								<script>
+									var stop = function () {
+										var stream = video.srcObject;
+										var tracks = stream.getTracks();
+										for (var i = 0; i < tracks.length; i++) {
+											var track = tracks[i];
+											track.stop();
+										}
+										video.srcObject = null;
+									};
+									var start = function () {
+										var video = document.getElementById("video"),
+											vendorUrl = window.URL || window.webkitURL;
+										if (navigator.mediaDevices.getUserMedia) {
+											navigator.mediaDevices
+												.getUserMedia({ video: true })
+												.then(function (stream) {
+													video.srcObject = stream;
+												})
+												.catch(function (error) {
+													console.log("Something went wrong!");
+												});
+										}
+									};
+									$(function () {
+										start();
+									});
+								</script>
+							</div>
+						</section>
+						<!-- //집중도분석 전 or 중 -->
+
+						<!-- 집중도분석 종료(로딩) -->
+						<section class="popupCont2 off">
+							<div class="popup__loading">
+								<div class="popup__loading-box">
+									<div class="popup__loading-img">
+										<img src="../img/popup_loading.png" alt="" />
+										<div class="loading" style="--duration: 2s; --num-dot: 60">
+											<div style="--index: 0"></div>
+											<div style="--index: 1"></div>
+											<div style="--index: 2"></div>
+											<div style="--index: 3"></div>
+											<div style="--index: 4"></div>
+											<div style="--index: 5"></div>
+											<div style="--index: 6"></div>
+											<div style="--index: 7"></div>
+											<div style="--index: 8"></div>
+											<div style="--index: 9"></div>
+											<div style="--index: 10"></div>
+											<div style="--index: 11"></div>
+											<div style="--index: 12"></div>
+											<div style="--index: 13"></div>
+											<div style="--index: 14"></div>
+											<div style="--index: 15"></div>
+											<div style="--index: 16"></div>
+											<div style="--index: 17"></div>
+											<div style="--index: 18"></div>
+											<div style="--index: 19"></div>
+											<div style="--index: 20"></div>
+											<div style="--index: 21"></div>
+											<div style="--index: 22"></div>
+											<div style="--index: 23"></div>
+											<div style="--index: 24"></div>
+											<div style="--index: 25"></div>
+											<div style="--index: 26"></div>
+											<div style="--index: 27"></div>
+											<div style="--index: 28"></div>
+											<div style="--index: 29"></div>
+											<div style="--index: 30"></div>
+											<div style="--index: 31"></div>
+											<div style="--index: 32"></div>
+											<div style="--index: 33"></div>
+											<div style="--index: 34"></div>
+											<div style="--index: 35"></div>
+											<div style="--index: 36"></div>
+											<div style="--index: 37"></div>
+											<div style="--index: 38"></div>
+											<div style="--index: 39"></div>
+											<div style="--index: 40"></div>
+											<div style="--index: 41"></div>
+											<div style="--index: 42"></div>
+											<div style="--index: 43"></div>
+											<div style="--index: 44"></div>
+											<div style="--index: 45"></div>
+											<div style="--index: 46"></div>
+											<div style="--index: 47"></div>
+											<div style="--index: 48"></div>
+											<div style="--index: 49"></div>
+											<div style="--index: 50"></div>
+											<div style="--index: 51"></div>
+											<div style="--index: 52"></div>
+											<div style="--index: 53"></div>
+											<div style="--index: 54"></div>
+											<div style="--index: 55"></div>
+											<div style="--index: 56"></div>
+											<div style="--index: 57"></div>
+											<div style="--index: 58"></div>
+											<div style="--index: 59"></div>
+										</div>
+									</div>
+									<p>
+										테스트 결과를 분석 중입니다.<br />
+										잠시만 기다려 주세요.
+									</p>
+								</div>
+							</div>
+						</section>
+						<!-- //집중도분석 종료(로딩) -->
+
+						<!-- 집중도분석 결과 -->
+						<section class="popupCont3 off">
+							<div class="popup__cont-scroll">
+								<div class="popup__cont-box">
+									<div class="popup__cont-tit">
+										<h3><img src="../img/popup_text01.png" alt="집중도 분석 결과 당신은…" /></h3>
+										<h2>
+											(전체 분석 시간 <strong>60초</strong> 중) <br /><span class="txt-BU">집중한 시간</span> <strong class="txt-BU">42초</strong>
+											<span class="txt-R">집중하지 않은 시간</span> <strong class="txt-R">18초<span>(3회)</span></strong>
+										</h2>
+									</div>
+									<div class="popup__list-box">
+										<ul>
+											<li>
+												<div class="box no">
+													<h3>집중도</h3>
+													<div class="popup__graph-donut">
+														<div class="graph-donut">
+															<canvas id="sample03"></canvas>
+															<script>
+																const ctx03 = document.getElementById("sample03").getContext("2d");
+																const sample03 = new Chart(ctx03, {
+																	type: "doughnut",
+																	data: {
+																		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+																		datasets: [
+																			{
+																				data: [12, 19, 3, 5, 2, 3],
+																				backgroundColor: [
+																					"rgba(255, 99, 132, 0.2)",
+																					"rgba(54, 162, 235, 0.2)",
+																					"rgba(255, 206, 86, 0.2)",
+																					"rgba(75, 192, 192, 0.2)",
+																					"rgba(153, 102, 255, 0.2)",
+																					"rgba(255, 159, 64, 0.2)",
+																				],
+																				borderColor: [
+																					"rgba(255, 99, 132, 1)",
+																					"rgba(54, 162, 235, 1)",
+																					"rgba(255, 206, 86, 1)",
+																					"rgba(75, 192, 192, 1)",
+																					"rgba(153, 102, 255, 1)",
+																					"rgba(255, 159, 64, 1)",
+																				],
+																				borderWidth: 1,
+																			},
+																		],
+																	},
+																	options: {
+																		responsive: true,
+																		maintainAspectRatio: false,
+																		scales: {
+																			y: {
+																				beginAtZero: true,
+																			},
+																		},
+																	},
+																});
+															</script>
+														</div>
+														<div class="popup__list-small">
+															<dl>
+																<dt>집중 구간</dt>
+																<dd><span class="i-BU"></span></dd>
+															</dl>
+															<dl>
+																<dt>비집중 구간</dt>
+																<dd><span class="i-R"></span></dd>
+															</dl>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>집중 유지</h3>
+													<h1>20초</h1>
+													<p>가장 오래 집중한 <br />시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>집중 나쁨</h3>
+													<h1>6초</h1>
+													<p>가장 오래 집중하지 <br />않은 시간</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="popup__graph">
+										<div class="popup__graph-tit">
+											<h3>집중 분포</h3>
+										</div>
+										<div class="popup__graph-box">
+											<!-- 그래프 영역 -->
+											<canvas id="sample02"></canvas>
+										</div>
+										<div class="popup__list-small">
+											<dl>
+												<dt>집중 구간</dt>
+												<dd><span class="i-BU"></span></dd>
+											</dl>
+											<dl>
+												<dt>비집중 구간</dt>
+												<dd><span class="i-R"></span></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- //집중도분석 결과 -->
+					</div>
+					<div class="popup__foot">
+						<!-- 하단 그래프 노출시 -->
+						<div class="popup__foot-graph">
+							<!-- 그래프 영역 -->
+							<div id="chart01"></div>
+							<canvas id="cv_chart01"></canvas>
+							<!--<script>
+								const ctx01 = document.getElementById("cv_chart01").getContext("2d");
+								const chart01 = new Chart(ctx01, {
+									type: "bar",
+									data: {
+										labels: [1,2,3,4,5,6,7,8],
+										datasets: [
+											{
+												barPercentage: 1.0,
+												categoryPercentage: 1.0,
+												data: [12, 19, 3, 5, 2, 3],
+												backgroundColor: [
+													"rgba(255, 99, 132, 0.2)",
+													"rgba(54, 162, 235, 0.2)",
+												],
+												borderColor: [
+													"rgba(255, 99, 132, 1)",
+													"rgba(54, 162, 235, 1)",
+												],
+												borderWidth: 1,
+											},
+										],
+									},
+									options: {
+										responsive: true,
+										maintainAspectRatio: false,
+										scales: {
+											y: {
+												beginAtZero: true,
+											},
+										},
+									},
+								});
+							</script>-->
+						</div>
+						<!-- //하단 그래프 노출시 -->
+						<!-- 분석 결과 페이지 노출시 -->
+						<div class="popup__foot-btn">
+							<button type="button" class="popup__btn-big btn-BU">결과 공유하기</button>
+							<button type="button" class="popup__btn-big btn-B btn-restart">다시하기</button>
+						</div>
+						<!-- //분석 결과 페이지 노출시 -->
+					</div>
+				</div>
+			</div>
+			<!-- //집중도분석 -->
+
+			<!-- 흥미도분석 소개 -->
+			<div class="popup__wrap off" id="popup1Intro">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>흥미도 분석</p>
+								<ul>
+									<li>집중도 분석</li>
+									<li class="select">흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup__cont-scroll">
+						<div class="popup-index" style="padding-top: 0; height: auto">
+							<div class="popup-intro-con">
+								<div class="intro-head">
+									<div class="message">
+										<h3>
+											<span class="fc-blue">나의 흥미도</span>는 몇 퍼센트? <button type="button" class="btn-share"><span class="btn-share__text">URL을 복사했습니다.</span><img src="../img/btn-copylink.png" width="37" alt="" />
+										</h3>
+										<p>나는 언제, 무엇에 흥미를 느끼는지 궁금하다면 <span class="m-block">지금 테스트 해보세요!</span></p>
+									</div>
+									<p class="start"><a href="javascript:void(0)" onclick="$('#popup1Intro').addClass('off');$('#popup1').removeClass('off')">Let’s start</a></p>
+								</div>
+								<p class="ai-text">Raiesme의 흥미도 분석 AI 모델은 화면을 응시하고 있는 사람의 <span>표정 변화로 인한 얼굴 근육</span>을 분석해서 흥미도를 측정합니다.</p>
+								<div class="ai-process">
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-01.png" alt="" /></div>
+										<dl style="margin-left:1.2rem">
+											<dt><span>1</span>준비</dt>
+											<dd>분석을 시작하기 전에 시청할 동영상을 준비해주세요.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-02-02.png" alt="" /></div>
+										<dl style="margin-left:1.2rem">
+											<dt><span>2</span>분석 시작</dt>
+											<dd>정확한 분석을 위해 모니터를 정면으로 응시하세요.</dd>
+											<dd>촬영을 위해 카메라 접근을 허용해주세요.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-03.png" alt="" /></div>
+										<dl>
+											<dt><span>3</span>분석 중</dt>
+											<dd>쇼케이스를 실행한 상태에서 동영상을 시청하세요.</dd>
+											<dd>분석 결과를 위해 <span>최소 10초 이상 최대 30초</span> 동안 시청해야 합니다.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-04.png" alt="" /></div>
+										<dl style="margin-left:2.1rem">
+											<dt><span>4</span>분석 완료</dt>
+											<dd>흥미도를 확인하고 결과를 공유하세요.</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<!-- //흥미도분석 소개 -->
+			<!-- 흥미도분석 -->
+			<div class="popup__wrap off" id="popup1">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng" style="cursor:pointer" onclick="$('#popup1').addClass('off');$('#popup1Intro').removeClass('off')"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>흥미도 분석</p>
+								<ul id="ul-interest">
+									<li>집중도 분석</li>
+									<li class="select">흥미도 분석</li>
+									<li>자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">흥미도는 몇 퍼센트?<button type="button" class="popup__btn-share btn-share"><span class="btn-share__text">URL을 복사했습니다.</span>url공유</button></div>
+					</div>
+					<div class="popup__cont">
+						<!-- 흥미도분석 전 or 중 -->
+						<section class="popupCont1">
+							<div class="popup__cont-time">
+								<h3 id="timer02" class="i-time">00:00</h3>
+								<button type="button" class="popup__btn-basic btn-w btn-start" id="start02">시작</button>
+							</div>
+							<div class="popup__cont-video">
+								<div id="guideline_02" class="video-bg video-bg1">
+									<div class="popup__toast"><p>점선 안에 정면으로 어깨까지 나오도록 해주세요.</p></div>
+									<!-- 영상 송출 시 해당 이 div 숨김 -->
+								</div>
+								<video id="video02" autoplay style="margin: 0 auto; background: #4a4c53" webkit-playsinline="true" playsinline="true"></video>
+							</div>
+						</section>
+						<!-- //흥미도분석 전 or 중 -->
+
+						<!-- 흥미도분석 종료(로딩) -->
+						<section class="popupCont2 off">
+							<div class="popup__loading">
+								<div class="popup__loading-box">
+									<div class="popup__loading-img">
+										<img src="../img/popup_loading.png" alt="" />
+										<div class="loading" style="--duration: 2s; --num-dot: 60">
+											<div style="--index: 0"></div>
+											<div style="--index: 1"></div>
+											<div style="--index: 2"></div>
+											<div style="--index: 3"></div>
+											<div style="--index: 4"></div>
+											<div style="--index: 5"></div>
+											<div style="--index: 6"></div>
+											<div style="--index: 7"></div>
+											<div style="--index: 8"></div>
+											<div style="--index: 9"></div>
+											<div style="--index: 10"></div>
+											<div style="--index: 11"></div>
+											<div style="--index: 12"></div>
+											<div style="--index: 13"></div>
+											<div style="--index: 14"></div>
+											<div style="--index: 15"></div>
+											<div style="--index: 16"></div>
+											<div style="--index: 17"></div>
+											<div style="--index: 18"></div>
+											<div style="--index: 19"></div>
+											<div style="--index: 20"></div>
+											<div style="--index: 21"></div>
+											<div style="--index: 22"></div>
+											<div style="--index: 23"></div>
+											<div style="--index: 24"></div>
+											<div style="--index: 25"></div>
+											<div style="--index: 26"></div>
+											<div style="--index: 27"></div>
+											<div style="--index: 28"></div>
+											<div style="--index: 29"></div>
+											<div style="--index: 30"></div>
+											<div style="--index: 31"></div>
+											<div style="--index: 32"></div>
+											<div style="--index: 33"></div>
+											<div style="--index: 34"></div>
+											<div style="--index: 35"></div>
+											<div style="--index: 36"></div>
+											<div style="--index: 37"></div>
+											<div style="--index: 38"></div>
+											<div style="--index: 39"></div>
+											<div style="--index: 40"></div>
+											<div style="--index: 41"></div>
+											<div style="--index: 42"></div>
+											<div style="--index: 43"></div>
+											<div style="--index: 44"></div>
+											<div style="--index: 45"></div>
+											<div style="--index: 46"></div>
+											<div style="--index: 47"></div>
+											<div style="--index: 48"></div>
+											<div style="--index: 49"></div>
+											<div style="--index: 50"></div>
+											<div style="--index: 51"></div>
+											<div style="--index: 52"></div>
+											<div style="--index: 53"></div>
+											<div style="--index: 54"></div>
+											<div style="--index: 55"></div>
+											<div style="--index: 56"></div>
+											<div style="--index: 57"></div>
+											<div style="--index: 58"></div>
+											<div style="--index: 59"></div>
+										</div>
+									</div>
+									<p>
+										테스트 결과를 분석 중입니다.<br />
+										잠시만 기다려 주세요.
+									</p>
+								</div>
+							</div>
+						</section>
+						<!-- //흥미도분석 종료(로딩) -->
+
+						<!-- 흥미도분석 결과 -->
+						<section class="popupCont3 off">
+							<div class="popup__cont-scroll">
+								<div class="popup__cont-box">
+									<div class="popup__cont-tit">
+										<h3><img src="../img/popup_text02.png" alt="흥미도 분석 결과 당신은…" /></h3>
+										<h2>
+											(전체 분석 시간 <strong>30초</strong> 중) <br />흥미 <span class="txt-BU">높음</span>
+											<strong id="ciHighTotal" class="txt-BU">21초</strong>, <span class="txt-R">낮음</span>
+											<strong id="ciNeutralTotal" class="txt-R">6초</strong>, <span class="txt-PU">분석불가</span>
+											<strong id="ciNATotal" class="txt-PU">3초</strong>
+										</h2>
+									</div>
+									<div class="popup__list-box">
+										<ul>
+											<li>
+												<div class="box no">
+													<h3>흥미도</h3>
+													<div class="popup__graph-donut">
+														<div class="graph-donut">
+															<canvas id="resDonut06"></canvas>
+														</div>
+														<div class="popup__list-small">
+															<dl>
+																<dt>흥미 높음</dt>
+																<dd><span class="i-BU"></span></dd>
+															</dl>
+															<dl>
+																<dt>흥미 낮음</dt>
+																<dd><span class="i-R"></span></dd>
+															</dl>
+															<dl>
+																<dt>분석 불가</dt>
+																<dd><span class="i-PU"></span></dd>
+															</dl>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>흥미 높음</h3>
+													<h1 id="max-interested-time">10초</h1>
+													<p>흥미도가 가장 오래 <br />높았던 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>흥미 낮음</h3>
+													<h1 id="min-interested-time">6초</h1>
+													<p>흥미도가 가장 오래 <br />낮았던 시간</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="popup__graph">
+										<div class="popup__graph-tit">
+											<h3>흥미 분포</h3>
+										</div>
+										<div class="popup__graph-box">
+											<canvas id="cv_resChart02"></canvas>
+										</div>
+										<div class="popup__list-small">
+											<dl>
+												<dt>흥미 높음 ↑</dt>
+												<dd></dd>
+											</dl>
+											<dl>
+												<dt>흥미 낮음 ↓</dt>
+												<dd></dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- //흥미도분석 결과 -->
+					</div>
+					<div class="popup__foot">
+						<!-- 하단 그래프 노출시 -->
+						<div class="popup__foot-graph">
+							<canvas id="cv_chart02"></canvas>
+						</div>
+						<!-- //하단 그래프 노출시 -->
+						<!-- 분석 결과 페이지 노출시 -->
+						<div class="popup__foot-btn">
+							<button type="button" class="popup__btn-big btn-BU">결과 공유하기</button>
+							<button id="restart02" type="button" class="popup__btn-big btn-B btn-restart">다시하기</button>
+						</div>
+						<!-- //분석 결과 페이지 노출시 -->						
+					</div>
+				</div>
+			</div>
+			<!-- //흥미도분석 -->
+
+			<!-- 자세분석 소개 -->
+			<div class="popup__wrap off" id="popup2Intro">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>자세 분석</p>
+								<ul>
+									<li>집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li class="select">자세 분석</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="popup__cont-scroll">
+						<div class="popup-index" style="padding-top: 0; height: auto">
+							<div class="popup-intro-con">
+								<div class="intro-head">
+									<div class="message">
+										<h3>
+											<span class="fc-blue">당신의 자세</span>는 어떤가요? <button type="button" class="btn-share"><span class="btn-share__text">URL을 복사했습니다.</span><img src="../img/btn-copylink.png" width="37" alt="" />
+										</h3>
+										<p>나의 자세가 좋은지 나쁜지 궁금하다면 <span class="m-block">지금 테스트 해보세요!</span></p>
+									</div>
+									<p class="start"><a href="javascript:void(0)" onclick="$('#popup2Intro').addClass('off');$('#popup2').removeClass('off')">Let’s start</a></p>
+								</div>
+								<p class="ai-text">Raiesme의 자세 분석 AI 모델은 화상으로 소통할 때 사람들의 <span>바른 자세 여부</span>를 확인할 수 있습니다.</p>
+								<div class="ai-process center">
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-02-03.png" alt="" /></div>
+										<dl style="margin-left:1.2rem">
+											<dt><span>1</span>분석 시작</dt>
+											<dd>정확한 분석을 위해 모니터를 정면으로 응시하세요.</dd>
+											<dd>촬영을 위해 카메라 접근을 허용해주세요.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-03.png" alt="" /></div>
+										<dl>
+											<dt><span>2</span>분석 중</dt>
+											<dd>쇼케이스를 실행한 상태에서 동영상을 시청하세요.</dd>
+											<dd>분석 결과를 위해 <span>최소 10초 이상 최대 30초</span> 동안 시청해야 합니다.</dd>
+										</dl>
+									</div>
+									<div class="step-process">
+										<div class="image"><img src="../img/img-stap-04.png" alt="" /></div>
+										<dl style="margin-left:2.1rem">
+											<dt><span>3</span>분석 완료</dt>
+											<dd>자세를 확인하고 결과를 공유하세요.</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+			<!-- //자세분석 소개 -->
+			<!-- 자세분석 -->
+			<div class="popup__wrap off" id="popup2">
+				<button type="button" class="popup__btn-close"><span class="i-close">close</span></button>
+				<div class="popup__wrap-box">
+					<div class="popup__head">
+						<div class="popup__select-box">
+							<h2 class="eng" style="cursor:pointer" onclick="$('#popup2').addClass('off');$('#popup2Intro').removeClass('off')"><span class="eng fc-blue">RAISEME</span> SHOWCASE</h2>
+							<div class="popup__select">
+								<p>자세 분석</p>
+								<ul id="ul-posture">
+									<li>집중도 분석</li>
+									<li>흥미도 분석</li>
+									<li class="select">자세 분석</li>
+								</ul>
+							</div>
+						</div>
+						<div class="popup__head-txt">당신의 자세는 어떤가요?<button type="button" class="popup__btn-share btn-share"><span class="btn-share__text">URL을 복사했습니다.</span>url공유</button></div>
+					</div>
+					<div class="popup__quick">
+						<div class="popup__quick-box">
+							<dl>
+								<dt>
+									<div class="bg-GY"><span class="i-away">자리비움</span></div>
+								</dt>
+								<dd id="awayCount">0초 (0회)</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-BU"><span class="i-like">자세좋음</span></div>
+								</dt>
+								<dd id="likeCount">0초 (0회)</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-PU"><span class="i-basic">자세보통</span></div>
+								</dt>
+								<dd id="basicCount">0초</dd>
+							</dl>
+							<dl>
+								<dt>
+									<div class="bg-R"><span class="i-bad">자세나쁨</span></div>
+								</dt>
+								<dd id="badCount">0초 (0회)</dd>
+							</dl>
+						</div>
+						<!-- 자세분석 중에 노출 -->
+						<div class="popup__quick-foot">
+							<div class="bg-NA"><span class="i-like2"></span></div>
+						</div>
+						<!-- //자세분석 중에 노출 -->
+					</div>
+					<div class="popup__cont">
+						<!-- 자세분석 전 or 중 -->
+						<section class="popupCont1">
+							<div class="popup__cont-time">
+								<h3 id="timer03" class="i-time">01:00</h3>
+								<button type="button" class="popup__btn-basic btn-w btn-start" id="start03">시작</button>
+							</div>
+							<div class="popup__cont-video">
+								<div id="guideline_03" class="video-bg video-bg1">
+									<div class="popup__toast"><p>점선 안에 정면으로 어깨까지 나오도록 해주세요.</p></div>
+									<!-- 영상 송출 시 해당 이 div 숨김 -->
+								</div>
+								<video id="video03" autoplay style="margin: 0 auto; background: #4a4c53" webkit-playsinline="true" playsinline="true"></video>
+							</div>
+						</section>
+						<!-- //자세분석 전 or 중 -->
+
+						<!-- 자세분석 종료(로딩) -->
+						<section class="popupCont2 off">
+							<div class="popup__loading">
+								<div class="popup__loading-box">
+									<div class="popup__loading-img">
+										<img src="../img/popup_loading.png" alt="" />
+										<div class="loading" style="--duration: 2s; --num-dot: 60">
+											<div style="--index: 0"></div>
+											<div style="--index: 1"></div>
+											<div style="--index: 2"></div>
+											<div style="--index: 3"></div>
+											<div style="--index: 4"></div>
+											<div style="--index: 5"></div>
+											<div style="--index: 6"></div>
+											<div style="--index: 7"></div>
+											<div style="--index: 8"></div>
+											<div style="--index: 9"></div>
+											<div style="--index: 10"></div>
+											<div style="--index: 11"></div>
+											<div style="--index: 12"></div>
+											<div style="--index: 13"></div>
+											<div style="--index: 14"></div>
+											<div style="--index: 15"></div>
+											<div style="--index: 16"></div>
+											<div style="--index: 17"></div>
+											<div style="--index: 18"></div>
+											<div style="--index: 19"></div>
+											<div style="--index: 20"></div>
+											<div style="--index: 21"></div>
+											<div style="--index: 22"></div>
+											<div style="--index: 23"></div>
+											<div style="--index: 24"></div>
+											<div style="--index: 25"></div>
+											<div style="--index: 26"></div>
+											<div style="--index: 27"></div>
+											<div style="--index: 28"></div>
+											<div style="--index: 29"></div>
+											<div style="--index: 30"></div>
+											<div style="--index: 31"></div>
+											<div style="--index: 32"></div>
+											<div style="--index: 33"></div>
+											<div style="--index: 34"></div>
+											<div style="--index: 35"></div>
+											<div style="--index: 36"></div>
+											<div style="--index: 37"></div>
+											<div style="--index: 38"></div>
+											<div style="--index: 39"></div>
+											<div style="--index: 40"></div>
+											<div style="--index: 41"></div>
+											<div style="--index: 42"></div>
+											<div style="--index: 43"></div>
+											<div style="--index: 44"></div>
+											<div style="--index: 45"></div>
+											<div style="--index: 46"></div>
+											<div style="--index: 47"></div>
+											<div style="--index: 48"></div>
+											<div style="--index: 49"></div>
+											<div style="--index: 50"></div>
+											<div style="--index: 51"></div>
+											<div style="--index: 52"></div>
+											<div style="--index: 53"></div>
+											<div style="--index: 54"></div>
+											<div style="--index: 55"></div>
+											<div style="--index: 56"></div>
+											<div style="--index: 57"></div>
+											<div style="--index: 58"></div>
+											<div style="--index: 59"></div>
+										</div>
+									</div>
+									<p>
+										테스트 결과를 분석 중입니다.<br />
+										잠시만 기다려 주세요.
+									</p>
+								</div>
+							</div>
+						</section>
+						<!-- //자세분석 종료(로딩) -->
+
+						<!-- 자세분석 결과 -->
+						<section class="popupCont3 off">
+							<div class="popup__cont-scroll">
+								<div class="popup__cont-box">
+									<div class="popup__cont-tit">
+										<h3><img src="../img/popup_text03.png" alt="자세 분석 결과 당신은…" /></h3>
+										<h2 class="small">전체 분석 시간 <strong>30초</strong> 중</h2>
+										<h2>
+											<span class="txt-GY">자리비움</span> <strong id="resAway" class="txt-GY">3초(1회)</strong>, <span class="txt-BU">자세좋음</span>
+											<strong id="resLike" class="txt-BU">42초(3회)</strong>, <span class="txt-PU">자세보통</span>
+											<strong id="resBasic" class="txt-PU">18초</strong>, 
+											<span class="txt-R">자세나쁨</span> <strong id="resBad" class="txt-R">18초(2회)</strong>
+										</h2>
+									</div>
+									<div class="popup__list-box">
+										<ul>
+											<li>
+												<div class="box">
+													<h3>자세평가</h3>
+													<div class="popup__graph-donut no">
+														<div class="graph-donut big">
+															<canvas id="sample07"></canvas>
+														</div>
+														<div class="popup__list-small">
+															<dl>
+																<dt>자리 비움</dt>
+																<!--#9196a9-->
+																<dd><span class="i-GY"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 좋음</dt>
+																<!--#46c7ff-->
+																<dd><span class="i-BU"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 보통</dt>
+																<!--#8957ff-->
+																<dd><span class="i-PU"></span></dd>
+															</dl>
+															<dl>
+																<dt>자세 나쁨</dt>
+																<!--#ff5959-->
+																<dd><span class="i-R"></span></dd>
+															</dl>
+														</div>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자리비움</h3>
+													<h1 id="longest-away-time"></h1>
+													<p>가장 오래 자리 <br />비운 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자세좋음</h3>
+													<h1 id="longest-like-time"></h1>
+													<p>가장 오래 바른 자세 <br />유지한 시간</p>
+												</div>
+											</li>
+											<li>
+												<div class="box">
+													<h3>자세나쁨</h3>
+													<h1 id="longest-bad-time"></h1>
+													<p>가장 오래 나쁜 자세 유지한 시간</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- //자세분석 결과 -->
+					</div>
+					<div class="popup__foot">
+						<!-- 분석 결과 페이지 노출시 -->
+						<div class="popup__foot-btn">
+							<button type="button" class="popup__btn-big btn-BU">결과 공유하기</button>
+							<button id="restart03" type="button" class="popup__btn-big btn-B btn-restart">다시하기</button>
+						</div>
+						<!-- //분석 결과 페이지 노출시 -->
+					</div>
+				</div>
+			</div>
+			<!-- //자세분석 -->
+
+			<div class="popup__control off" style="display: none">
+				<button type="button" class="popup__btn-next">다음</button>
+				<button type="button" class="popup__btn-next off" name="popupCont2">다음</button>
+				<!-- 결과 로딩-->
+				<button type="button" class="popup__btn-next off" name="popupCont3">다음</button>
+				<!--분석 결과-->
+				<button type="button" class="popup__btn-next off" name="popupCont1">다음</button>
+			</div>
+
+			<div class="popup__dim off"></div>
+		</div>
+
+		<script>
+			var stop01 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop01();
+				}
+				video.srcObject = null;
+			};
+			var start01 = function () {
+				var video = document.getElementById("video01"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start01();
+			});
+		</script>
+		<script>
+			var stop02 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop02();
+				}
+				video.srcObject = null;
+			};
+			var start02 = function () {
+				var video = document.getElementById("video02"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start02();
+			});
+		</script>
+		<script>
+			var stop03 = function () {
+				var stream = video.srcObject;
+				var tracks = stream.getTracks();
+				for (var i = 0; i < tracks.length; i++) {
+					var track = tracks[i];
+					track.stop03();
+				}
+				video.srcObject = null;
+			};
+			var start03 = function () {
+				var video = document.getElementById("video03"),
+					vendorUrl = window.URL || window.webkitURL;
+				if (navigator.mediaDevices.getUserMedia) {
+					navigator.mediaDevices
+						.getUserMedia({ video: true })
+						.then(function (stream) {
+							video.srcObject = stream;
+						})
+						.catch(function (error) {
+							console.log("Something went wrong!");
+						});
+				}
+			};
+			$(function () {
+				start03();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="Raiseme" />
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<meta property="og:image" content="../img/img-og.png">
+<meta property="og:url" content="">
+<meta property="og:description" content="">
+<meta property="og:title" content="Raiseme">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<title>Raiseme</title>
+<link rel="stylesheet" href="../css/popup_style.css" />
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/imagesloaded.pkgd.min.js"></script>
+<script src="../js/gsap.min.js"></script>
+<script src="../js/ScrollTrigger.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/ScrollToPlugin3.min.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/ui-common.js"></script>
+</head>
+
+<body> 
+<div class="accessbility"><a href="#contents">본문바로가기</a></div>
+<div id="wrapper">
+   <header id="header">
+       <div class="row">
+            <h1><a href="M_MAIN_01.html"><img src="../img/ci.svg" alt="Raiseme"></a></h1>
+            <ul class="gnb">
+                <li><a href="A_ABOUT_01.html">ABOUT</a></li>
+                <li><a href="S_APIS_01_T.html">Service</a></li>
+                <li><a href="T_CONC_01_T.html">Tech</a></li>
+                <li><a href="C_COUN_01_T.html">Use case</a></li>
+                <li class="active"><a href="N_NEWS_01.html">News</a></li>
+            </ul>
+            <p class="menu-btn">
+                <span class="navTrigger"><i></i><i></i><i></i></span>
+            </p>
+       </div>
+   </header>
+   <div class="m-menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#page01">ABOUT US</a></li>
+            <li><a href="#page02">STORY</a></li>
+            <li><a href="#page03">ROAD MAP</a></li>
+            <li><a href="#page04">TEAM & ADVISORS</a></li>
+            <li><a href="#page05">FAQ</a></li>
+        </ul>
+    </div>
+   <section id="contents">
+    <!-- contents -->
+        <div class="page-header visual-news">
+            <div class="row">
+                <p class="cate eng">News</p>
+                <h2>새로운 소식을 <br><em>전달하는 레이즈미</em></h2>
+                <p class="summery">하루하루 업데이트되는 <span>레이즈미의 소식을 들어보세요</span></p>
+                <div class="visual-block news">
+                    <p class="back"><img src="../img/hologram-back.png" alt=""></p>
+                    <p class="man"><img src="../img/man.png" alt=""></p>
+                    <p class="holo-01 holo"><img src="../img/img-news-visual-01.png" alt=""></p>
+                    <p class="holo-02 holo"><img src="../img/img-news-visual-02.png" alt=""></p>
+                    <p class="holo-03 holo"><img src="../img/img-news-visual-03.png" alt=""></p>
+                    <p class="holo-04 holo"><img src="../img/img-news-visual-04.png" alt=""></p>
+                    <p class="holo-05 holo"><img src="../img/img-news-visual-05.png" alt=""></p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="news-comming">
+                <div class="comming eng">Coming Soon!</div>
+            </div>
+            <!--
+            <ul class="news-tab tab-ui">
+                <li class="active"><button type="button">전체</button></li>
+                <li><button type="button">동영상</button></li>
+                <li><button type="button">뉴스</button></li>
+            </ul>
+            <div class="news-contents-wrap tab-ui-con">
+                <div class="news-contents  active">
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-01.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>동영상</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-02.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>뉴스</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-03.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>영상</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-04.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>뉴스</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </div>
+                <div class="news-contents">
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-01.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>동영상</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-02.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>뉴스</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </div>
+                <div class="news-contents">
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-03.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>영상</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                    <div class="news-con">
+                        <div class="image"><img src="../img/thumb/thumb-04.png" alt=""></div>
+                        <a href="#">
+                            <dl>
+                                <dt>뉴스</dt>
+                                <dd>원격수업으로 인한 학습격차를 걱정하는 학부모들의 이야기</dd>
+                                <dd class="date eng">2022.05.03</dd>
+                            </dl>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+    <!-- //contents -->
+   </section>
+   <footer id="footer">
+        <div class="row">
+            <div class="footer-menu">
+                <h1><img src="../img/ci-footer.svg" alt=""></h1>
+                <ul>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
+                    <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
+                </ul>
+            </div>
+            <div class="site-info">
+                <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
+                <ul class="contact">
+                    <li>이메일: hello@raiseme.kr</li>
+                    <li>주소: 05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</li>
+                </ul>
+            </div>
+        </div>
+   </footer>
+</div>
+<script>
+    $(document).ready(function () {
+        var tl = gsap.timeline({repeat: -1, repeatDelay: 0});
+        gsap.set($(".visual-block .man"), {
+            opacity:0,
+            y:'50%',
+        })
+        gsap.set($(".visual-block .back"), {
+            opacity:0,
+            y:'-50%',
+        })
+        gsap.set($(".visual-block .holo"), {
+            opacity:0,
+            y:'-150%',
+        })
+        gsap.to($(".visual-block .man"), 0.2, {
+            opacity:1,
+            delay:0.7,
+            y:'0%',
+        })
+        gsap.to($(".visual-block .back"), 0.2, {
+            opacity:1,
+            delay:0.5,
+            y:'0%',
+        })
+        gsap.to($(".visual-block .holo"), 0.2, {
+            opacity:1,
+            delay:1,
+            y:'0%',
+            stagger: 0.1,
+            ease:Power1.easeOut,
+        })
+        tl.set($(".visual-block .holo"), {
+            opacity:1,
+            y:'0%',
+            delay:2,
+        })
+        .to($(".visual-block .back"), 2, {
+            ease:Power1.easeOut,
+            scale:0.95,
+            x:'-5%',
+            opacity:0.3,
+        },'time')
+        .to($(".visual-block .back"), 2, {
+            ease:Power1.easeOut,
+            scale:1,
+            x:'0%',
+            opacity:1,
+        },'time1')
+        .to($(".visual-block .holo-01"), 2, {
+            x:'-10%',
+            y:'-10%',
+            ease:Power1.easeOut,
+            scale:1.1,
+        },'time')
+        .to($(".visual-block .holo-01"), 2, {
+            x:'0%',
+            y:'0%',
+            ease:Power1.easeOut,
+            scale:1,
+        },'time1')
+        .to($(".visual-block .holo-05"), 2, {
+            x:'-10%',
+            y:'10%',
+            scale:1.1,
+            ease:Power1.easeOut,
+        },'time')
+        .to($(".visual-block .holo-05"), 2, {
+            x:'0%',
+            y:'0%',
+            scale:1,
+            ease:Power1.easeOut,
+        },'time1')
+        
+    })
+</script>
+</body>
+</html>

@@ -16,6 +16,10 @@ $(document).ready(function () {
     });
 });
 function init() {
+    // $( "img" ).each( function() {
+    //     var $img = $( this );
+    //     $img.width( $img.width() * .5 );
+    // });
     setTimeout(function(){
         $('#header').addClass('load')
     },500)
