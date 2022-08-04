@@ -7,7 +7,7 @@
 <meta name="keywords" content="">
 <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 <meta property="og:image" content="../img/img-og.png">
 <meta property="og:url" content="">
 <meta property="og:description" content="">
@@ -210,25 +210,30 @@
                     <ul class="list-detail">
                         <li class="active">
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 집중여부를 판정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>표정에서 얼굴 근육의 움직임을 분석하여
+                                    흥미도와 긍정, 부정 반응을 측정합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>비대면 수업과 화상상담 진행 시 참여자가 
+                                    자리를 비우거나  반응을 확인할 수 없는 
+                                    경우를 찾아냅니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl>
-                                <dd>영상 속 사람의 자세, 행동, 표정 등을 분석하여 <br>집중여부를 판정합니다.</dd>
+                                <dd>온라인시험 시 응시자의 행위를 분석해서 
+                                    부정행위 발생 여부를 감독관과 운영본부에 
+                                    리포팅합니다.</dd>
                                 <dd><a href="#" class="eng">SEE MORE</a></dd>
                             </dl>
                         </li>
@@ -450,14 +455,13 @@
    <footer id="footer">
         <div class="row">
             <div class="footer-menu">
-                <!--<h1><img src="../img/ci-footer.svg" alt=""></h1> -->
+                <h1><img src="../img/ci-footer.svg" alt=""></h1>
                 <ul>
                     <li><a href="#">이용약관</a></li>
                     <li><a href="#">개인정보처리방침</a></li>
                     <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
                     <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
                 </ul>
-                <p class="btn-top"><a href="#"><img src="../img/btn-top.png" alt=""></a></p>
             </div>
             <div class="site-info">
                 <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
@@ -472,11 +476,12 @@
 <aside class="float">
     <a href="#"><img src="../img/floating-btn-01.png" width="110" alt="MY MESTIES"></a>
     <a href="#"><img src="../img/floating-btn-02.png" width="110" alt="쇼케이스 체험하기"></a>
+    <a href="#" class="btn-top"><img src="../img/btn-top.png" alt=""></a>
 </aside>
 <script>
     
     $(document).ready(function () {
-
+        setTimeout(function(){
         let aiTween;
         const aiLength = 3;
         
@@ -774,7 +779,25 @@
             },
         })
 
+        gsap.to($(".float"),0.4,{
+            scrollTrigger: {
+                trigger: $('footer'),
+                start: "0% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
+                end: "0% 60%",
+                //markers: true,
+                toggleActions: "play pause  reverse pause",
+                scrub: 1,
+                // pin:true,
+                invalidateOnRefresh: true,
+                // pinSpacing: true,
+                // anticipatePin: 1
+            },
+            css:{paddingBottom: '260px'},
+            ease: 'power3.out'
+        })
+
         ScrollTrigger.refresh();
+        },500)
     })
 </script>
 </body>

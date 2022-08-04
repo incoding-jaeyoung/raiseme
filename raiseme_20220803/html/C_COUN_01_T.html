@@ -65,7 +65,7 @@
             <div class="row">
                 <p class="cate eng">USE CASE</p>
                 <h2>언제 어디서나<br><em>레이즈미</em></h2>
-                <p class="summery">언제 어디서나 레이즈미의 <span>기술을 활용하세요</span></p>
+                <p class="summery">레이즈미의 비즈니스 <span>활용사례를 만나보세요</span></p>
                 <div class="visual-block case slide-up">
                     <ul class="obj">
                         <li class="obj-01 obj-move"><span></span></li>
@@ -171,16 +171,15 @@
                                         },
                                         observer: true,
                                         observeParents: true,
-                                        
                                     });
-                                    swiper.on('slideChangeTransitionEnd', function () {
-                                        setTimeout(function(){
-                                            $('.popup-01').addClass('active')
-                                            setTimeout(function(){
-                                                $('.popup-02').addClass('active')
-                                            },500)
-                                        },500)
-                                    });
+                                    // swiper.on('slideChangeTransitionEnd', function () {
+                                    //     setTimeout(function(){
+                                    //         $('.popup-01').addClass('active')
+                                    //         setTimeout(function(){
+                                    //             $('.popup-02').addClass('active')
+                                    //         },500)
+                                    //     },500)
+                                    // });
                                 },500)
                                 
                             </script>
@@ -752,36 +751,55 @@
                     </div>
                 </div>
                 <div class="use-contents">
-                    <h3>부정행위 걱정 없이 온라인시험을 운영, 감독하세요</h3>
-                    <div class="comming eng">Coming Soon!</div>
+                    <div class="row">
+                        <h3>부정행위 걱정 없이 온라인시험을 운영, 감독하세요</h3>
+                        <div class="comming eng">Coming Soon!</div>
+                    </div>
                 </div>
             </div>
     <!-- //contents -->
    </section>
    <footer id="footer">
-        <div class="row">
-            <div class="footer-menu">
-                <h1><img src="../img/ci-footer.svg" alt=""></h1>
-                <ul>
-                    <li><a href="#">이용약관</a></li>
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
-                    <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
-                </ul>
-            </div>
-            <div class="site-info">
-                <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
-                <ul class="contact">
-                    <li>이메일: hello@raiseme.kr</li>
-                    <li>주소: 05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</li>
-                </ul>
-            </div>
+    <div class="row">
+        <div class="footer-menu">
+            <h1><img src="../img/ci-footer.svg" alt=""></h1>
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">레이즈미 소개자료를 받고 싶어요<img src="../img/icon-download.png" width="12" alt=""></a></li>
+                <li><a href="#"> API 사용방법을 알고싶어요<img src="../img/icon-newwin.png" width="16" alt=""></a></li>
+            </ul>
         </div>
-   </footer>
+        <div class="site-info">
+            <p class="copy">Copyright 2022 Raiseme. All rights reserved.</p>
+            <ul class="contact">
+                <li>이메일: hello@raiseme.kr</li>
+                <li>주소: 05510 서울시 송파구 올림픽로35길 125 삼성SDS 서관캠퍼스 4층</li>
+            </ul>
+        </div>
+    </div>
+</footer>
 </div>
 <script>
     $(document).ready(function () {
-        
+        function findGetParameter ( parameterName) {
+            let result = null;
+            let tmp = [];
+            window.location.search
+                .substr(1)
+                .split("&")
+                .forEach(function (item) {
+                    tmp = item.split("=");
+                    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+                    $('.tab-ui li').removeClass('active')
+                    $('.tab-ui li').eq(tmp[1]).addClass('active')
+                    $('.tab-ui-con > *').removeClass('active')
+                    $('.tab-ui-con > *').eq(tmp[1]).addClass('active')
+                });
+            return result;
+            
+        }
+        findGetParameter('tab');
         
     })
 </script>
