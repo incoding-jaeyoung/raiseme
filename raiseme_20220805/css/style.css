@@ -12,11 +12,10 @@ html,
 body {
   font-size: 62.5%;
 }
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1400px) {
     html {
         font-size:45%;
     }
-    .btn-slide{opacity: 0;}
   }
 /* common */
 * { -webkit-overflow-scrolling: touch;  word-break: keep-all; box-sizing: border-box;}

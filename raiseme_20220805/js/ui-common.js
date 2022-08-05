@@ -225,7 +225,7 @@ function commonTween() {
 						start: "0% 100%", // 앞 : 객체 , 뒤 : 페이지 전체
 						end: "0% 50%", // 앞 : 객체 , 뒤 : 페이지 전체
 						scrub: true, //스크롤에 반응 (없으면 자동재생)
-						//markers: true,
+						markers: true,
 						toggleActions: "play pause pause reverse",
 					},
 				});
