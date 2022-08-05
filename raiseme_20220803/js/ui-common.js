@@ -76,9 +76,9 @@ function init() {
         ScrollTrigger.create({
             trigger: video,
             scroller: 'body',
-            start: '0% center',
-            end: 'bottom 0%',
-            //markers: true,
+            start: '30% center',
+            end: '120% 0%',
+            // markers: true,
             onEnter: () => video.play(),
             onEnterBack: () => video.play(),
             onLeave: () => video.pause(),
@@ -91,7 +91,6 @@ function headerScroll() {
     var lastScrollTop = 0;
     var delta = 5;
     var navbarHeight = $('#header').outerHeight();
-    console.log(navbarHeight)
     $(window).scroll(function (event) {
         didScroll = true;
     });
@@ -175,7 +174,6 @@ function commonTween() {
     $('.slide-up, .sub-title').each(function (e) {
         let text = $(this).wrapInner('<div class="over-text-con"></div>')
         let target = text.find('.over-text-con')
-        console.log(text)
         gsap.set(target, {
             y:100,
             opacity: 0,
@@ -338,8 +336,6 @@ function commonTween() {
     })
     $('.up-slide-stagger > *').each(function (e) {
         var stagger = $(this)
-        console.log(stagger)
-        
         gsap.from(stagger, 0.5, {
             scrollTrigger: {
                 trigger: $(this),
