@@ -3,6 +3,7 @@ if ("scrollRestoration" in history) {
 	history.scrollRestoration = "manual";
 }
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 ScrollTrigger.saveStyles(".mobile, .desktop");
 // JavaScript Document
 var heroHeight;
@@ -16,6 +17,7 @@ $(document).ready(function () {
 			init();
 			headerScroll();
 			navTrigger();
+			
 		});
 	openshowcase("#showcase", "popup.html");
 });
@@ -28,6 +30,7 @@ function init() {
 		// $('.m-menu').toggleClass('active')
 		// $('html').toggleClass('fixed')
 		// $('#header').removeClass('nav-down')
+		
 		return false;
 	});
 	$(".m-menu li a").on("click", function () {
@@ -43,10 +46,24 @@ function init() {
 		$(".tab-ui li").eq(indexNum).addClass("active");
 		$(".tab-ui-con > *").removeClass("active");
 		$(".tab-ui-con > *").eq(indexNum).addClass("active");
-
 		ScrollTrigger.refresh();
-		swiper.update();
+		// swiper.update();
+		gsap.to(window, {duration: 0.4, scrollTo: {y: ".tab-ui-con", offsetY: 150}});
+		
 	});
+	if($('.news-tab').length >= 1){
+		var topPos = $('.news-tab').offset().top
+		$(window).scroll(function(){
+			if ($(window).scrollTop() >= topPos - 105) {
+				$('.news-tab').parent().addClass('sticky');
+			}
+			else {
+				$('.news-tab').parent().removeClass('sticky');
+			}
+		});
+	}
+	
+
 	ScrollTrigger.matchMedia({
 		"(min-width:851px)": function () {
 			var ran = gsap.timeline().to(".obj-move", {
@@ -125,6 +142,16 @@ function headerScroll() {
 			$("header").removeClass("nav-default");
 		}
 	}
+}
+function tab() {
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= 300) {
+			$('news-tab').addClass('sticky');
+		}
+		else {
+			$('news-tab').removeClass('sticky');
+		}
+	});
 }
 function commonTween() {
 	$(".fade").each(function (e) {
@@ -417,21 +444,4 @@ function closeModal(no) {
 	$(".modal-inside").hide();
 }
 
-function counter() {
-	var counter = {
-		var: 0,
-	};
-	var tal = document.getElementById("cx1");
 
-	TweenMax.to(counter, 3, {
-		var: 1000000,
-		onUpdate: function () {
-			tal.innerHTML = numberWithCommas(Math.ceil(counter.var));
-		},
-		ease: "Power4.easeOut",
-	});
-
-	function numberWithCommas(x) {
-		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	}
-}

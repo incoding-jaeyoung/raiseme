@@ -42,9 +42,9 @@
 					</h1>
 					<ul class="gnb">
 						<li><a href="A_ABOUT_01.html">ABOUT</a></li>
-						<li><a href="S_APIS_01_T.html">Service</a></li>
 						<li><a href="T_CONC_01_T.html">Tech</a></li>
 						<li><a href="C_COUN_01_T.html">Use case</a></li>
+						<li><a href="S_APIS_01_T.html">Service</a></li>
 						<li><a href="N_NEWS_01.html">News</a></li>
 					</ul>
 					<p class="menu-btn">
@@ -54,11 +54,11 @@
 			</header>
 			<div class="m-menu">
 				<ul>
-					<li><a href="A_ABOUT_01.html">About</a></li>
-					<li><a href="S_APIS_01_T.html">service </a></li>
-					<li><a href="T_CONC_01_T.html">tech</a></li>
-					<li><a href="C_COUN_01_T.html">use case</a></li>
-					<li><a href="N_NEWS_01.html">news</a></li>
+					<li><a href="A_ABOUT_01.html">ABOUT</a></li>
+					<li><a href="T_CONC_01_T.html">Tech</a></li>
+					<li><a href="C_COUN_01_T.html">Use case</a></li>
+					<li><a href="S_APIS_01_T.html">Service</a></li>
+					<li><a href="N_NEWS_01.html">News</a></li>
 				</ul>
 			</div>
 			<section id="contents">
@@ -66,7 +66,7 @@
 				<div class="index-header">
 					<div class="row">
 						<h2><img src="img/title.png" width="709" alt="" /></h2>
-						<p>레이즈미는 간편하고 스마트한 AI기술을 만듭니다</p>
+						<p>우리의 삶의 가능성을 더 크고 높게 할 스마트한 AI기술을 만듭니다.</p>
 					</div>
 				</div>
 				<div class="video-block">
@@ -261,7 +261,7 @@
 									<div class="img"><img src="img/icon-01.png" width="80" alt="" /></div>
 									<dl>
 										<dt>뇌공학연구실의 뇌파 학습데이터</dt>
-										<dd>Raiseme는 한양대 뇌공학연구실과 연구한 <br />뇌파를 기반으로 딥러닝 된 AI입니다.</dd>
+										<dd>산학 및 전문 AI연구인력과 협업하여<br>최신의 AI 개발 기법이 적용된 딥러닝 AI입니다.</dd>
 									</dl>
 								</li>
 								<li>
@@ -269,8 +269,7 @@
 									<dl>
 										<dt>현장의 목소리를 담은 기술</dt>
 										<dd>
-											현직 교사, 시험 감독관, 학부모들을 <br />
-											대상으로 한 실험을 통해 만들어졌습니다.
+											교육전문가, 현직교사와 학생, 시험감독관, 학부모 등이 참여한 실험을 통해 만들어졌습니다.
 										</dd>
 									</dl>
 								</li>
@@ -284,10 +283,9 @@
 								<li>
 									<div class="img"><img src="img/icon-04.png" width="105" alt="" /></div>
 									<dl>
-										<dt>리포팅 자동화 시스템</dt>
+										<dt>업종과 비즈니스 케이스의 고려</dt>
 										<dd>
-											시간, 빈도, 유형 등의 분석 자료를 자동으로 <br />
-											작성하고 리포팅합니다.
+											사용시나리오에 맞게 바로 적용이 가능한 값으로 분석하여 서비스 활용이 용이합니다.
 										</dd>
 									</dl>
 								</li>
@@ -637,31 +635,55 @@
 						},
 					});
 
-					//플로우 이동
-					ScrollTrigger.matchMedia({
-						"(min-width:851px)": function () {
-							gsap.to($(".flow-block img"), {
-								scrollTrigger: {
-									trigger: $(".flow-block"),
-									start: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-									end: "+=3000",
-									// markers: true,
-									toggleActions: "play pause reverse pause",
-									scrub: 1,
-									pin: true,
-									invalidateOnRefresh: true,
-									pinSpacing: true,
-									anticipatePin: 1,
-								},
-								xPercent: -120,
-								x: () => innerWidth,
-								ease: "none",
-							});
-						},
-						"(max-width:850px)": function () {
-							//mob interaction
+					//차별화
+					let visionCon = $('.benefit .benefit-list li')
+					const vision = gsap.timeline({
+						scrollTrigger: {
+							trigger: ".benefit",
+							start: "0% 110", // 앞 : 객체 , 뒤 : 페이지 전체
+							end: "+=200%",
+							scrub: true, //스크롤에 반응 (없으면 자동재생)
+							markers: true,
+							pin:true,
+							pinSpacing: true,
+							anticipatePin: 1,
+							toggleActions: "play pause reverse pause",
 						},
 					});
+					vision.from(visionCon, 0.5, {
+						y: -100,
+						stagger: 0.5,
+						opacity: 0,
+						//            ease: "power2.inOut",
+						onComplete: function () {},
+					})
+					.to('body',{ duration: 0.3 }) ;
+
+					//플로우 이동
+					// ScrollTrigger.matchMedia({
+					// 	"(min-width:851px)": function () {
+					// 		gsap.to($(".flow-block img"), {
+					// 			scrollTrigger: {
+					// 				trigger: $(".flow-block"),
+					// 				start: "0% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
+					// 				end: "+=3000",
+					// 				// markers: true,
+					// 				toggleActions: "play pause reverse pause",
+					// 				scrub: 1,
+					// 				pin: true,
+					// 				invalidateOnRefresh: true,
+					// 				pinSpacing: true,
+					// 				anticipatePin: 1,
+					// 			},
+					// 			xPercent: -120,
+					// 			x: () => innerWidth,
+					// 			ease: "none",
+					// 		});
+					// 	},
+					// 	"(max-width:850px)": function () {
+					// 		//mob interaction
+					// 	},
+					// });
 
 					// 가능성 플로우 이동
 					let dreamTween;
@@ -697,13 +719,13 @@
 								});
 							dreamTween = gsap.to($(".dreamSwiper .swiper-wrapper"), {
 								scrollTrigger: {
-									trigger: $(".dreamSwiper .swiper-wrapper"),
-									start: "0 0", // 앞 : 객체 , 뒤 : 페이지 전체
-									end: () => `+=2500 100%`, // 앞 : 객체 , 뒤 : 페이지 전체
-									// markers: true,
+									trigger: $(".dream"),
+									start: "0 110px", // 앞 : 객체 , 뒤 : 페이지 전체
+									end: "+=2000 100%", // 앞 : 객체 , 뒤 : 페이지 전체
+									markers: true,
 									toggleActions: "play pause reverse pause",
 									scrub: 1,
-									// pin:true,
+									pin:true,
 									invalidateOnRefresh: true,
 									pinSpacing: true,
 									anticipatePin: 1,
@@ -720,8 +742,8 @@
 							gsap.to($(".dreamSwiper .obj-01,.dreamSwiper .obj-03,.dreamSwiper .obj-04"), {
 								scrollTrigger: {
 									trigger: $(".dream"),
-									start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-									end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+									start: "0% 110px", // 앞 : 객체 , 뒤 : 페이지 전체
+									end: "+=2000 100%", // 앞 : 객체 , 뒤 : 페이지 전체
 									// markers: true,
 									toggleActions: "play pause reverse pause",
 									scrub: 1,
@@ -730,14 +752,14 @@
 									pinSpacing: true,
 									anticipatePin: 1,
 								},
-								xPercent: 150,
+								xPercent: 450,
 								ease: "none",
 							});
 							gsap.to($(".dreamSwiper .obj-02,.dreamSwiper .obj-05"), {
 								scrollTrigger: {
 									trigger: $(".dream"),
-									start: "20% 0%", // 앞 : 객체 , 뒤 : 페이지 전체
-									end: "+=2000", // 앞 : 객체 , 뒤 : 페이지 전체
+									start: "0% 110px", // 앞 : 객체 , 뒤 : 페이지 전체
+									end: "+=2000 100%", // 앞 : 객체 , 뒤 : 페이지 전체
 									// markers: true,
 									toggleActions: "play pause reverse pause",
 									scrub: 1,
@@ -746,7 +768,7 @@
 									pinSpacing: true,
 									anticipatePin: 1,
 								},
-								xPercent: 50,
+								xPercent: -150,
 								ease: "none",
 							});
 
@@ -827,7 +849,7 @@
 					});
 
 					ScrollTrigger.refresh();
-				}, 500);
+				}, 0);
 			});
 		</script>
 	</body>
