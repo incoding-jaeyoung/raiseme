@@ -640,13 +640,12 @@
 					const vision = gsap.timeline({
 						scrollTrigger: {
 							trigger: ".benefit",
-							start: "0% 110", // 앞 : 객체 , 뒤 : 페이지 전체
-							end: "+=200%",
+							start: "0% 110px", // 앞 : 객체 , 뒤 : 페이지 전체
+							end: "+=2000",
 							scrub: true, //스크롤에 반응 (없으면 자동재생)
-							markers: true,
+							// markers: true,
 							pin:true,
 							pinSpacing: true,
-							anticipatePin: 1,
 							toggleActions: "play pause reverse pause",
 						},
 					});
@@ -655,7 +654,6 @@
 						stagger: 0.5,
 						opacity: 0,
 						//            ease: "power2.inOut",
-						onComplete: function () {},
 					})
 					.to('body',{ duration: 0.3 }) ;
 
@@ -722,7 +720,7 @@
 									trigger: $(".dream"),
 									start: "0 110px", // 앞 : 객체 , 뒤 : 페이지 전체
 									end: "+=2000 100%", // 앞 : 객체 , 뒤 : 페이지 전체
-									markers: true,
+									// markers: true,
 									toggleActions: "play pause reverse pause",
 									scrub: 1,
 									pin:true,
